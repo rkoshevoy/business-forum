@@ -1,0 +1,77 @@
+.business-missions {
+	color: #484e5c;
+
+	h2 {
+		margin-bottom: 40px;
+		color: #666666;
+	}
+
+	&__text {
+		margin-bottom: 95px;
+		font-size: 18px;
+		margin-bottom: 95px;
+	}
+
+	&__more {
+		position: relative;
+		height: 100px;
+		cursor: pointer;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 20px;
+			height: 20px;
+			border-top: 2px solid #000;
+			border-right: 2px solid #000;
+			transform: translate(-50%, -50%) rotate(135deg);
+		}
+	}
+}
+
+.question {
+	position: relative;
+	margin-bottom: 27px;
+
+	img {
+		width: 100%;
+		margin-bottom: 27px;
+	}
+
+	h3 {
+		margin-bottom: 15px;
+		color: #515255;
+		font-size: 14px;
+	}
+
+	p {
+		width: 70%;
+		margin: 0 auto;
+		font-size: 12.5px;
+		color: #7a7875;
+	}
+
+	&__more-button {
+		position: absolute;
+		right: 30px;
+		bottom: 0;
+		width: 18px;
+		height: 18px;
+		border: 2px solid #000;
+		border-radius: 50%;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 2px;
+			right: 3.5px;
+			width: 5px;
+			height: 5px;
+			border-right: 2px solid #000;
+			border-bottom: 2px solid #000;
+			transform: rotate(45deg);
+		}
+	}
+}

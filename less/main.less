@@ -7,6 +7,7 @@ body {
 body {
 	margin: 0 auto;
 	background-color: #fff;
+	font-family: BlissProHeavy;
 }
 
 * {
@@ -21,4 +22,55 @@ body {
 	content: '';
 	display: block;
 	clear: both;
+}
+
+button {
+	background-color: transparent;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+input {
+	outline: none;
+}
+
+textarea {
+	resize: none;
+}
+
+.main-wrapper {
+	width: 100%;
+
+	@media (min-width: 750px) {
+		width: 750px;
+		margin: 0 auto;
+	}
+}
+
+.wrapper {
+	width: 100%;
+	padding: 0 16px;
+}
+
+.hide {
+	display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	text-align: center;
+}
+
+h2 {
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+p {
+	text-align: center;
 }
