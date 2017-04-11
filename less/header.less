@@ -2,27 +2,39 @@
 	position: relative;
 
 	&__button-wrapper {
-		display: inline-block;
+		background-color: #6d6d6e;
+		text-align: center; 
 		padding: 5px;
 		margin-right: 80px;
-		background-color: #6d6d6e;
-		text-align: center;
 	}
 
-	&__button {
+	&__button { 
 		width: 100%;
 		max-width: 220px;
-		padding: 20px 0;
+		padding: 18px 0;
 		font-size: 20px;
-		background-color: #1f8a70;
 		color: #fff;
-		font-family: BlissProHeavy;
+		font-family: BlissProHeavy; 
+		background-color: #1f8a70;
+		overflow: hidden;
 	}
 
 	&__modal-button {
 		float: right;
 		width: 80px;
 		height: 70px;
-		background-color: red;
+	}
+
+	&__button-line {
+		width: 50px;
+		height: 8px;
+		margin: 0 auto;
+		margin-bottom: 8px;
+		border-radius: 4px;
+		background-color: #343434;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
 	}
 }
