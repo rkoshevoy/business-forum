@@ -4,19 +4,55 @@
 	&__header {
 		padding: 85px 0;
 	}
+
+	&__more {
+		position: relative;
+		height: 40px;
+		cursor: pointer;
+
+		&::after {
+			content: '';
+			position: absolute;
+			left: 50%;
+			width: 20px;
+			height: 20px;
+			border-top: 2px solid #000;
+			border-right: 2px solid #000;
+			transform: translatex(-50%) rotate(135deg);
+		}
+	}
 }
 
 .speaker {
+	margin-bottom: 65px;
 	position: relative;
+	text-align: center;
 
-	&__opened {
-		position: relative;
-		border-top-right-radius: 10px;
-		border-top-left-radius: 10px;
-		background-color: #fff;
-		text-align: center;
-
+	img {
+		display: block;
+		margin: 0 auto;
+		margin-bottom: 15px;
 	}
+
+	&__name {
+		margin-bottom: 10px;
+		font-size: 18px;
+		color: #666666;
+	}
+
+	&__company {
+		font-size: 14px;
+		color: #bdd63d;
+	}
+}
+
+.speaker-details {
+	position: relative;
+	margin-bottom: 40px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	background-color: #fff;
+	text-align: center;
 
 	&__header {
 		padding: 15px 0;
@@ -59,8 +95,8 @@
 		}
 	}
 
-	img {
-		margin-bottom: 15px;
+	&__avatar {
+		margin-bottom: 10px;
 	}
 
 	&__name {
@@ -71,12 +107,23 @@
 	}
 
 	&__description {
+		margin-bottom: 25px;
 		color: #b2b2b2;
 		font-size: 14px;
 		text-align: left;
 	}
 
-	p {
-		border: 10px solid blue;
+	&__company {
+		margin-bottom: 40px;
+		font-size: 12px;
+		text-align: left;
+		color: #515255;
+	}
+
+	&__position {
+		padding-bottom: 55px;
+		font-size: 12px;
+		text-align: left;
+		color: #515255;
 	}
 }
