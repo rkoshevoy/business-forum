@@ -499,6 +499,10 @@ p {
   letter-spacing: 3px;
   color: #fff;
 }
+.timetable__dates--second {
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
 .timetable__date {
   position: absolute;
   display: inline-block;
@@ -521,6 +525,17 @@ p {
   background-color: #6c6c6d;
 }
 .timetable__date--second h2 {
+  text-align: right;
+  margin-right: 16px;
+}
+.timetable__date--third {
+  right: 0;
+  width: 60%;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background-color: #fee010;
+}
+.timetable__date--third h2 {
   text-align: right;
   margin-right: 16px;
 }
@@ -796,6 +811,7 @@ p {
   top: 70px;
   width: 72px;
   height: 400px;
+  cursor: pointer;
 }
 .slider-sections__arrow::before {
   content: '';

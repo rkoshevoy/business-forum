@@ -21,6 +21,11 @@
 		}
 	}
 
+	&__dates--second {
+		margin-top: 40px;
+		margin-bottom: 15px;
+	}
+
 	&__date {
 		position: absolute;
 		display: inline-block;
@@ -48,6 +53,19 @@
 		right: 0;
 		width: 60%;
 		background-color: #6c6c6d;
+
+		h2 {
+			text-align: right;
+			margin-right: 16px;
+		}
+	}
+
+	&__date--third {
+		right: 0;
+		width: 60%;
+		border-top-left-radius: 30px;
+		border-bottom-left-radius: 30px;
+		background-color: #fee010;
 
 		h2 {
 			text-align: right;
@@ -367,6 +385,7 @@
 		top: 70px;
 		width: 72px;
 		height: 400px;
+		cursor: pointer;
 
 		&::before {
 			content: '';
