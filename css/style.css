@@ -506,13 +506,13 @@ p {
   height: 20px;
   border-top: 2px solid #000;
   border-right: 2px solid #000;
-  transform: translate(-50%, -50%) rotate(135deg);
+  transform: translate(-50%, -70%) rotate(135deg);
 }
 .question {
   position: relative;
   margin-bottom: 27px;
 }
-.question:nth-of-type(3n+0) {
+.question:nth-of-type(2n+0) {
   display: none;
 }
 .question img {
@@ -550,10 +550,12 @@ p {
   border-bottom: 2px solid #000;
   transform: rotate(45deg);
 }
+.directions {
+  background-color: #f3f4f6;
+}
 .directions__header {
   padding-top: 50px;
   padding-bottom: 115px;
-  background-color: #f3f4f6;
 }
 .directions__header h2 {
   color: #666666;
@@ -632,6 +634,7 @@ p {
 }
 .speakers {
   background-color: #f7f8fb;
+  text-align: center;
 }
 .speakers__header {
   padding: 85px 0;
@@ -652,8 +655,8 @@ p {
   transform: translatex(-50%) rotate(135deg);
 }
 .speaker {
-  margin-bottom: 65px;
   position: relative;
+  margin-bottom: 65px;
   text-align: center;
 }
 .speaker img {
@@ -671,7 +674,9 @@ p {
   color: #bdd63d;
 }
 .speaker-details {
-  position: relative;
+  position: absolute;
+  z-index: 1;
+  top: 0;
   margin-bottom: 40px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
@@ -1135,15 +1140,25 @@ p {
   font-size: 14px;
   text-transform: uppercase;
 }
+.partners h3:first-of-type {
+  font-size: 18px;
+}
+.partners h4 {
+  margin-bottom: 45px;
+  color: #666666;
+  font-size: 18px;
+  text-transform: uppercase;
+}
 .partners a {
   display: block;
   margin-bottom: 30px;
 }
-.partners__business-partner a {
+.partners__partner a {
   margin-bottom: 50px;
+  vertical-align: bottom;
 }
-.partners__media-partner a {
-  margin-bottom: 60px;
+.partners__other {
+  text-align: center;
 }
 .partners__other a {
   display: inline-block;
@@ -1180,6 +1195,7 @@ p {
 .faq__item {
   margin-bottom: 5px;
   list-style: none;
+  font-size: 14px;
   cursor: pointer;
 }
 .faq p {
@@ -1402,6 +1418,9 @@ p {
     margin-bottom: 20px;
     font-size: 24px;
   }
+  .business-missions__more {
+    height: 50px;
+  }
   .question {
     display: inline-block;
     width: 300px;
@@ -1411,6 +1430,154 @@ p {
   }
   .question:nth-of-type(3n+0) {
     display: inline-block;
+  }
+  .direction {
+    display: inline-block;
+    width: 33.4%;
+    margin-right: -4px;
+    vertical-align: top;
+  }
+  .direction:nth-of-type(3) .direction__header {
+    background-color: #1f8a70;
+  }
+  .direction__header::before {
+    display: none;
+  }
+  .direction__more-header {
+    display: none;
+  }
+  .direction__more {
+    display: none;
+  }
+  .speakers__header {
+    padding-bottom: 105px;
+  }
+  .speaker {
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 45px;
+  }
+  .speaker::nth-of-type(3n) {
+    margin-right: 0;
+  }
+  .speaker__name {
+    margin-bottom: 5px;
+  }
+  .timetable__dates {
+    height: 95px;
+  }
+  .timetable__dates h2 {
+    padding-top: 30px;
+    padding-bottom: 25px;
+    font-size: 30px;
+  }
+  .timetable__date--first {
+    border-top-right-radius: 45px;
+    border-bottom-right-radius: 45px;
+  }
+  .timetable__date--first h2 {
+    margin-left: 90px;
+  }
+  .timetable__date--second h2 {
+    margin-right: 90px;
+  }
+  .timetable__date--third {
+    border-top-left-radius: 45px;
+    border-bottom-left-radius: 45px;
+  }
+  .timetable__download {
+    margin-top: 70px;
+  }
+  .time__header {
+    height: 95px;
+    border-top-right-radius: 45px;
+    border-bottom-right-radius: 45px;
+  }
+  .time__header p {
+    font-size: 30px;
+  }
+  .time__header--not-important {
+    margin-left: -30px;
+  }
+  .time__header--not-important p {
+    margin-left: 45px;
+  }
+  .time__header--not-important .time__description p {
+    margin-left: 0;
+  }
+  .time__description {
+    margin-top: -14px;
+  }
+  .partner {
+    margin-top: 90px;
+    padding-bottom: 10px;
+  }
+  .partner h2 {
+    padding-bottom: 120px;
+    font-size: 24px;
+  }
+  .partners h2 {
+    padding-bottom: 100px;
+    font-size: 24px;
+  }
+  .partners h4 {
+    margin-bottom: 60px;
+    font-size: 14px;
+  }
+  .partners a {
+    display: inline-block;
+    margin-right: 65px;
+    margin-bottom: 100px;
+  }
+  .partners a:last-of-type {
+    margin-right: 0;
+  }
+  .partners__partner {
+    display: inline-block;
+    margin-right: 35px;
+    vertical-align: top;
+  }
+  .partners__other a {
+    width: 24%;
+    margin: 0;
+    margin-bottom: 45px;
+  }
+  .organizers h2 {
+    padding-top: 45px;
+  }
+  .faq__list {
+    display: inline-block;
+    width: 49%;
+  }
+  .faq__item {
+    font-size: 18px;
+  }
+  .faq p {
+    display: inline-block;
+    width: 49%;
+    font-size: 14px;
+    vertical-align: top;
+  }
+  .contact {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  .contact:last-of-type {
+    margin-right: 0;
+  }
+  .form-volunteers input {
+    width: 48.5%;
+  }
+  .form-volunteers input:nth-of-type(2n-1) {
+    margin-right: 17px;
+  }
+  .last-forums h2 {
+    font-size: 18px;
+  }
+  .last-forums img {
+    width: 20%;
+    height: 100px;
+    margin-right: -4px;
   }
 }
 @media (max-width: 300px) {
