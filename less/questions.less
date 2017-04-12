@@ -3,6 +3,10 @@
 	background-color: #0b87a2;
 	color: #fff;
 
+	@media @tablet {
+		margin-bottom: 70px;
+	}
+
 	&__header {
 		width: 100%;
 		padding-top: 60px;
@@ -17,25 +21,44 @@
 	&__arrow {
 		position: absolute;
 		top: 50%;
-		border-top: 1px solid #2795ad;
-		border-right: 1px solid #2795ad;
+		border-top: 1px solid #3c9fb5;
+		border-right: 1px solid #3c9fb5;
 		width: 15px;
 		height: 15px;
 		cursor: pointer;
+
+		@media @tablet  {
+			top: 100px;
+			width: 40px;
+			height: 40px;
+		}
 	}
 
 	&__arrow--left {
+		left: 20px;
 		transform: rotate(-135deg);
+
+		@media @tablet  {
+			left: 30px;
+		}
 	}
 
 	&__arrow--right {
-		right: 0;
+		right: 20px;
 		transform: rotate(45deg);
+
+		@media @tablet  {
+			right: 30px;
+		}
 	}
 	
 	&__bullets {
 		text-align: center;
 		padding-bottom: 35px;
+
+		@media @tablet {
+			padding-bottom: 30px;
+		}
 
 		ul {
 
@@ -45,6 +68,7 @@
 				height: 12px;
 				border: 1px solid #6ab6c6;
 				border-radius: 50%;
+				cursor: pointer;
 			}
 
 			.active-bullet {
@@ -59,10 +83,14 @@
 	vertical-align: bottom;
 
 	p {
-		width: 215px;
 		margin: 0 auto;
 		padding-top: 105px;
 		padding-bottom: 65px;
 		font-size: 18px;
+
+		@media @tablet {
+			padding-top: 100px;
+			padding-bottom: 110px;
+		}
 	}
 }

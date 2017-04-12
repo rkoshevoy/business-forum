@@ -5,6 +5,7 @@ body {
 }
 
 body {
+	position: relative;
 	margin: 0 auto;
 	background-color: #fff;
 	font-family: BlissProHeavy;
@@ -43,22 +44,16 @@ textarea {
 	resize: none;
 }
 
-.main-wrapper {
-	width: 100%;
 
-	@media (min-width: 750px) {
-		width: 750px;
-		margin: 0 auto;
-	}
-}
 
 .wrapper {
 	width: 100%;
 	padding: 0 16px;
-}
 
-.hide {
-	display: none;
+	@media (min-width: 750px) {
+		width: 728px;
+		margin: 0 auto;
+	}
 }
 
 h1,
@@ -76,4 +71,48 @@ h2 {
 
 p {
 	text-align: center;
+}
+
+.feedback {
+	position: fixed;
+	z-index: 100;
+	bottom: 6px;
+	left: 6px;
+	width: 44px;
+	height: 44px;
+	border: 1px solid #728027;
+	border-radius: 50%;
+	background-color: #bdd63b;
+	background-image: url('../images/feedback_phone.png');
+	background-position: center;
+	cursor: pointer;
+}
+
+.up {
+	position: fixed;
+	z-index: 100;
+	bottom: 6px;
+	right: 6px;
+	width: 44px;
+	height: 44px;
+	border: 1px solid #83797b;
+	border-radius: 50%;
+	background-color: #fff;
+	cursor: pointer;
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 20px;
+		height: 20px;
+		border-top: 1px solid #000;
+		border-right: 1px solid #000;
+		transform: translate(-50%, -25%) rotate(-45deg);
+	}
+}
+
+.hide {
+	display: none;
 }

@@ -3,11 +3,26 @@
 	margin-bottom: 80px;
 	background-image: url(../images/logo_w_text.png);
 	background-position: center 75px;
+	background-size: 190px;
+	overflow: hidden;
+
+	@media @tablet {
+		padding-top: 420px;
+		margin-bottom: 50px;
+		background-position: center 115px;
+		background-size: 340px;
+	}
 
 	p {
 		margin-bottom: 25px;
 		color: #7d7d7d;
 		text-align: center;
+
+		@media @tablet {
+			margin-bottom: 50px;
+			font-size: 22px;
+			text-transform: uppercase;
+		}
 	}
 
 	h1 {
@@ -15,14 +30,27 @@
 		font-size: 36px;
 		color: #6c6c6d;
 		text-transform: uppercase;
+
+		@media @tablet {
+			margin-bottom: 140px;
+			font-size: 65px;
+		}
 	}
 }
 
 .video {
 	position: relative;
+	overflow: hidden;
 
 	img {
+		display: block;
 		width: 100%;
+		margin-bottom: 0; 
+
+		@media @tablet {
+			width: 100%;
+			height: auto;
+		}
 	}
 
 	&__play-button {
@@ -33,7 +61,7 @@
 		width: 85px;
 		height: 85px;
 		border-radius: 50%;
-		background: rgba(0, 0, 0, 0.2);
+		background: rgba(255, 255, 255, 0.4);
 		cursor: pointer;
 
 		&::after {

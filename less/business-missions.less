@@ -1,9 +1,18 @@
 .business-missions {
 	color: #484e5c;
 
+	@media @tablet {
+		text-align: center;
+	}
+
 	h2 {
 		margin-bottom: 40px;
 		color: #666666;
+
+		@media @tablet {
+			margin-bottom: 20px;
+			font-size: 24px;
+		}
 	}
 
 	&__text {
@@ -34,6 +43,23 @@
 .question {
 	position: relative;
 	margin-bottom: 27px;
+
+	&:nth-of-type(3n+0) {
+		display: none;
+	}
+
+	@media @tablet {
+		display: inline-block;
+		width: 300px;
+
+		&:nth-of-type(2n-1) {
+			margin-right: 20px;
+		}
+
+		&:nth-of-type(3n+0) {
+			display: inline-block;
+		}
+	}
 
 	img {
 		width: 100%;
