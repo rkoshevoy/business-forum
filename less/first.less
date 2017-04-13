@@ -1,39 +1,87 @@
 .first {
-	padding-top: 205px;
 	margin-bottom: 80px;
-	background-image: url(../images/logo_w_text.png);
-	background-position: center 75px;
-	background-size: 190px;
 	overflow: hidden;
 
 	@media @tablet {
-		padding-top: 420px;
 		margin-bottom: 50px;
-		background-position: center 115px;
-		background-size: 340px;
 	}
 
-	p {
-		margin-bottom: 25px;
-		color: #7d7d7d;
-		text-align: center;
+	@media @desktop {
+		text-align: right;
+		background-position: center 175px;
+	}
+
+	.wrapper {
+		background-image: url(../images/logo_w_text.png);	
+		background-position: center 75px;
+		background-size: 190px;	
 
 		@media @tablet {
-			margin-bottom: 50px;
-			font-size: 22px;
-			text-transform: uppercase;
+			background-position: center 115px;
+			background-size: 340px;		
+		}
+
+		@media @desktop {
+			background-position: 16px 175px;
 		}
 	}
 
-	h1 {
-		margin-bottom: 40px;
-		font-size: 36px;
-		color: #6c6c6d;
-		text-transform: uppercase;
+	&__text {
+		padding-top: 205px;
 
 		@media @tablet {
-			margin-bottom: 140px;
-			font-size: 65px;
+			padding-top: 420px;
+		}
+
+		@media @desktop {
+			display: inline-block;
+			width: 540px;
+			padding-top: 150px;
+		}
+
+		p {
+			margin-bottom: 25px;
+			color: #7d7d7d;
+			text-align: center;
+
+			@media @tablet {
+				margin-bottom: 50px;
+				font-size: 22px;
+				text-transform: uppercase;
+			}
+		}
+
+		h1 {
+			margin-bottom: 40px;
+			font-size: 35px;
+			color: #6c6c6d;
+			text-transform: uppercase;
+
+			@media @tablet {
+				margin-bottom: 140px;
+				font-size: 65px;
+			}
+
+			@media @desktop {
+				margin-bottom: 80px;
+			}
+		}
+	}
+
+	&__button { 
+		display: none;
+
+		@media @desktop {
+			display: block;
+			width: 220px;
+			margin: 0 auto;
+			margin-bottom: 70px;
+			padding: 18px 0;
+			font-size: 20px;
+			color: #fff;
+			font-family: BlissProHeavy; 
+			background-color: #1f8a70;
+			overflow: hidden;
 		}
 	}
 }
@@ -63,6 +111,11 @@
 		border-radius: 50%;
 		background: rgba(255, 255, 255, 0.4);
 		cursor: pointer;
+
+		@media @desktop {
+			width: 130px;
+			height: 130px;
+		}
 
 		&::after {
 			content: '';

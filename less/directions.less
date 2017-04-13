@@ -2,12 +2,17 @@
 	background-color: #f3f4f6;
 	
 	&__header {
+		position: relative;
 		padding-top: 50px;
 		padding-bottom: 115px;
 
 		h2 {
 			color: #666666;
 		}
+	}
+
+	@media @desktop {
+		text-align: center;
 	}
 }
 
@@ -29,10 +34,14 @@
 		}
 	}
 
+	@media @desktop {
+		width: 250px;
+	}
+
 	&__header {
 		position: relative;
-		padding-top: 30px;
-		padding-bottom: 50px;
+		padding-top: 40px;
+		padding-bottom: 40px;
 		margin-bottom: 25px;
 		background-color: #6c6c6d;
 
@@ -88,6 +97,10 @@
 		margin: 0 auto;
 		margin-bottom: 155px;
 		color: #666666;
+
+		@media @tablet {
+			margin-bottom: 50px;
+		}
 	}
 
 	&__more {

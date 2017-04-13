@@ -17,6 +17,8 @@
 
 	@media @desktop {
 		top: 110px;
+
+		width: 940px;
 	}
 
 	h2 {
@@ -25,11 +27,19 @@
 		font-size: 18px;
 		color: #6c6c6d;
 		text-transform: inherit;
+
+		@media @desktop {
+			font-size: 24px;
+		}
 	}
 
 	h3 {
 		font-size: 14px;
 		color: #bdd63d;
+
+		@media @desktop {
+			font-size: 18px;
+		}
 	}
 
 	&__close {
@@ -86,6 +96,10 @@
 		}
 	}
 
+	@media @desktop {
+		width: 285px;
+	}
+
 	&:hover {
 		background-color: #bdd63d;
 
@@ -120,11 +134,19 @@
 		font-size: 11px;
 		color: #4d4d4c;
 		line-height: 18px;
+
+		@media @desktop {
+			font-size: 12px;
+		}
 	}
 
 	&__button {
 		padding: 12px 20px;
 		border: 2px solid #6c6c6d;
 		border-radius: 30px;
+		
+		@media @desktop {
+			font-size: 16px;
+		}
 	}
 }
