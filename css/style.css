@@ -269,7 +269,7 @@ p {
   color: #999999;
 }
 .modal-registration form textarea {
-  width: 100%;
+  width: 98%;
   height: 120px;
   padding: 15px;
   margin-bottom: 80px;
@@ -316,6 +316,7 @@ p {
   text-align: left;
 }
 .modal-registration__checkbox:last-of-type {
+  margin-right: 49%;
   margin-bottom: 25px;
 }
 .modal-registration__checkbox label {
@@ -729,6 +730,9 @@ p {
 .speakers__header {
   padding: 85px 0;
 }
+.speakers__header h2 {
+  color: #666666;
+}
 .speakers__more {
   position: relative;
   height: 40px;
@@ -745,6 +749,9 @@ p {
   transform: translatex(-50%) rotate(135deg);
 }
 .speakers__tablet {
+  display: none;
+}
+.speakers__desktop {
   display: none;
 }
 .speaker {
@@ -841,8 +848,9 @@ p {
   color: #515255;
 }
 .timetable h2 {
-  padding-top: 60px;
-  padding-bottom: 100px;
+  padding-top: 75px;
+  padding-bottom: 75px;
+  color: #666666;
 }
 .timetable__dates {
   position: relative;
@@ -1316,6 +1324,7 @@ p {
   background-color: #fafafa;
   color: #666666;
   padding-bottom: 15px;
+  text-align: center;
 }
 .contacts h2 {
   padding-top: 45px;
@@ -1515,6 +1524,9 @@ p {
   .modal-registration form input:nth-of-type(2n-1) {
     margin-right: 20px;
   }
+  .modal-registration form input:nth-of-type(9) {
+    margin-right: 50.5%;
+  }
   .modal-registration form textarea {
     margin-bottom: 35px;
   }
@@ -1524,10 +1536,9 @@ p {
   }
   .modal-registration__checkbox {
     width: auto;
-    margin-right: 35px;
   }
-  .modal-registration__checkbox {
-    margin-right: 40px;
+  .modal-registration__checkbox:last-of-type {
+    margin-right: 35px;
   }
   .cost {
     top: 320px;
@@ -1976,6 +1987,9 @@ p {
   .modal-registration form p {
     font-size: 14px;
   }
+  .modal-registration__checkbox {
+    margin-right: 55px;
+  }
   .modal-registration__checkbox label {
     font-size: 14px;
   }
@@ -2060,6 +2074,9 @@ p {
   }
   .direction {
     width: 250px;
+  }
+  .speakers__desktop {
+    display: inline-block;
   }
 }
 @media (max-width: 300px) {
