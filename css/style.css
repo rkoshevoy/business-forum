@@ -54,8 +54,8 @@ p {
 .feedback {
   position: fixed;
   z-index: 100;
-  bottom: 6px;
-  left: 6px;
+  bottom: 10px;
+  left: 5px;
   width: 44px;
   height: 44px;
   border: 1px solid #728027;
@@ -68,8 +68,8 @@ p {
 .up {
   position: fixed;
   z-index: 100;
-  bottom: 6px;
-  right: 6px;
+  bottom: 10px;
+  right: 5px;
   width: 44px;
   height: 44px;
   border: 1px solid #83797b;
@@ -227,8 +227,10 @@ p {
 }
 .modal-registration form textarea {
   width: 100%;
+  height: 120px;
   padding: 15px;
   margin-bottom: 80px;
+  border: 1px solid #ececec;
 }
 .modal-registration form textarea::-webkit-input-placeholder {
   font-family: BlissProHeavy;
@@ -261,6 +263,7 @@ p {
   font-family: BlissProHeavy;
   color: #fff;
   text-transform: uppercase;
+  cursor: pointer;
 }
 .modal-registration__checkbox {
   position: relative;
@@ -270,7 +273,6 @@ p {
   text-align: left;
 }
 .modal-registration__checkbox:last-of-type {
-  margin-right: 48%;
   margin-bottom: 25px;
 }
 .modal-registration__checkbox label {
@@ -320,10 +322,39 @@ p {
   padding-bottom: 45px;
   font-size: 18px;
   color: #6c6c6d;
+  text-transform: inherit;
 }
 .cost h3 {
   font-size: 14px;
   color: #bdd63d;
+}
+.cost__close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+}
+.cost__close::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: -1px;
+  width: 12px;
+  height: 3px;
+  background-color: #6c6c6d;
+  transform: rotate(45deg);
+}
+.cost__close::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: -1px;
+  width: 12px;
+  height: 3px;
+  background-color: #6c6c6d;
+  transform: rotate(-45deg);
 }
 .price {
   width: 220px;
@@ -508,12 +539,12 @@ p {
   border-right: 2px solid #000;
   transform: translate(-50%, -70%) rotate(135deg);
 }
+.business-missions__tablet {
+  display: none;
+}
 .question {
   position: relative;
   margin-bottom: 27px;
-}
-.question:nth-of-type(2n+0) {
-  display: none;
 }
 .question img {
   width: 100%;
@@ -653,6 +684,9 @@ p {
   border-top: 2px solid #000;
   border-right: 2px solid #000;
   transform: translatex(-50%) rotate(135deg);
+}
+.speakers__tablet {
+  display: none;
 }
 .speaker {
   position: relative;
@@ -877,6 +911,7 @@ p {
   vertical-align: top;
 }
 .member img {
+  width: 55px;
   margin-bottom: 5px;
 }
 .member__moderator {
@@ -1278,6 +1313,9 @@ p {
   background-color: #6c6c6d;
   color: #fff;
 }
+.form-volunteers {
+  text-align: center;
+}
 .form-volunteers input {
   width: 100%;
   margin-bottom: 13px;
@@ -1302,6 +1340,7 @@ p {
 }
 .form-volunteers textarea {
   width: 100%;
+  margin-bottom: 15px;
   padding: 12px;
   border: #eaeaea;
   border: 1px solid #eaeaea;
@@ -1322,6 +1361,14 @@ p {
   font-size: 10px;
   color: #999999;
 }
+.form-volunteers__button {
+  border: 1px solid #4aa08b;
+  background-color: #1f8a70;
+  font-family: BlissProHeavy;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
 .last-forums a {
   text-decoration: none;
 }
@@ -1335,6 +1382,9 @@ p {
 .last-forums img {
   width: 100%;
   margin-bottom: -5px;
+}
+.last-forums__tablet {
+  display: none;
 }
 .footer {
   padding-top: 10px;
@@ -1370,6 +1420,53 @@ p {
   }
   .header__modal-button {
     width: 100px;
+  }
+  .modal-registration {
+    top: 420px;
+    left: 50%;
+    transform: translatex(-50%);
+    width: 720px;
+  }
+  .modal-registration__close {
+    right: 10px;
+  }
+  .modal-registration form h2 {
+    padding-top: 25px;
+    padding-bottom: 20px;
+    font-size: 24px;
+  }
+  .modal-registration form input {
+    width: 48%;
+  }
+  .modal-registration form input:nth-of-type(2n-1) {
+    margin-right: 20px;
+  }
+  .modal-registration form textarea {
+    margin-bottom: 35px;
+  }
+  .modal-registration form p {
+    margin-top: 0;
+    margin-left: 10px;
+  }
+  .modal-registration__checkbox {
+    width: auto;
+    margin-right: 35px;
+  }
+  .cost {
+    top: 320px;
+    width: 720px;
+    left: 50%;
+    transform: translatex(-50%);
+  }
+  .cost__close {
+    right: 10px;
+  }
+  .price {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  .price:last-of-type {
+    margin-right: 0;
   }
   .first {
     padding-top: 420px;
@@ -1421,15 +1518,16 @@ p {
   .business-missions__more {
     height: 50px;
   }
+  .business-missions__tablet {
+    display: inline-block;
+    width: 300px;
+  }
   .question {
     display: inline-block;
     width: 300px;
   }
   .question:nth-of-type(2n-1) {
     margin-right: 20px;
-  }
-  .question:nth-of-type(3n+0) {
-    display: inline-block;
   }
   .direction {
     display: inline-block;
@@ -1451,6 +1549,9 @@ p {
   }
   .speakers__header {
     padding-bottom: 105px;
+  }
+  .speakers__tablet {
+    display: inline-block;
   }
   .speaker {
     display: inline-block;
@@ -1571,6 +1672,9 @@ p {
   .form-volunteers input:nth-of-type(2n-1) {
     margin-right: 17px;
   }
+  .form-volunteers input[type=submit] {
+    width: 130px;
+  }
   .last-forums h2 {
     font-size: 18px;
   }
@@ -1578,6 +1682,33 @@ p {
     width: 20%;
     height: 100px;
     margin-right: -4px;
+  }
+  .last-forums__tablet {
+    display: inline-block;
+    width: 20%;
+    margin-right: -4px;
+  }
+  .last-forums__tablet img {
+    width: 100%;
+  }
+  .footer {
+    padding-top: 20px;
+    padding-bottom: 25px;
+  }
+  .footer a {
+    width: 24%;
+  }
+  .footer p {
+    width: 24%;
+  }
+  .footer__copyright p {
+    width: 100%;
+    margin-top: 0;
+    font-size: 12px;
+  }
+  .footer__copyright {
+    display: inline-block;
+    width: 49%;
   }
 }
 @media (max-width: 300px) {

@@ -5,17 +5,30 @@
 	color: #fff;
 	font-size: 12px;
 
+	@media @tablet {
+		padding-top: 20px;
+		padding-bottom: 25px;
+	}
+
 	a {
 		display: inline-block;
 		width: 49%;
 		text-decoration: none;
 		color: #fff;
+
+		@media @tablet {
+			width: 24%;
+		}
 	}
 
 	p {
 		display: inline-block;
 		width: 49%;
 		text-align: left;
+
+		@media @tablet {
+			width: 24%;
+		}
 	}
 
 	&__copyright {
@@ -25,6 +38,17 @@
 			width: 100%;
 			font-size: 9px;
 			text-align: left;
+
+			@media @tablet {
+				width: 100%;
+				margin-top: 0;
+				font-size: 12px;
+			}
+		}
+
+		@media @tablet {
+			display: inline-block;
+			width: 49%;
 		}
 	}
 }

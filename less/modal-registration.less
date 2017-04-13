@@ -4,6 +4,14 @@
 	top: 255px;
 	background-color: #f8f8f8;
 
+	@media @tablet {
+		top: 420px;
+		left: 50%;
+		transform: translatex(-50%);
+		width: 720px;
+
+	}
+
 	&__close {
 		position: absolute;
 		top: 10px;
@@ -11,6 +19,10 @@
 		width: 12px;
 		height: 12px;
 		cursor: pointer;
+
+		@media @tablet {
+			right: 10px;
+		}
 
 		&::before {
 			content: '';
@@ -49,6 +61,12 @@
 			margin-bottom: 55px;
 			background-color: #6c6c6d;
 			color: #f6f6f6;
+
+			@media @tablet {
+				padding-top: 25px;
+				padding-bottom: 20px;
+				font-size: 24px;
+			}
 		}
 
 		input {
@@ -62,12 +80,26 @@
 				font-size: 11px;
 				color: #999999;
 			}
+
+			@media @tablet {
+				width: 48%;
+
+				&:nth-of-type(2n-1) {
+					margin-right: 20px;
+				}
+			}
 		}
 
 		textarea {
 			width: 100%;
+			height: 120px;
 			padding: 15px;
 			margin-bottom: 80px;
+			border: 1px solid #ececec;
+
+			@media @tablet {
+				margin-bottom: 35px;
+			}
 
 			&::placeholder {
 				font-family: BlissProHeavy;
@@ -80,6 +112,11 @@
 			margin-top: 20px;
 			margin-bottom: 30px;
 			text-align: left;
+
+			@media @tablet {
+				margin-top: 0;
+				margin-left: 10px;
+			}
 		}
 	}
 
@@ -89,6 +126,7 @@
 		font-family: BlissProHeavy;
 		color: #fff;
 		text-transform: uppercase;
+		cursor: pointer;
 	}
 
 	&__checkbox {
@@ -98,8 +136,12 @@
 		margin-bottom: 35px;
 		text-align: left;
 
+		@media @tablet {
+			width: auto;
+			margin-right: 35px;
+		}
+
 		&:last-of-type {
-			margin-right: 48%;
 			margin-bottom: 25px;
 		}
 

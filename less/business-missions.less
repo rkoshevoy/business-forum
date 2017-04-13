@@ -42,15 +42,21 @@
 			transform: translate(-50%, -70%) rotate(135deg);
 		}
 	}
+
+	&__tablet {
+		display: none;
+
+		@media @tablet {
+			display: inline-block;
+			width: 300px;
+		}
+	}
 }
 
 .question {
 	position: relative;
 	margin-bottom: 27px;
 
-	&:nth-of-type(2n+0) {
-		display: none;
-	}
 
 	@media @tablet {
 		display: inline-block;
@@ -58,10 +64,6 @@
 
 		&:nth-of-type(2n-1) {
 			margin-right: 20px;
-		}
-
-		&:nth-of-type(3n+0) {
-			display: inline-block;
 		}
 	}
 
