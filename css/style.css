@@ -135,7 +135,7 @@ p {
   background-color: #1f8a70;
   overflow: hidden;
 }
-.header__modal-button {
+.header__menu-button {
   float: right;
   width: 80px;
   height: 70px;
@@ -150,6 +150,48 @@ p {
 }
 .header__button-line:last-of-type {
   margin-bottom: 0;
+}
+.header__dates {
+  display: none;
+}
+.header__right {
+  float: right;
+}
+.menu {
+  position: absolute;
+  z-index: 10;
+  top: 70px;
+  display: block;
+  width: 100%;
+  margin-left: -5px;
+  list-style: none;
+  background-color: #6d6d6e;
+}
+.menu__item {
+  display: block;
+  padding: 20px;
+  border-top: 1px solid #1F8A70;
+  color: #e0dedb;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.menu__item:hover {
+  color: #fff;
+}
+.menu--hide {
+  display: none;
+}
+.social {
+  display: none;
+}
+.social__button {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('../images/social_sprite.png');
+}
+.social__button--yt {
+  background-position: -25px 0;
 }
 .modal-registration {
   position: absolute;
@@ -1434,7 +1476,7 @@ p {
   .header__button-wrapper {
     margin-right: 100px;
   }
-  .header__modal-button {
+  .header__menu-button {
     width: 100px;
   }
   .modal-registration {
@@ -1822,6 +1864,53 @@ p {
   .footer__copyright {
     display: inline-block;
     width: 49%;
+  }
+}
+@media (min-width: 950px) {
+  .header__button-wrapper {
+    margin-right: 0;
+    padding: 0;
+  }
+  .header__button {
+    display: none;
+  }
+  .header__menu-button {
+    display: none;
+  }
+  .header__dates {
+    display: inline-block;
+    padding: 25px 20px;
+    margin-right: -3px;
+    background-color: #fee010;
+  }
+  .header__dates p {
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .menu {
+    position: relative;
+    top: 0;
+    display: inline-block;
+    width: auto;
+    padding: 25px 0;
+    margin: 0 auto;
+  }
+  .menu__item {
+    display: inline-block;
+    margin-right: 9px;
+    padding: 0;
+    border: none;
+    font-size: 13px;
+  }
+  .social {
+    display: inline-block;
+    width: 70px;
+    padding: 21px 12px;
+    background-color: #014357;
+    vertical-align: middle;
+  }
+  .cost {
+    top: 110px;
   }
 }
 @media (max-width: 300px) {

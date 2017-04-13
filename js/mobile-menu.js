@@ -1,14 +1,9 @@
 $(document).ready(function() {
-	var regButton = $('.header__button');
-	var regNav = $('.modal-registration');
-	var regClose = $('.modal-registration');
+	var menuButton = $('.header__menu-button');
+	var menuNav = $('.menu');
 
 
-	$(regButton).click(function() {
-		$(regNav).removeClass('hide');
-	})
-
-	$(regClose).click(function() {
-		$(regNav).addClass('hide');
+	$(menuButton).click(function() {
+		$(menuNav).toggleClass('menu--hide');
 	})
 });
