@@ -197,6 +197,17 @@
 		}
 	}
 
+	&__description--little {
+
+		p {
+			font-size: 14px;
+
+			@media @tablet {
+
+			}
+		}
+	}
+
 	&__about {
 		width: 100%;
 		margin-top: 5px;
@@ -290,10 +301,13 @@
 
 		p {
 			text-align: left;
-			font-size: 12px;
 
-			&:nth-of-type(2) {
-				font-size: 10px;
+			@media @tablet {
+				font-size: 12px;
+
+				&:nth-of-type(2) {
+					font-size: 10px;
+				}
 			}
 		}
 	}
@@ -471,6 +485,11 @@
 .slider-sections {
 	position: relative;
 
+	@media @tablet {
+		width: 720px;
+		margin: 0 auto;
+	}
+
 	&__slide {
 		color: #6c6c6d;
 
@@ -507,7 +526,10 @@
 				background-color: #b5b5b6;
 
 				@media @tablet {
-					display: none;
+					top: -2px;
+					left: -900px;
+					height: 2px;
+					width: 1000px;
 				}
 			}
 
@@ -521,7 +543,10 @@
 				background-color: #b5b5b6;
 
 				@media @tablet {
-					display: none;
+					top: 88px;
+					left: -900px;
+					height: 2px;
+					width: 1000px;
 				}
 			}
 		}
