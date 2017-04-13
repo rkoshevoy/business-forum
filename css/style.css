@@ -184,6 +184,9 @@ p {
 .social {
   display: none;
 }
+.social a {
+  text-decoration: none;
+}
 .social__button {
   display: inline-block;
   width: 20px;
@@ -602,7 +605,6 @@ p {
 .question {
   position: relative;
   margin-bottom: 27px;
-  border: 1px solid blue;
 }
 .question img {
   width: 100%;
@@ -2055,19 +2057,20 @@ p {
     text-align: left;
   }
   .business-missions__tablet {
-    width: 250px;
+    width: 280px;
   }
   .business-missions__desktop {
     display: inline-block;
-    width: 300px;
-    border: 1px solid red;
+    width: 280px;
+    margin-right: 0;
+  }
+  .business-missions__desktop .question {
+    width: 100%;
+    margin: 0;
   }
   .question {
-    width: 250px;
+    width: 280px;
     margin-right: 15px;
-  }
-  .question :nth-of-type(3n) {
-    margin-right: 0;
   }
   .directions {
     text-align: center;
@@ -2077,6 +2080,11 @@ p {
   }
   .speakers__desktop {
     display: inline-block;
+  }
+}
+@media (min-width: 750px) and (min-width: 950px) {
+  .question:nth-of-type(2n-1) {
+    margin-right: 15px;
   }
 }
 @media (max-width: 300px) {
