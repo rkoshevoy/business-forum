@@ -569,9 +569,6 @@ p {
 .business-missions {
   color: #484e5c;
 }
-.business-missions .wrapper {
-  border: 1px solid red;
-}
 .business-missions h2 {
   margin-bottom: 40px;
   color: #666666;
@@ -1620,9 +1617,6 @@ p {
     display: inline-block;
     width: 300px;
   }
-  .question:nth-of-type(2n-1) {
-    margin-right: 20px;
-  }
   .direction {
     display: inline-block;
     width: 33.4%;
@@ -1652,15 +1646,8 @@ p {
   }
   .speaker {
     display: inline-block;
-    margin-right: 20px;
+    width: 180px;
     margin-bottom: 45px;
-  }
-  .speaker:nth-of-type(3n) {
-    margin-right: 0;
-  }
-  .speaker:first-of-type {
-    margin-left: 0;
-    margin-right: 5px;
   }
   .speaker__name {
     margin-bottom: 5px;
@@ -2056,21 +2043,14 @@ p {
     margin-bottom: 25px;
     text-align: left;
   }
-  .business-missions__tablet {
-    width: 280px;
-  }
   .business-missions__desktop {
     display: inline-block;
-    width: 280px;
+    width: 300px;
     margin-right: 0;
   }
   .business-missions__desktop .question {
     width: 100%;
     margin: 0;
-  }
-  .question {
-    width: 280px;
-    margin-right: 15px;
   }
   .directions {
     text-align: center;
@@ -2078,13 +2058,63 @@ p {
   .direction {
     width: 250px;
   }
+  .speakers br {
+    display: none;
+  }
   .speakers__desktop {
     display: inline-block;
   }
-}
-@media (min-width: 750px) and (min-width: 950px) {
-  .question:nth-of-type(2n-1) {
-    margin-right: 15px;
+  .speaker {
+    width: 150px;
+  }
+  .timetable__dates h2 {
+    font-size: 32px;
+  }
+  .timetable__date--first {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
+  .timetable__date--third {
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+  }
+  .time__header {
+    height: 95px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
+  .time__header p {
+    font-size: 32px;
+  }
+  .time__header--not-important {
+    margin-left: -125px;
+  }
+  .time__header--not-important p {
+    margin-left: 150px;
+  }
+  .time__about p {
+    font-size: 24px;
+  }
+  .members {
+    width: 920px;
+  }
+  .member__line2 {
+    left: 160px;
+  }
+  .slider-sections {
+    width: 920px;
+  }
+  .organizers a {
+    width: 30%;
+  }
+  .contact__phone {
+    font-size: 24px;
+  }
+  .contact__mail {
+    font-size: 18px;
+  }
+  .contact__button {
+    font-size: 14px;
   }
 }
 @media (max-width: 300px) {

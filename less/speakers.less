@@ -2,6 +2,12 @@
 	background-color: #f7f8fb;
 	text-align: center;
 
+	@media @desktop {
+		br {
+			display: none;
+		}
+	}
+
 	&__header {
 		padding: 85px 0;
 
@@ -55,17 +61,12 @@
 
 	@media @tablet {
 		display: inline-block;
-		margin-right: 20px;
+		width: 180px;
 		margin-bottom: 45px;
+	}
 
-		&:nth-of-type(3n) {
-			margin-right: 0;
-		}
-
-		&:first-of-type {
-			margin-left: 0;
-			margin-right: 5px;
-		}
+	@media @desktop {
+		width: 150px;
 	}
 
 	img {
