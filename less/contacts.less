@@ -11,6 +11,7 @@
 }
 
 .contact {
+	position: relative;
 	margin-bottom: 55px;
 	text-align: center;
 
@@ -93,5 +94,46 @@
 
 	&:last-of-type {
 		margin-bottom: 0;
+	}
+
+	&__info {
+		position: absolute;
+		z-index: 10;
+		top: 150px;
+		left: 50%;
+		transform: translatex(-50%);
+		width: 220px;
+		height: 160px;
+		padding: 25px 10px;
+		background-color: #fff;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+		@media @desktop {
+			top: 160px;
+		}
+	}
+
+	&__hide {
+		position: absolute;
+		left: 50%;
+		bottom: 7px;
+		width: 16px;
+		height: 16px;
+		border: 2px solid #000;
+		border-radius: 50%;
+		transform: translatex(-50%);
+		cursor: pointer;
+
+		&::after {
+			content:'';
+			position: absolute;
+			bottom: 2px;
+			left: 50%;
+			width: 4px;
+			height: 4px;
+			border-right: 2px solid #000;
+			border-bottom: 2px solid #000;
+			transform: translatex(-50%) rotate(-135deg);
+		}
 	}
 }
