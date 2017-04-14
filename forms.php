@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 ini_set("ERROR_REPORTING", 1);
 ini_set("default_charset", "UTF-8");
@@ -25,14 +25,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
         } else $activity = "Сфера деятельности не указана";
 
         if (isset($_POST['phone']) && $_POST['phone'] != '') {
-
             $phone = $_POST['phone'];
         } else {
             $phone = "Телефон не указан";
         }
 
         if (isset($_POST['email']) && $_POST['email'] != '') {
-
             $from = $_POST['email'];
         } else {
             $from = "Email не указан";
@@ -59,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
         } else $comment = "Комментариев нет";
 
 
-        $to = 'parnable@gmail.com';
+        $to = 'support@crepla.com';
         $to1 = $from;
 
         $subject = $name . " зарегистрировался на бизнес-форуме!";
@@ -124,11 +122,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
 
         $headers = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=UTF-8' . " \r\n";
-        $headers .= 'From: ' . $name . "\r\n";
-        $headers .= 'Reply-To: ' . $from . "\r\n";
 
-        $admin_letter = mail($to, $subject, $message);
-        $thank_letter = mail($to1, $subject1, $message1);
+        $admin_letter = mail($to, $subject, $message, $headers);
+        $thank_letter = mail($to1, $subject1, $message1, $headers);
 
         if ($admin_letter && $thank_letter) {
             echo '<div style="margin-top:25%; margin-left:25%; border:solid 1px black; height:20%; width:40%;">
@@ -166,15 +162,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
             $phone = $_POST['phone'];
         }
 
-
-
-
         if (isset($_POST['comments']) && $_POST['comments'] != '') {
 
             $comment = $_POST['comments'];
         } else $comment = "Комментариев нет";
 
-        $to = 'parnable@gmail.com';
+        $to = 'support@crepla.com';
         $to1 = $from;
 
         $subject = $name . " хочет быть волонтером на форуме";
@@ -209,13 +202,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
                      Спасибо за ваш интерес к форуму и желание нас помочь с его организацией!<br>
                      Мы свяжемся с Вами в ближайшее время для уточнения деталей';
 
-        $headers = 'MIME-Version: 1.0' . "\r\n";
-        $headers .= 'Content-type: text/html; charset=UTF-8' . " \r\n";
-        $headers .= 'From: ' . $name . "\r\n";
-        $headers .= 'Reply-To: ' . $from . "\r\n";
+        $headers  = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
 
-        $admin_letter = mail($to, $subject, $message);
-        $thank_letter = mail($to1, $subject1, $message1);
+        $admin_letter = mail($to, $subject, $message, $headers);
+        $thank_letter = mail($to1, $subject1, $message1, $headers);
 
         if ($admin_letter && $thank_letter) {
             echo '<div style="margin-top:25%; margin-left:25%; border:solid 1px black; height:20%; width:40%;">
@@ -232,29 +223,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
     }
 
 } else {
-http_response_code(403);
-echo "Попробуйте еще раз";
+    http_response_code(403);
+    echo "Попробуйте еще раз";
 }
 ?>
 
 <script type="text/javascript">
-window.onload = function(){
+    window.onload = function(){
 
-    (function(){
-        var counter = 4;
+        (function(){
+            var counter = 4;
 
-        setInterval(function() {
-            if (counter >= 0) {
-                span = document.getElementById("count");
-                span.innerHTML = counter;
-            } else {
-                window.location = "http://www.crepla.com/business-forum/index.html";
-            }
-            counter--;
+            setInterval(function() {
+                if (counter >= 0) {
+                    span = document.getElementById("count");
+                    span.innerHTML = counter;
+                } else {
+                    window.location = "http://www.crepla.com/business-forum/index.html";
+                }
+                counter--;
 
-        }, 1000);
+            }, 1000);
 
-    })();
+        })();
 
-}
+    }
 </script>
