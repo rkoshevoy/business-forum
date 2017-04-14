@@ -18,77 +18,76 @@
 			<div class="header__button-line"></div>
 		</button>
 
-		<div class="header__wrapper">
-			<div class="header__right">
-				<div class="header__dates"><p>21-22 июня 2017</p></div>
+		<div class="header__right">
+			<div class="header__dates"><p>21-22 июня 2017</p></div>
 
-				<div class="social">
-					<a href="#">
-						<div class="social__button social__button--fb"></div>
-					</a>
+			<div class="social">
+				<a href="#">
+					<div class="social__button social__button--fb"></div>
+				</a>
 
-					<a href="#">
-						<div class="social__button social__button--yt"></div>
-					</a>
-				</div>
+				<a href="#">
+					<div class="social__button social__button--yt"></div>
+				</a>
 			</div>
-			<div class="header__button-wrapper">
-				<button class="header__button">Регистрация</button>
+		</div>
+		<div class="header__button-wrapper">
+			<button class="header__button">Регистрация</button>
 
-				<ul class="menu menu--hide">
-					<li class="menu__item">Вопросы форума</li>
-					<li class="menu__item menu__item--modal">Стоимость</li>
-					<li class="menu__item">Спикеры</li>
-					<li class="menu__item">Программа</li>
-					<li class="menu__item">Контакты</li>
-					<li class="menu__item">Новости</li>
-					<li class="menu__item">История форума</li>
-				</ul>
-			</div>
+			<ul class="menu menu--hide">
+				<li class="menu__item">Вопросы форума</li>
+				<li class="menu__item menu__item--modal">Стоимость</li>
+				<li class="menu__item">Спикеры</li>
+				<li class="menu__item">Программа</li>
+				<li class="menu__item">Контакты</li>
+				<li class="menu__item">Новости</li>
+				<li class="menu__item">История форума</li>
+			</ul>
 		</div>
 	</header>
 
 	<section class="modal-registration hide">
-		<form action="#">
+		<form method="POST" action="forms.php">
 			<h2>Регистрация на бизнес-форум 2017</h2>
 			<div class="wrapper">
 				<div class="modal-registration__close"></div>
-				<input type="text" placeholder="Имя*">
-				<input type="text" placeholder="Фамилия">
-				<input type="text" placeholder="Компания">
-				<input type="text" placeholder="Сфера деятельности">
-				<input type="text" placeholder="Телефон*">
-				<input type="text" placeholder="E-mail">
-				<input type="text" placeholder="Должность">
-				<input type="text" placeholder="Количество билетов*">
-				<input type="text" placeholder="Промокод">
+				<input type="text" name="name"  required pattern="^[A-Za-zА-Яа-яЁё\s-]{1,50}" placeholder="Имя*">
+				<input type="text" name="surname" pattern="^[A-Za-zА-Яа-яЁё\s-]{1,50}" placeholder="Фамилия">
+				<input type="text" name="company" placeholder="Компания">
+				<input type="text" name="activity" placeholder="Сфера деятельности">
+				<input type="text" name="phone" required minlength="11" maxlength="20" pattern="\+\d*" title="начните ввод с символа +" placeholder="Телефон в международном формате*">
+				<input type="text" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="E-mail" title="не похоже на E-mail :(">
+				<input type="text" name="position" placeholder="Должность">
+				<input type="text" name="tickets" required placeholder="Количество билетов*">
+				<input type="text" name="promo" placeholder="Промокод">
 
 				<p>Интересные направления работы форума:</p>			
 
 				<div class="modal-registration__checkbox">
-					<input type="checkbox">
-					<label for="">Инвестиции</label>
+					<input type="checkbox" name="investment">
+					<label>Инвестиции</label>
 				</div>
 				<div class="modal-registration__checkbox">
-					<input type="checkbox">
-					<label for="">Экспорт/Импорт</label>
+					<input type="checkbox" name="export">
+					<label>Экспорт/Импорт</label>
 				</div>
 				<div class="modal-registration__checkbox">
-					<input type="checkbox">
-					<label for="">IT</label>
+					<input type="checkbox" name="it">
+					<label>IT</label>
 				</div>
 				<div class="modal-registration__checkbox">
-					<input type="checkbox">
-					<label for="">Энергоэффективность</label>
+					<input type="checkbox" name="energy_saving">
+					<label>Энергоэффективность</label>
 				</div>
 				<div class="modal-registration__checkbox">
-					<input type="checkbox">
-					<label for="">Гранты для бизнеса</label>
+					<input type="checkbox" name="grants">
+					<label>Гранты для бизнеса</label>
 				</div>
 
-				<textarea name="comments" id="" cols="30" rows="10" class="modal-registration_textarea" placeholder="Комментарии/предложения..."></textarea>
+				<textarea name="comments" id="1" cols="30" rows="10" class="modal-registration_textarea" placeholder="Комментарии/предложения..."></textarea>
 
 				<input type="submit" class="modal-registration__button">
+				<input type="hidden" name="registration_form" />
 			</div>
 		</form>
 	</section>
@@ -288,7 +287,7 @@
 
 			<div class="speaker">
 				<img src="images/speaker4.png" alt="">
-				<p class="speaker__name">Ник Пиацца</p>
+				<p class="speaker__name">Станислав Игнатьев</p>
 				<p class="speaker__company">SP Advisors</p>
 
 				<div class="speaker-details hide">
@@ -447,90 +446,6 @@
 				</div>
 			</div>
 			<div class="speakers__desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__big-desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__big-desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__big-desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__big-desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__big-desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__big-desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__big-desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__big-desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__big-desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__big-desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__big-desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__big-desktop">
 				<div class="speaker">
 					<img src="images/speaker2.png" alt="">
 					<p class="speaker__name">Ник Пиацца</p>
@@ -1872,55 +1787,54 @@
 				<img src="images/business.png" alt="finance.ua">
 			</a>
 		</div>
-		
-		<div class="wrapper">
-			<div class="partners__other">
-				<a href="#">
-					<img src="images/partner1.png" alt="">
-				</a>
-				<a href="#">
-					<img src="images/partner2.png" alt="">
-				</a>
-				<a href="#">
-					<img src="images/partner3.png" alt="">
-				</a>
-				<a href="#">
-					<img src="images/partner4.png" alt="">
-				</a>
-				<a href="#">
-					<img src="images/partner5.png" alt="">
-				</a>
-				<a href="#">
-					<img src="images/partner6.png" alt="">
-				</a>
-				<a href="#">
-					<img src="images/partner7.png" alt="">
-				</a>
-				<a href="#">
-					<img src="images/partner8.png" alt="">
-				</a>
-				<a href="#">
-					<img src="images/partner9.png" alt="">
-				</a>
-				<a href="#">
-					<img src="images/partner10.png" alt="">
-				</a>
-				<a href="#">
-					<img src="images/partner11.png" alt="">
-				</a>
-				<a href="#">
-					<img src="images/partner12.png" alt="">
-				</a>
-				<a href="#">
-					<img src="images/partner13.png" alt="">
-				</a>
-				<a href="#">
-					<img src="images/partner14.png" alt="">
-				</a>
-				<a href="#">
-					<img src="images/partner15.png" alt="">
-				</a>
-			</div>
+
+		<div class="partners__other">
+			<a href="#">
+				<img src="images/partner1.png" alt="">
+			</a>
+			<a href="#">
+				<img src="images/partner2.png" alt="">
+			</a>
+			<a href="#">
+				<img src="images/partner3.png" alt="">
+			</a>
+			<a href="#">
+				<img src="images/partner4.png" alt="">
+			</a>
+			<a href="#">
+				<img src="images/partner5.png" alt="">
+			</a>
+			<a href="#">
+				<img src="images/partner6.png" alt="">
+			</a>
+			<a href="#">
+				<img src="images/partner7.png" alt="">
+			</a>
+			<a href="#">
+				<img src="images/partner8.png" alt="">
+			</a>
+			<a href="#">
+				<img src="images/partner9.png" alt="">
+			</a>
+			<a href="#">
+				<img src="images/partner10.png" alt="">
+			</a>
+			<a href="#">
+				<img src="images/partner11.png" alt="">
+			</a>
+			<a href="#">
+				<img src="images/partner12.png" alt="">
+			</a>
+			<a href="#">
+				<img src="images/partner13.png" alt="">
+			</a>
+			<a href="#">
+				<img src="images/partner14.png" alt="">
+			</a>
+			<a href="#">
+				<img src="images/partner15.png" alt="">
+			</a>
+
 		</div>
 	</section>
 
@@ -1985,17 +1899,18 @@
 		<h2>Регистрация для волонтеров</h2>
 
 		<div class="wrapper">
-			<form action="#" class="form-volunteers">
-				<input type="text" placeholder="Имя *">
-				<input type="text" placeholder="Фамилия">
-				<input type="text" placeholder="Телефон *">
-				<input type="text" placeholder="E-mail">
-				<input type="text" placeholder="Компания">
-				<input type="text" placeholder="Сфера деятельности">
+			<form method="POST" action="forms.php" class="form-volunteers">
+				<input type="text" name="name"  required pattern="^[A-Za-zА-Яа-яЁё\s-]{1,50}" placeholder="Имя*">
+				<input type="text" name="surname" placeholder="Фамилия">
+				<input type="text" name="phone" required minlength="11" maxlength="20" pattern="\+\d*" title="начните ввод с символа +" placeholder="Телефон в международном формате*">
+				<input type="text" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="E-mail*" title="не похоже на E-mail :(">
+				<input type="text" name="company" placeholder="Компания">
+				<input type="text" name="activity" placeholder="Сфера деятельности">
 
-				<textarea name="text" id="" cols="30" rows="10" placeholder="Текст..."></textarea>
+				<textarea name="comments" id="2" cols="30" rows="10" placeholder="Текст..."></textarea>
 
 				<input type="submit" value="Отправить" class="form-volunteers__button">
+				<input type="hidden" name="volunteer_form" />
 			</form>
 		</div>
 	</section>
