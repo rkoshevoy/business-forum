@@ -138,7 +138,7 @@ p {
 .header__menu-button {
   float: right;
   width: 80px;
-  height: 70px;
+  height: 65px;
 }
 .header__button-line {
   width: 50px;
@@ -156,6 +156,10 @@ p {
 }
 .header__right {
   float: right;
+  height: 60px;
+}
+.header__wrapper {
+  width: 100%;
 }
 .menu {
   position: absolute;
@@ -448,6 +452,7 @@ p {
 .first {
   margin-bottom: 80px;
   overflow: hidden;
+  text-align: center;
 }
 .first .wrapper {
   background-image: url(../images/logo_w_text.png);
@@ -751,6 +756,9 @@ p {
   display: none;
 }
 .speakers__desktop {
+  display: none;
+}
+.speakers__big-desktop {
   display: none;
 }
 .speaker {
@@ -1535,6 +1543,7 @@ p {
   }
   .modal-registration__checkbox {
     width: auto;
+    margin-right: 35px;
   }
   .modal-registration__checkbox:last-of-type {
     margin-right: 35px;
@@ -1802,6 +1811,9 @@ p {
     padding-bottom: 120px;
     font-size: 24px;
   }
+  .partners .wrapper {
+    width: 750px;
+  }
   .partners h2 {
     padding-bottom: 100px;
     font-size: 24px;
@@ -1830,6 +1842,9 @@ p {
   }
   .organizers h2 {
     padding-top: 45px;
+  }
+  .faq .wrapper {
+    width: 950px;
   }
   .faq__list {
     display: inline-block;
@@ -1900,6 +1915,9 @@ p {
   .wrapper {
     width: 950px;
   }
+  .header {
+    background-color: #6D6D6E;
+  }
   .header__button-wrapper {
     margin-right: 0;
     padding: 0;
@@ -1919,6 +1937,10 @@ p {
   .header__dates p {
     text-transform: uppercase;
     color: #fff;
+  }
+  .header__wrapper {
+    width: 935px;
+    margin: 0 auto;
   }
   .menu {
     position: relative;
@@ -1944,7 +1966,10 @@ p {
   }
   .modal-registration {
     top: 215px;
-    width: 940px;
+    width: 930px;
+  }
+  .modal-registration .wrapper {
+    width: 930px;
   }
   .modal-registration form h2 {
     font-size: 32px;
@@ -1977,7 +2002,7 @@ p {
     font-size: 14px;
   }
   .modal-registration__checkbox {
-    margin-right: 55px;
+    margin-right: 50px;
   }
   .modal-registration__checkbox label {
     font-size: 14px;
@@ -2061,6 +2086,9 @@ p {
   .speakers br {
     display: none;
   }
+  .speakers .wrapper {
+    width: 950px;
+  }
   .speakers__desktop {
     display: inline-block;
   }
@@ -2115,6 +2143,27 @@ p {
   }
   .contact__button {
     font-size: 14px;
+  }
+}
+@media (min-width: 1200px) {
+  .wrapper {
+    width: 1200px;
+  }
+  .speakers__big-desktop {
+    display: inline-block;
+  }
+  .volunteers .wrapper {
+    width: 950px;
+  }
+  .footer {
+    text-align: center;
+  }
+  .footer p {
+    width: auto;
+    margin-right: 75px;
+  }
+  .footer__copyright {
+    width: auto;
   }
 }
 @media (max-width: 300px) {

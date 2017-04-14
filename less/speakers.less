@@ -3,8 +3,13 @@
 	text-align: center;
 
 	@media @desktop {
+
 		br {
 			display: none;
+		}
+
+		.wrapper {
+			width: 950px;
 		}
 	}
 
@@ -49,6 +54,14 @@
 		display: none;
 
 		@media @desktop {
+			display: inline-block;
+		}
+	}
+
+	&__big-desktop {
+		display: none;
+
+		@media @big-desktop {
 			display: inline-block;
 		}
 	}

@@ -1,6 +1,10 @@
 .header {
 	position: relative;
 
+	@media @desktop {
+		background-color: #6D6D6E;
+	}
+
 	&__button-wrapper {
 		background-color: #6d6d6e;
 		text-align: center; 
@@ -35,7 +39,7 @@
 	&__menu-button {
 		float: right;
 		width: 80px;
-		height: 70px;
+		height: 65px;
 
 		@media @tablet {
 			width: 100px;	
@@ -77,7 +81,17 @@
 
 	&__right {
 		float: right;
+		height: 60px;
 	}
+
+	 &__wrapper {
+		width: 100%;
+	
+		@media @desktop {
+			width: 935px;
+			margin: 0 auto;
+		}
+	}  
 }
 
 .menu {
