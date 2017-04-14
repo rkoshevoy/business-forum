@@ -47,46 +47,47 @@
 	</header>
 
 	<section class="modal-registration hide">
-		<form action="#">
+		<form method="POST" action="forms.php">
 			<h2>Регистрация на бизнес-форум 2017</h2>
 			<div class="wrapper">
 				<div class="modal-registration__close"></div>
-				<input type="text" placeholder="Имя*">
-				<input type="text" placeholder="Фамилия">
-				<input type="text" placeholder="Компания">
-				<input type="text" placeholder="Сфера деятельности">
-				<input type="text" placeholder="Телефон*">
-				<input type="text" placeholder="E-mail">
-				<input type="text" placeholder="Должность">
-				<input type="text" placeholder="Количество билетов*">
-				<input type="text" placeholder="Промокод">
+				<input type="text" name="name"  placeholder="Имя*">
+				<input type="text" name="surname" placeholder="Фамилия">
+				<input type="text" name="company" placeholder="Компания">
+				<input type="text" name="activity" placeholder="Сфера деятельности">
+				<input type="text" name="phone" placeholder="Телефон*">
+				<input type="text" name="email" placeholder="E-mail">
+				<input type="text" name="position" placeholder="Должность">
+				<input type="text" name="tickets" placeholder="Количество билетов*">
+				<input type="text" name="promo" placeholder="Промокод">
 
 				<p>Интересные направления работы форума:</p>			
 
 				<div class="modal-registration__checkbox">
-					<input type="checkbox">
-					<label for="">Инвестиции</label>
+					<input type="checkbox" name="investment">
+					<label>Инвестиции</label>
 				</div>
 				<div class="modal-registration__checkbox">
-					<input type="checkbox">
-					<label for="">Экспорт/Импорт</label>
+					<input type="checkbox" name="export">
+					<label>Экспорт/Импорт</label>
 				</div>
 				<div class="modal-registration__checkbox">
-					<input type="checkbox">
-					<label for="">IT</label>
+					<input type="checkbox" name="it">
+					<label>IT</label>
 				</div>
 				<div class="modal-registration__checkbox">
-					<input type="checkbox">
-					<label for="">Энергоэффективность</label>
+					<input type="checkbox" name="energy_saving">
+					<label>Энергоэффективность</label>
 				</div>
 				<div class="modal-registration__checkbox">
-					<input type="checkbox">
-					<label for="">Гранты для бизнеса</label>
+					<input type="checkbox" name="grants">
+					<label>Гранты для бизнеса</label>
 				</div>
 
-				<textarea name="comments" id="" cols="30" rows="10" class="modal-registration_textarea" placeholder="Комментарии/предложения..."></textarea>
+				<textarea name="comments" id="1" cols="30" rows="10" class="modal-registration_textarea" placeholder="Комментарии/предложения..."></textarea>
 
 				<input type="submit" class="modal-registration__button">
+				<input type="hidden" name="registration_form" />
 			</div>
 		</form>
 	</section>
@@ -1898,17 +1899,18 @@
 		<h2>Регистрация для волонтеров</h2>
 
 		<div class="wrapper">
-			<form action="#" class="form-volunteers">
-				<input type="text" placeholder="Имя *">
-				<input type="text" placeholder="Фамилия">
-				<input type="text" placeholder="Телефон *">
-				<input type="text" placeholder="E-mail">
-				<input type="text" placeholder="Компания">
-				<input type="text" placeholder="Сфера деятельности">
+			<form method="POST" action="forms.php" class="form-volunteers">
+				<input type="text" required name="name" placeholder="Имя *">
+				<input type="text" name="surname" placeholder="Фамилия">
+				<input type="text" required name="phone" placeholder="Телефон *">
+				<input type="text" name="email" placeholder="E-mail">
+				<input type="text" name="company" placeholder="Компания">
+				<input type="text" name="activity" placeholder="Сфера деятельности">
 
-				<textarea name="text" id="" cols="30" rows="10" placeholder="Текст..."></textarea>
+				<textarea name="comments" id="2" cols="30" rows="10" placeholder="Текст..."></textarea>
 
 				<input type="submit" value="Отправить" class="form-volunteers__button">
+				<input type="hidden" name="volunteer_form" />
 			</form>
 		</div>
 	</section>
