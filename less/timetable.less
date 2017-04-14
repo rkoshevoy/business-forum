@@ -55,6 +55,23 @@
 		border-top-right-radius: 30px;
 		border-bottom-right-radius: 30px;
 
+		&::before {
+			content: '';
+			position: absolute;
+			left: -2000px;
+			width: 2000px;
+			height: 64px;
+			background-color: #fee010;
+
+			@media @tablet {
+				height: 91px;
+			}
+
+			@media @desktop {
+				height: 93px;
+			}
+		}
+
 		@media (max-width: 300px) {
 			width: 50%;
 		}
@@ -84,6 +101,24 @@
 		width: 60%;
 		background-color: #6c6c6d;
 
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: -2000px;
+			width: 2000px;
+			height: 64px;
+			background-color: #6c6c6d;
+
+			@media @tablet {
+				height: 91px;
+			}
+
+			@media @desktop {
+				height: 93px;
+			}
+		}
+
 		h2 {
 			text-align: right;
 			margin-right: 16px;
@@ -100,6 +135,24 @@
 		border-top-left-radius: 30px;
 		border-bottom-left-radius: 30px;
 		background-color: #fee010;
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: -2000px;
+			width: 2000px;
+			height: 64px;
+			background-color: #fee010;
+
+			@media @tablet {
+				height: 91px;
+			}
+
+			@media @desktop {
+				height: 93px;
+			}
+		}
 
 		@media @tablet {
 			width: 235px;
@@ -144,6 +197,7 @@
 	margin-bottom: 15px;
 
 	&__header {
+		position: relative;
 		height: 65px;
 		width: 100%;
 		margin-left: -15px;
@@ -183,8 +237,21 @@
 	&__header--not-important {
 		background-color: #1f8a70;
 
+		&::before {
+			content: '';
+			position: absolute;
+			left: -2000px;
+			width: 2000px;
+			height: 65px;
+			background-color: #1F8A70;
+
+			@media @tablet {
+				height: 95px;
+			}
+		}
+
 		@media @tablet {
-			margin-left: -30px;	
+			margin-left: -30px;
 			
 			p {
 				margin-left: 45px;
@@ -202,13 +269,26 @@
 			margin-left: -125px;
 
 			p {
-				margin-left: 150px;
+				margin-left: 145px;
 			}
 		}
 	}
 
 	&__header--important {
 		background-color: #6c6c6d;
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: -2000px;
+			width: 2000px;
+			height: 65px;
+			background-color: #6c6c6d;
+
+			@media @tablet {
+				height: 95px;
+			}
+		}
 	}
 
 	&__description {
