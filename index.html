@@ -46,7 +46,7 @@
         </div>
     </header>
 
-    <section class="modal-registration">
+    <section class="modal-registration hide">
         <form method="POST" action="forms.php">
             <h2>Регистрация на бизнес-форум 2017</h2>
             <div class="wrapper">
@@ -86,8 +86,18 @@
 
                 <textarea name="comments" id="1" cols="30" rows="10" class="modal-registration_textarea" placeholder="Комментарии/предложения..."></textarea>
 
+                <div class="modal__payment">
+                    <p>Выберете удобный способ оплаты -</p>
+                    <img src="images/privat.png" alt="">
+                    <img src="images/money.png" alt="">
+                    <img src="images/contract.png" alt="">
+                    <img src="images/card.png" alt="">
+                </div>
+
                 <input type="submit" class="modal-registration__button">
                 <input type="hidden" name="registration_form" />
+
+                <p>После заполнения вами формы регистрации .Вам будет автоматически отправлено письмо на  почту.</p>
             </div>
         </form>
     </section>

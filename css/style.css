@@ -358,6 +358,10 @@ p {
   border-right: 2px solid #6c6c6d;
   transform: rotate(135deg);
 }
+.modal-registration__payment {
+  width: 100%;
+  text-align: left;
+}
 .cost {
   position: absolute;
   z-index: 10;
@@ -2096,7 +2100,7 @@ p {
     font-size: 14px;
   }
   .modal-registration__checkbox {
-    margin-right: 50px;
+    margin-right: 48px;
   }
   .modal-registration__checkbox label {
     font-size: 14px;
