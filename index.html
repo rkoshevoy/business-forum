@@ -7,11 +7,11 @@
   <title>Бизнес-форум 2017</title>
   <link rel="shortcut icon" href="images/logo.png" type="image/png">
   <link rel="stylesheet" href="css/style.css">
-
+  <link rel="stylesheet" href="css/animate.css">
 </head>
 <body>
 
-  <header class="header">
+  <header class="header" id="top">
     <button class="header__menu-button">
       <div class="header__button-line"></div>
       <div class="header__button-line"></div>
@@ -22,11 +22,11 @@
       <div class="header__dates"><p>21-22 июня 2017</p></div>
 
       <div class="social">
-        <a href="#">
+        <a href="#" target="blank">
           <div class="social__button social__button--fb"></div>
         </a>
 
-        <a href="#">
+        <a href="#" target="blank">
           <div class="social__button social__button--yt"></div>
         </a>
       </div>
@@ -35,13 +35,13 @@
       <button class="header__button">Регистрация</button>
 
       <ul class="menu menu--hide">
-        <li class="menu__item">Вопросы форума</li>
+        <li class="menu__item"><a href="#questions">Вопросы форума</a></li>
         <li class="menu__item menu__item--modal">Стоимость</li>
-        <li class="menu__item">Спикеры</li>
-        <li class="menu__item">Программа</li>
-        <li class="menu__item">Контакты</li>
-        <li class="menu__item">Новости</li>
-        <li class="menu__item">История форума</li>
+        <li class="menu__item"><a href="#speakers">Спикеры</a></li>
+        <li class="menu__item"><a href="#timetable">Программа</a></li>
+        <li class="menu__item"><a href="#contacts">Контакты</a></li>
+        <li class="menu__item"><a href="#news">Новости</a></li>
+        <li class="menu__item"><a href="#history">История форума</a></li>
       </ul>
     </div>
   </header>
@@ -170,7 +170,7 @@
     </div>
   </section>
 
-  <section class="questions">
+  <section class="questions" id="questions">
     <div class="questions__header">
       <h2>Вопросы форума</h2>
     </div>
@@ -288,7 +288,7 @@
     </div>
   </section>
 
-  <section class="speakers">
+  <section class="speakers" id="speakers">
 
     <div class="speakers__header">
       <h2>Спикеры</h2>
@@ -467,7 +467,7 @@
     </div>
   </section>
 
-  <section class="timetable">
+  <section class="timetable" id="timetable">
     <div class="wrapper">
       <h2>Программа форума</h2>
 
@@ -1882,7 +1882,7 @@
     </div>
   </section>
 
-  <section class="contacts">
+  <section class="contacts" id="contacts">
     <div class="wrapper">
       <h2>Контакты</h2>
 
@@ -1944,7 +1944,7 @@
     </div>
   </section>
 
-  <section class="last-forums">
+  <section class="last-forums" id="history">
 
     <a href="#">
       <h2>Бизнес-форум 2014</h2>
@@ -2080,7 +2080,7 @@
 
   <div class="feedback"></div>
 
-  <div class="up"></div>
+  <a href="#top" class="up"></a>
 
   <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 
@@ -2091,6 +2091,10 @@
   <script type="text/javascript" src="js/cost.js"></script>
 
   <script type="text/javascript" src="js/popups.js"></script>
+
+   <script type="text/javascript" src="js/waypoints-animated.js"></script>
+
+   <script type="text/javascript" src="js/smoothscroll.js"></script>
 
 </body>
 </html>

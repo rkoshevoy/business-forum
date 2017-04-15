@@ -180,6 +180,13 @@ p {
   text-transform: uppercase;
   cursor: pointer;
 }
+.menu__item a {
+  color: #e0dedb;
+  text-decoration: none;
+}
+.menu__item a:hover {
+  color: #fff;
+}
 .menu__item:hover {
   color: #fff;
 }
@@ -2187,7 +2194,7 @@ p {
     font-size: 14px;
   }
   .modal-registration__payment p {
-    margin-right: 50px;
+    margin-right: 85px;
   }
   .modal-registration__payment-type {
     margin-right: 50px;
