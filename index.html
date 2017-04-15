@@ -61,7 +61,7 @@
                 <input type="text" name="tickets" required placeholder="Количество билетов*">
                 <input type="text" name="promo" placeholder="Промокод">
 
-                <p>Интересные направления работы форума:</p>
+                <p class="modal-registration__interesting">Интересные направления работы форума:</p>
 
                 <div class="modal-registration__checkbox">
                     <input type="checkbox" name="investment">
@@ -86,18 +86,18 @@
 
                 <textarea name="comments" id="1" cols="30" rows="10" class="modal-registration_textarea" placeholder="Комментарии/предложения..."></textarea>
 
-                <div class="modal__payment">
-                    <p>Выберете удобный способ оплаты -</p>
-                    <img src="images/privat.png" alt="">
-                    <img src="images/money.png" alt="">
-                    <img src="images/contract.png" alt="">
-                    <img src="images/card.png" alt="">
+                <div class="modal-registration__payment">
+                    <p>Выберете удобный способ оплаты:</p>
+                    <div class="modal-registration__payment-type modal-registration__payment-type--first"></div>
+                    <div class="modal-registration__payment-type modal-registration__payment-type--second"></div>
+                    <div class="modal-registration__payment-type modal-registration__payment-type--third"></div>
+                    <div class="modal-registration__payment-type modal-registration__payment-type--fourth"></div>
                 </div>
 
                 <input type="submit" class="modal-registration__button">
                 <input type="hidden" name="registration_form" />
 
-                <p>После заполнения вами формы регистрации .Вам будет автоматически отправлено письмо на  почту.</p>
+                <p class="modal-registration__bottom-text">После заполнения вами формы регистрации. Вам будет автоматически отправлено письмо на  почту.</p>
             </div>
         </form>
     </section>

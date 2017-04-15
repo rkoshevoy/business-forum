@@ -157,6 +157,7 @@ p {
 .header__right {
   float: right;
   height: 60px;
+  background-color: #014357;
 }
 .header__wrapper {
   width: 100%;
@@ -279,7 +280,7 @@ p {
   width: 98%;
   height: 120px;
   padding: 15px;
-  margin-bottom: 80px;
+  margin-bottom: 35px;
   border: 1px solid #ececec;
 }
 .modal-registration form textarea::-webkit-input-placeholder {
@@ -303,12 +304,19 @@ p {
   color: #999999;
 }
 .modal-registration form p {
+  text-align: left;
+}
+.modal-registration__interesting {
   margin-top: 20px;
   margin-bottom: 30px;
   text-align: left;
 }
-.modal-registration__button {
+.modal-registration input[type='submit'] {
+  width: 165px;
+  margin-bottom: 45px;
   border: 1px solid #4aa08b;
+}
+.modal-registration__button {
   background-color: #1f8a70;
   font-family: BlissProHeavy;
   color: #fff;
@@ -322,9 +330,8 @@ p {
   margin-bottom: 35px;
   text-align: left;
 }
-.modal-registration__checkbox:last-of-type {
+.modal-registration__checkbox:nth-of-type(6) {
   margin-right: 49%;
-  margin-bottom: 25px;
 }
 .modal-registration__checkbox label {
   position: relative;
@@ -359,8 +366,42 @@ p {
   transform: rotate(135deg);
 }
 .modal-registration__payment {
-  width: 100%;
-  text-align: left;
+  text-align: center;
+}
+.modal-registration__payment p {
+  margin-right: 20px;
+  margin-bottom: 35px;
+  margin-left: 5px;
+}
+.modal-registration__payment-type {
+  display: inline-block;
+  width: 49%;
+  height: 40px;
+  margin-bottom: 35px;
+}
+.modal-registration__payment-type--first {
+  background-image: url('../images/privat.png');
+  background-position: center;
+  background-size: 40px;
+}
+.modal-registration__payment-type--second {
+  background-image: url('../images/money.png');
+  background-position: center;
+  background-size: 40px;
+}
+.modal-registration__payment-type--third {
+  background-image: url('../images/contract.png');
+  background-position: center;
+  background-size: 40px;
+}
+.modal-registration__payment-type--fourth {
+  background-image: url('../images/card.png');
+  background-position: center;
+  background-size: 40px;
+}
+.modal-registration__bottom-text {
+  margin-bottom: 30px;
+  font-size: 12px;
 }
 .cost {
   position: absolute;
@@ -1620,7 +1661,7 @@ p {
   .modal-registration form textarea {
     margin-bottom: 35px;
   }
-  .modal-registration form p {
+  .modal-registration__interesting {
     margin-top: 0;
     margin-left: 10px;
   }
@@ -1628,8 +1669,26 @@ p {
     width: auto;
     margin-right: 35px;
   }
-  .modal-registration__checkbox:last-of-type {
+  .modal-registration__checkbox:nth-of-type(6) {
     margin-right: 35px;
+  }
+  .modal-registration__payment {
+    text-align: left;
+    margin-left: 5px;
+  }
+  .modal-registration__payment p {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 12px;
+  }
+  .modal-registration__payment-type {
+    width: 40px;
+    margin-right: 25px;
+    vertical-align: middle;
+  }
+  .modal-registration__bottom-text {
+    font-size: 14px;
+    margin-left: 5px;
   }
   .cost {
     top: 320px;
@@ -2015,6 +2074,28 @@ p {
   }
   .header {
     background-color: #6D6D6E;
+    width: 930px;
+    margin: 0 auto;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: -2000px;
+    width: 2000px;
+    height: 69px;
+    background-color: #6D6D6E;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: -2000px;
+    width: 2000px;
+    height: 69px;
+    background-color: #014357;
   }
   .header__button-wrapper {
     margin-right: 0;
@@ -2096,7 +2177,7 @@ p {
   .modal-registration form textarea::placeholder {
     font-size: 14px;
   }
-  .modal-registration form p {
+  .modal-registration__interesting {
     font-size: 14px;
   }
   .modal-registration__checkbox {
@@ -2104,6 +2185,15 @@ p {
   }
   .modal-registration__checkbox label {
     font-size: 14px;
+  }
+  .modal-registration__payment p {
+    margin-right: 50px;
+  }
+  .modal-registration__payment-type {
+    margin-right: 50px;
+  }
+  .modal-registration__bottom-text {
+    font-size: 19px;
   }
   .cost {
     top: 110px;
@@ -2174,6 +2264,16 @@ p {
   .business-missions__desktop .question {
     width: 100%;
     margin: 0;
+  }
+  .directions__header::before {
+    content: '';
+    position: absolute;
+    top: 186px;
+    left: 0;
+    z-index: 0;
+    width: 4000px;
+    height: 100px;
+    background-color: #6C6C6D;
   }
   .directions {
     text-align: center;
