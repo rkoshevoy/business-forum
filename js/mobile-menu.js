@@ -7,7 +7,7 @@ $(document).ready(function() {
 
 	$(menuButton).click(function() {
 		$(menuItem).addClass('zoomIn'),
-		$(menuNav).addClass('zoomIn'),
+		$(menuNav).addClass('fadeInDown'),
 		$(menuNav).toggleClass('menu--hide'),
 		$(menuPrice).addClass('hide'),
 		$(menuRegistration).addClass('hide');
