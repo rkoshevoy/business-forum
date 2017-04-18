@@ -35,19 +35,19 @@
     <div class="header__button-wrapper">
       <button class="header__button">Регистрация</button>
 
-      <ul class="menu menu--hide">
-        <li class="menu__item"><a href="#questions">Вопросы форума</a></li>
-        <li class="menu__item menu__item--modal">Стоимость</li>
-        <li class="menu__item"><a href="#speakers">Спикеры</a></li>
-        <li class="menu__item"><a href="#timetable">Программа</a></li>
-        <li class="menu__item"><a href="#contacts">Контакты</a></li>
-        <li class="menu__item"><a href="#news">Новости</a></li>
-        <li class="menu__item"><a href="#history">История форума</a></li>
+      <ul class="menu menu--hide animated">
+        <li class="menu__item animated"><a href="#questions">Вопросы форума</a></li>
+        <li class="menu__item menu__item--modal animated">Стоимость</li>
+        <li class="menu__item animated"><a href="#speakers">Спикеры</a></li>
+        <li class="menu__item animated"><a href="#timetable">Программа</a></li>
+        <li class="menu__item animated"><a href="#contacts">Контакты</a></li>
+        <li class="menu__item animated"><a href="#news">Новости</a></li>
+        <li class="menu__item animated"><a href="#history">История форума</a></li>
       </ul>
     </div>
   </header>
 
-  <section class="modal-registration hide">
+  <section class="modal-registration hide animated">
     <form method="POST" action="forms.php">
       <h2>Регистрация на бизнес-форум 2017</h2>
       <div class="wrapper">
@@ -103,7 +103,7 @@
     </form>
   </section>
 
-  <section class="cost hide">
+  <section class="cost hide animated">
     <h2>Стоимость</h2>
     <div class="cost__close"></div>
 
@@ -147,7 +147,7 @@
     </div>
   </section>
 
-  <section class="first">
+  <section class="first content hidden">
     <div class="wrapper">
       <div class="first__text">
         <p>Украина 2017<br>стратегическое видение:</p>
@@ -163,7 +163,7 @@
     </div>
   </section>
 
-  <section class="mission">
+  <section class="mission content hidden">
 
     <div class="wrapper">
       <h2>Миссия бизнес-форума</h2>
@@ -171,7 +171,7 @@
     </div>
   </section>
 
-  <section class="questions" id="questions">
+  <section class="questions content hidden" id="questions">
     <div class="questions__header">
       <h2>Вопросы форума</h2>
     </div>
@@ -199,7 +199,7 @@
     </div>
   </section>
 
-  <section class="business-missions">
+  <section class="business-missions content hidden">
     <div class="wrapper">
       <h2>Бизнес-миссии</h2>
       <p class="business-missions__text"><font size="+8">Lorem ipsum</font> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -256,7 +256,7 @@
     </div>
   </section>
 
-  <section class="directions">
+  <section class="directions content hidden">
     <div class="directions__header">
       <h2>Направления работы форума</h2>
     </div>
@@ -289,8 +289,7 @@
     </div>
   </section>
 
-  <section class="speakers" id="speakers">
-
+  <section class="speakers content hidden" id="speakers">
     <div class="speakers__header">
       <h2>Спикеры</h2>
     </div>
@@ -468,7 +467,7 @@
     </div>
   </section>
 
-  <section class="timetable" id="timetable">
+  <section class="timetable content hidden" id="timetable">
     <div class="wrapper">
       <h2>Программа форума</h2>
 
@@ -1758,14 +1757,14 @@
     </div>
   </section>
 
-  <section class="partner">
+  <section class="partner content hidden">
     <h2>Официальный партнер</h2>
     <a href="#">
       <img src="images/avec.png" alt="">
     </a>
   </section>
 
-  <section class="partners">
+  <section class="partners content hidden">
     <h2>Партнёры</h2>
 
     <a href="#">
@@ -1853,7 +1852,7 @@
     </div>
   </section>
 
-  <section class="organizers">
+  <section class="organizers content hidden">
     <h2>Организаторы</h2>
 
     <a href="#">
@@ -1864,7 +1863,7 @@
     </a>
   </section>
 
-  <section class="faq">
+  <section class="faq content hidden">
     <h2>Часто задаваемые вопросы</h2>
     <div class="wrapper">
       <ul class="faq__list">
@@ -1883,7 +1882,7 @@
     </div>
   </section>
 
-  <section class="contacts" id="contacts">
+  <section class="contacts content hidden" id="contacts">
     <div class="wrapper">
       <h2>Контакты</h2>
 
@@ -1925,7 +1924,7 @@
     </div>
   </section>
 
-  <section class="volunteers">
+  <section class="volunteers content hidden">
     <h2>Регистрация для волонтеров</h2>
 
     <div class="wrapper">
@@ -1945,8 +1944,7 @@
     </div>
   </section>
 
-  <section class="last-forums" id="history">
-
+  <section class="last-forums content hidden" id="history">
     <a href="#">
       <h2>Бизнес-форум 2014</h2>
       <div class="wrapper">
@@ -2096,6 +2094,10 @@
   <script type="text/javascript" src="js/waypoints-animated.js"></script>
 
   <script type="text/javascript" src="js/smoothscroll.js"></script>
+
+  <script type="text/javascript" src="js/jquery.viewportchecker.min.js"></script>
+
+  <script type="text/javascript" src="js/animation-delay.js"></script>
 
 </body>
 </html>

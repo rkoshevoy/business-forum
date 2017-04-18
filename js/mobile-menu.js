@@ -6,6 +6,8 @@ $(document).ready(function() {
 	var menuRegistration = $('.modal-registration');
 
 	$(menuButton).click(function() {
+		$(menuItem).addClass('fadeInDown'),
+		$(menuNav).addClass('fadeInDown'),
 		$(menuNav).toggleClass('menu--hide'),
 		$(menuPrice).addClass('hide'),
 		$(menuRegistration).addClass('hide');

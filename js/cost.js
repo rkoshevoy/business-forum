@@ -7,7 +7,8 @@ $(document).ready(function() {
 
 
 	$(costButton).click(function() {
-		$(cost).toggleClass('hide');
+		$(cost).toggleClass('hide'),
+		$(cost).addClass('fadeInDown');
 	})
 
 	$(costClose).click(function() {
@@ -16,6 +17,7 @@ $(document).ready(function() {
 
 	$(costBuy).click(function() {
 		$(cost).addClass('hide'),
-		$(costRegistration).removeClass('hide');
+		$(costRegistration).removeClass('hide'),
+		$(costRegistration).addClass('fadeInDown');
 	})
 });
