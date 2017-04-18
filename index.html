@@ -1925,22 +1925,23 @@
   </section>
 
   <section class="volunteers content hidden">
-    <h2>Регистрация для волонтеров</h2>
+      <h2>Регистрация для волонтеров</h2>
 
-    <div class="wrapper">
-      <form method="POST" action="forms.php" class="form-volunteers">
-        <input type="text" name="name"  required pattern="^[A-Za-zА-Яа-яЁё\s-]{1,50}" placeholder="Имя*">
-        <input type="text" name="surname" placeholder="Фамилия">
-        <input type="text" name="phone" required minlength="11" maxlength="20" pattern="\+\d*" title="начните ввод с символа +" placeholder="Телефон в международном формате*">
-        <input type="text" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="E-mail*" title="не похоже на E-mail :(">
-        <input type="text" name="company" placeholder="Компания">
-        <input type="text" name="activity" placeholder="Сфера деятельности">
+      <div class="wrapper">
+        <form method="POST" action="forms.php" class="form-volunteers">
+          <input type="text" name="name"  required pattern="^[A-Za-zА-Яа-яЁё\s-]{1,50}" placeholder="Имя*">
+          <input type="text" name="surname" placeholder="Фамилия">
+          <input type="text" name="phone" required minlength="11" maxlength="20" pattern="\+\d*" title="начните ввод с символа +" placeholder="Телефон в международном формате*">
+          <input type="text" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="E-mail*" title="не похоже на E-mail :(">
+          <input type="text" name="company" placeholder="Компания">
+          <input type="text" name="activity" placeholder="Сфера деятельности">
 
-        <textarea name="comments" id="2" cols="30" rows="10" placeholder="Текст..."></textarea>
+          <textarea name="comments" id="2" cols="30" rows="10" placeholder="Текст..."></textarea>
 
-        <input type="submit" value="Отправить" class="form-volunteers__button">
-        <input type="hidden" name="volunteer_form" />
-      </form>
+          <input type="submit" value="Отправить" class="form-volunteers__button">
+          <input type="hidden" name="volunteer_form" />
+        </form>
+      </div>
     </div>
   </section>
 
