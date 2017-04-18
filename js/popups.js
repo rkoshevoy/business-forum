@@ -12,7 +12,9 @@ $(document).ready(function() {
 
 
 	$(popupButton1).click(function() {
-		$(popupInfo1).toggleClass('hide');
+		$(popupInfo1).toggleClass('hide'),
+		$(popupInfo2).addClass('hide'),
+		$(popupInfo3).addClass('hide');
 	})
 
 	$(popupHide1).click(function() {
@@ -20,7 +22,9 @@ $(document).ready(function() {
 	})
 
 	$(popupButton2).click(function() {
-		$(popupInfo2).toggleClass('hide');
+		$(popupInfo2).toggleClass('hide'),
+		$(popupInfo1).addClass('hide'),
+		$(popupInfo3).addClass('hide');
 	})
 
 	$(popupHide2).click(function() {
@@ -28,7 +32,9 @@ $(document).ready(function() {
 	})
 
 	$(popupButton3).click(function() {
-		$(popupInfo3).toggleClass('hide');
+		$(popupInfo3).toggleClass('hide'),
+		$(popupInfo1).addClass('hide'),
+		$(popupInfo2).addClass('hide');
 	})
 
 	$(popupHide3).click(function() {

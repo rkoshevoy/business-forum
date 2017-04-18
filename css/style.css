@@ -848,6 +848,7 @@ p {
   position: relative;
   margin-bottom: 65px;
   text-align: center;
+  cursor: pointer;
 }
 .speaker img {
   display: block;
@@ -866,7 +867,7 @@ p {
 .speaker-details {
   position: absolute;
   z-index: 1;
-  top: 0;
+  top: -50px;
   margin-bottom: 40px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
