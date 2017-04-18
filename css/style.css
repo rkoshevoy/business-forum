@@ -118,6 +118,7 @@ p {
 }
 .header {
   position: relative;
+  width: 100%;
 }
 .header__button-wrapper {
   background-color: #6d6d6e;
@@ -385,6 +386,7 @@ p {
   width: 49%;
   height: 40px;
   margin-bottom: 35px;
+  cursor: pointer;
 }
 .modal-registration__payment-type--first {
   background-image: url('../images/privat.png');
@@ -699,6 +701,7 @@ p {
 }
 .directions {
   background-color: #f3f4f6;
+  overflow: hidden;
 }
 .directions__header {
   position: relative;
@@ -906,6 +909,9 @@ p {
   font-size: 12px;
   text-align: left;
   color: #515255;
+}
+.timetable {
+  overflow: hidden;
 }
 .timetable h2 {
   padding-top: 75px;
@@ -1976,7 +1982,7 @@ p {
     font-size: 24px;
   }
   .partners .wrapper {
-    width: 750px;
+    width: 730px;
   }
   .partners h2 {
     padding-bottom: 100px;
@@ -2008,7 +2014,8 @@ p {
     padding-top: 45px;
   }
   .faq .wrapper {
-    width: 950px;
+    width: 700px;
+    padding: 0;
   }
   .faq__list {
     display: inline-block;
@@ -2361,6 +2368,11 @@ p {
   }
   .contact__info {
     top: 160px;
+  }
+}
+@media (min-width: 750px) and (min-width: 950px) {
+  .faq .wrapper {
+    width: 930px;
   }
 }
 @media (min-width: 1200px) {
