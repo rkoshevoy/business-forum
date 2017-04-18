@@ -419,23 +419,27 @@ p {
 }
 .modal-registration__payment-type--first {
   background-image: url('../images/privat.png');
-  background-position: center;
+  background-position: right;
   background-size: 40px;
+  height: 130px;
 }
 .modal-registration__payment-type--second {
   background-image: url('../images/money.png');
   background-position: center;
   background-size: 40px;
+  height: 130px;
 }
 .modal-registration__payment-type--third {
   background-image: url('../images/contract.png');
   background-position: center;
   background-size: 40px;
+  height: 130px;
 }
 .modal-registration__payment-type--fourth {
   background-image: url('../images/card.png');
   background-position: center;
   background-size: 40px;
+  height: 130px;
 }
 .modal-registration__bottom-text {
   margin-bottom: 30px;
