@@ -1883,18 +1883,35 @@
     <h2>Часто задаваемые вопросы</h2>
     <div class="wrapper">
       <ul class="faq__list">
-        <li class="faq__item">Где проходит безнес-форум?</li>
-        <li class="faq__item">Как добраться?</li>
-        <li class="faq__item">Где поселиться?</li>
-        <li class="faq__item">Где покушать?</li>
-        <li class="faq__item">Где парковка?</li>
-        <li class="faq__item">Какие есть такси?</li>
-        <li class="faq__item">Как зарегестрироваться?</li>
-        <li class="faq__item">Как оплатить?</li>
-        <li class="faq__item">Когда и как получить акты?</li>
+        <li class="faq__item faq__item--active" id="faq1">Где проходит безнес-форум?</li>
+        <li class="faq__item" id="faq2">Как добраться?</li>
+        <li class="faq__item" id="faq3">Где поселиться?</li>
+        <li class="faq__item" id="faq4">Где покушать?</li>
+        <li class="faq__item" id="faq5">Где парковка?</li>
+        <li class="faq__item" id="faq6">Какие есть такси?</li>
+        <li class="faq__item" id="faq7">Как зарегестрироваться?</li>
+        <li class="faq__item" id="faq8">Как оплатить?</li>
+        <li class="faq__item" id="faq9">Когда и как получить акты?</li>
       </ul>
 
-      <p>«Харьков Палас» – первый в городе отель класса luxury+, воплощающий идею сдержанной роскоши третьего тысячелетия. Отель спроектирован в характерном для Харькова стиле конструктивизма и органично вписывается в ансамбль центральной площади города – площади Свободы.</p>
+      <p id="faq-answer1" class="faq__answer faq__answer-show animated">Бизнес-форум проходит на улице</p>
+
+      <p id="faq-answer2" class="faq__answer animated">Добраться можно на маршрутке</p>
+
+      <p id="faq-answer3" class="faq__answer animated">«Харьков Палас» – первый в городе отель класса luxury+, воплощающий идею сдержанной роскоши третьего тысячелетия. Отель спроектирован в характерном для Харькова стиле конструктивизма и органично вписывается в ансамбль центральной площади города – площади Свободы.</p>
+
+      <p id="faq-answer4" class="faq__answer animated">Покушать можно в FreshLine</p>
+
+      <p id="faq-answer5" class="faq__answer animated">Парковка под землёй</p>
+
+      <p id="faq-answer6" class="faq__answer animated">Такси есть разные</p>
+
+      <p id="faq-answer7" class="faq__answer animated">Зарегестрироваться можно, нажав на кнопку "Регистрация", как не странно</p>
+
+      <p id="faq-answer8" class="faq__answer animated">Оплатить лучше через Приват24</p>
+
+      <p id="faq-answer9" class="faq__answer animated">Акты можно получить когда угодно и как угодно</p>
+
     </div>
   </section>
 
@@ -2120,6 +2137,7 @@
   <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
 
   <script src="js/slick.js" type="text/javascript" charset="utf-8"></script>
+
   <script type="text/javascript">
     $(document).on('ready', function() {
       $(".regular").slick({
@@ -2130,6 +2148,8 @@
       });
     });
   </script>
+
+  <script type="text/javascript" src="js/faq.js"></script>
 
 </body>
 </html>

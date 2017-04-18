@@ -13,7 +13,8 @@ $(document).ready(function() {
 	})
 
 	$(regButton2).click(function() {
-		$(regNav).toggleClass('hide');
+		$(regNav).toggleClass('hide'),
+		$(regNav).addClass('zoomIn');
 	})
 
 	$(regClose).click(function() {
