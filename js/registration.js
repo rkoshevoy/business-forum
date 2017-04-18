@@ -9,7 +9,7 @@ $(document).ready(function() {
 	$(regButton).click(function() {
 		$(regNav).toggleClass('hide'),
 		$(regMenu).addClass('menu--hide'),
-		$(regNav).addClass('fadeInDown');
+		$(regNav).addClass('zoomIn');
 	})
 
 	$(regButton2).click(function() {
@@ -17,6 +17,7 @@ $(document).ready(function() {
 	})
 
 	$(regClose).click(function() {
-		$(regNav).addClass('hide');
+		$(regNav).addClass('hide'),
+		$(regNav).addClass('zoomIn');
 	})
 }); 
