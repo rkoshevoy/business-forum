@@ -6,17 +6,14 @@
 
 	@media @tablet {
 		top: 420px;
-		left: 50%;
-		transform: translatex(-50%);
+		left: ~"calc(50% - 360px)";
 		width: 720px;
 	}
 
 	@media @desktop {
 		top: 215px;
+		left: ~"calc(50% - 465px)";
 		width: 930px;
-	}
-
-	@media @desktop {
 
 		.wrapper {
 			width: 930px;
@@ -59,6 +56,7 @@
 	}
 
 	form {
+		-webkit-appearance: none;
 		position: relative;
 		font-size: 10px;
 		text-align: center;
@@ -281,24 +279,28 @@
 		background-image: url('../images/privat.png');
 		background-position: center;
 		background-size: 40px;
+		height: 130px;
 	}
 
 	&__payment-type--second {
 		background-image: url('../images/money.png');
 		background-position: center;
 		background-size: 40px;
+		height: 130px;
 	}
 
 	&__payment-type--third {
 		background-image: url('../images/contract.png');
 		background-position: center;
 		background-size: 40px;
+		height: 130px;
 	}
 
 	&__payment-type--fourth {
 		background-image: url('../images/card.png');
 		background-position: center;
 		background-size: 40px;
+		height: 130px;
 	}
 
 	&__bottom-text {

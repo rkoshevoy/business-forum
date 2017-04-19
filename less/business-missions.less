@@ -1,7 +1,6 @@
 .business-missions {
 	color: #484e5c;
 
-
 	@media @tablet {
 		text-align: center;
 	}
@@ -56,8 +55,32 @@
 		}
 	}
 
+	&__less {
+		display: none;
+		position: relative;
+		height: 100px;
+		cursor: pointer;
+
+		@media @tablet {
+			height: 50px;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 20px;
+			height: 20px;
+			border-top: 2px solid #000;
+			border-right: 2px solid #000;
+			transform: translate(-50%, -70%) rotate(-45deg);
+		}
+	}
+
 	&__tablet {
 		display: none;
+		width: 100%;
 
 		@media @tablet {
 			display: inline-block;
@@ -67,6 +90,11 @@
 
 	&__desktop {
 		display: none;
+		width: 100%;
+
+		@media @tablet {
+			width: 300px;
+		}
 
 		@media @desktop {
 			display: inline-block;
@@ -84,6 +112,7 @@
 .question {
 	position: relative;
 	margin-bottom: 27px;
+	width: 100%;
 
 	@media @tablet {
 		display: inline-block;
@@ -128,6 +157,14 @@
 			border-right: 2px solid #000;
 			border-bottom: 2px solid #000;
 			transform: rotate(45deg);
+		}
+	}
+
+	&--hidden {
+		display: none;
+
+		@media @tablet {
+			display: none;
 		}
 	}
 }

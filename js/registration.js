@@ -9,16 +9,16 @@ $(document).ready(function() {
 	$(regButton).click(function() {
 		$(regNav).toggleClass('hide'),
 		$(regMenu).addClass('menu--hide'),
-		$(regNav).addClass('zoomIn');
+		$(regNav).addClass('fadeInDown');
 	})
 
 	$(regButton2).click(function() {
 		$(regNav).toggleClass('hide'),
-		$(regNav).addClass('zoomIn');
+		$(regNav).addClass('fadeInDown');
 	})
 
 	$(regClose).click(function() {
 		$(regNav).addClass('hide'),
-		$(regNav).addClass('zoomIn');
+		$(regNav).addClass('fadeInDown');
 	})
 }); 

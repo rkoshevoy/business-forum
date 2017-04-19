@@ -13,7 +13,7 @@ $(document).ready(function() {
 
 	$(popupButton1).click(function() {
 		$(popupInfo1).toggleClass('hide'),
-		$(popupInfo1).addClass('zoomIn'),
+		$(popupInfo1).addClass('fadeInUp'),
 		$(popupInfo2).addClass('hide'),
 		$(popupInfo3).addClass('hide');
 	})
@@ -24,7 +24,7 @@ $(document).ready(function() {
 
 	$(popupButton2).click(function() {
 		$(popupInfo2).toggleClass('hide'),
-		$(popupInfo2).addClass('zoomIn'),
+		$(popupInfo2).addClass('fadeInUp'),
 		$(popupInfo1).addClass('hide'),
 		$(popupInfo3).addClass('hide');
 	})
@@ -35,7 +35,7 @@ $(document).ready(function() {
 
 	$(popupButton3).click(function() {
 		$(popupInfo3).toggleClass('hide'),
-		$(popupInfo3).addClass('zoomIn'),
+		$(popupInfo3).addClass('fadeInUp'),
 		$(popupInfo1).addClass('hide'),
 		$(popupInfo2).addClass('hide');
 	})

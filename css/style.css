@@ -273,6 +273,7 @@ p {
   transform: rotate(-45deg);
 }
 .modal-registration form {
+  -webkit-appearance: none;
   position: relative;
   font-size: 10px;
   text-align: center;
@@ -419,7 +420,7 @@ p {
 }
 .modal-registration__payment-type--first {
   background-image: url('../images/privat.png');
-  background-position: right;
+  background-position: center;
   background-size: 40px;
   height: 130px;
 }
@@ -686,15 +687,35 @@ p {
   border-right: 2px solid #000;
   transform: translate(-50%, -70%) rotate(135deg);
 }
+.business-missions__less {
+  display: none;
+  position: relative;
+  height: 100px;
+  cursor: pointer;
+}
+.business-missions__less::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid #000;
+  border-right: 2px solid #000;
+  transform: translate(-50%, -70%) rotate(-45deg);
+}
 .business-missions__tablet {
   display: none;
+  width: 100%;
 }
 .business-missions__desktop {
   display: none;
+  width: 100%;
 }
 .question {
   position: relative;
   margin-bottom: 27px;
+  width: 100%;
 }
 .question img {
   width: 100%;
@@ -731,6 +752,9 @@ p {
   border-right: 2px solid #000;
   border-bottom: 2px solid #000;
   transform: rotate(45deg);
+}
+.question--hidden {
+  display: none;
 }
 .directions {
   background-color: #f3f4f6;
@@ -840,6 +864,22 @@ p {
   border-top: 2px solid #000;
   border-right: 2px solid #000;
   transform: translatex(-50%) rotate(135deg);
+}
+.speakers__less {
+  display: none;
+  position: relative;
+  height: 40px;
+  cursor: pointer;
+}
+.speakers__less::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid #000;
+  border-right: 2px solid #000;
+  transform: translatex(-50%) rotate(-45deg);
 }
 .speakers__tablet {
   display: none;
@@ -1552,8 +1592,7 @@ p {
   position: absolute;
   z-index: 10;
   top: 150px;
-  left: 50%;
-  transform: translatex(-50%);
+  left: calc(50% - 110px);
   width: 220px;
   height: 160px;
   padding: 25px 10px;
@@ -1594,6 +1633,7 @@ p {
   color: #fff;
 }
 .form-volunteers {
+  -webkit-appearance: none;
   text-align: center;
 }
 .form-volunteers input {
@@ -1703,8 +1743,7 @@ p {
   }
   .modal-registration {
     top: 420px;
-    left: 50%;
-    transform: translatex(-50%);
+    left: calc(50% - 360px);
     width: 720px;
   }
   .modal-registration__close {
@@ -1759,8 +1798,7 @@ p {
   .cost {
     top: 320px;
     width: 720px;
-    left: 50%;
-    transform: translatex(-50%);
+    left: calc(50% - 360px);
   }
   .cost__close {
     right: 10px;
@@ -1826,13 +1864,22 @@ p {
   .business-missions__more {
     height: 50px;
   }
+  .business-missions__less {
+    height: 50px;
+  }
   .business-missions__tablet {
     display: inline-block;
+    width: 300px;
+  }
+  .business-missions__desktop {
     width: 300px;
   }
   .question {
     display: inline-block;
     width: 300px;
+  }
+  .question--hidden {
+    display: none;
   }
   .direction {
     display: inline-block;
@@ -1911,10 +1958,12 @@ p {
   }
   .time__header {
     height: 95px;
+    margin-left: 15px;
     border-top-right-radius: 45px;
     border-bottom-right-radius: 45px;
   }
   .time__header p {
+    margin-left: 0px;
     font-size: 30px;
   }
   .time__header--not-important::before {
@@ -2212,6 +2261,7 @@ p {
   }
   .modal-registration {
     top: 215px;
+    left: calc(50% - 465px);
     width: 930px;
   }
   .modal-registration .wrapper {
@@ -2264,6 +2314,7 @@ p {
   }
   .cost {
     top: 110px;
+    left: calc(50% - 470px);
     width: 940px;
   }
   .cost h2 {
