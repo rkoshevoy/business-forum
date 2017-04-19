@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
 
     if (isset($_POST['registration_form'])) { //если пришла форма регистрации участника
 
-    include_once('phpqrcode/qrlib.php'); //наша библиотека генерации кр-кодов
+        include_once('phpqrcode/qrlib.php'); //наша библиотека генерации кр-кодов
         //var_dump($_POST); die;
 
         if (isset($_POST['name']) && $_POST['name'] != '') {
@@ -56,16 +56,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
             $comment = $_POST['comments'];
         } else $comment = "Комментариев нет";
 
-        if($promo == "рыба"){
+        if ($promo == "рыба") {
             $promo_code = 0.9;
-        } elseif($promo == "носки"){
+        } elseif ($promo == "носки") {
             $promo_code = 0.8;
-        } elseif($promo == "море"){
+        } elseif ($promo == "море") {
             $promo_code = 0.7;
         } else $promo_code = 1;
 
 
-        $to = 'support@crepla.com';
+        $to = 'parnable@gmail.com';
         $to1 = $from;
 
         $subject = $name . " зарегистрировался на бизнес-форуме!";
@@ -118,6 +118,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
 
         $message .= "<p>И в качестве способа платежа выбрал " . $radio1 . "</p>";
 
+        if ($tickets > 1) {
+            //$folder = iconv("UTF-8", "cp1251", 'qr-images/' . $_POST['name'] . $_POST['surname']);
+            //echo $folder; die;
+            $folder = mkdir('qr-images/' . iconv("UTF-8", "cp1251", $name . $surname . substr($phone, -3)));
+            $qr_path = 'qr-images/' .  $name . $surname . substr($phone, -3);
+            for ($i = 0; $i < $tickets; $i++) {
+                $qr_hash[] = md5($name . $surname . $from . $i);
+                QRcode::png(md5($name . $surname . $from . $i), 'qr-images/' .  iconv("UTF-8", "cp1251", $name . $surname . substr($phone, -3)). '/' .iconv("UTF-8", "cp1251", $name . $surname . $i. substr($phone, -3)). '.png'); //генерируем кр-коды
+            }
+        } else {
+            $qr_path = 'qr-images/' . $name . $surname . substr($phone, -3);
+            $qr_hash = md5($name . $surname . $from . $i);
+            QRcode::png($qr_hash, 'qr-images/' . iconv("UTF-8", "cp1251", $name . $surname . substr($phone, -3) . '.png')); //генерируем кр-код для одного пользователя
+        }
+
+        if (is_array($qr_hash)){
+            foreach ($qr_hash as $value) {
+                $qr_hash_result .= $value."\n";
+            }
+            $qr_hash_result = substr($qr_hash_result, 0, -1);
+        } else $qr_hash_result = $qr_hash;
+
+        $message1 = 'Добрый день, ' . $name . '!<br> 
+                     Спасибо за ваш интерес к форуму!<br>
+                     Вы заказали ' . (int)$tickets . ' билетов. На сумму ' . 4000 * $promo_code * (int)$tickets . 'грн.<br> 
+                     Их можно приобрести кликнув по ссылке: (тут будет Приват24)<br>
+                     Со стоимостью и датами проведения мероприятий можно ознакомиться здесь: (ссылка на цены)<br>
+                     Мы свяжемся с Вами в ближайшее время для уточнения деталей<br>
+                     По факту оплаты Вам будут предоставлены qr-коды для посещения мероприятия. Их можно распечатать или предъявить на экране телефона';
+
+        $headers = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=UTF-8' . " \r\n";
+
+        $admin_letter = mail($to, $subject, $message, $headers);
+        $thank_letter = mail($to1, $subject1, $message1, $headers);
+
+
 
         // теперь подготовим данные для отправки в гугл форму
         $url = 'https://docs.google.com/forms/d/e/1FAIpQLSedc4PJ8dTzkMyiCdTrZgmiyKuFU07YlGoekwH_SBFRYCxM_A/formResponse'; // куда слать, это атрибут action у гугл формы
@@ -134,11 +171,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
         $data['entry.308823621'] = $comment;
         $data['entry.464725136'] = $radio1;
         $data['entry.1364161321'] = $checkbox1;
+        $data['entry.1521103503'] = $qr_path;
+        $data['entry.946035065'] = $qr_hash_result;
 
         $data = http_build_query($data); // теперь сериализуем массив данных в строку для отправки
         foreach ($checkbox1 as $key => $value) { // если у нас есть элементы с нескольки значениями (например чекбоксы), надо пройтись по каждому и заменить кое что в отправляемой строке
             $data = str_replace('entry.1364161321%5B' . $key . '%5D', 'entry.1364161321', $data); // а именно выпилить [0], [1], [2].. из ключей, иначе в гугл форму это поле с несколькими значениями не запишется
         }
+
 
         $options = array( // задаем параметры запроса
             'http' => array(
@@ -150,115 +190,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
         $context = stream_context_create($options); // создаем контекст отправки
         $result = file_get_contents($url, false, $context); // отправляем
 
-        $message1 = 'Добрый день, ' . $name . '!<br> 
-                     Спасибо за ваш интерес к форуму!<br>
-                     Вы заказали ' . (int)$tickets . ' билетов. На сумму '. 4000*$promo_code*(int)$tickets . 'грн.<br> 
-                     Их можно приобрести кликнув по ссылке: (тут будет Приват24)<br>
-                     Со стоимостью и датами проведения мероприятий можно ознакомиться здесь: (ссылка на цены)<br>
-                     Мы свяжемся с Вами в ближайшее время для уточнения деталей';
-
-        $headers = 'MIME-Version: 1.0' . "\r\n";
-        $headers .= 'Content-type: text/html; charset=UTF-8' . " \r\n";
-
-        $admin_letter = mail($to, $subject, $message, $headers);
-        $thank_letter = mail($to1, $subject1, $message1, $headers);
-
-        if ($tickets > 1) {
-            //$folder = iconv("UTF-8", "cp1251", 'qr-images/' . $_POST['name'] . $_POST['surname']);
-            //echo $folder; die;
-            for ($i = 0; $i < $tickets; $i++) {
-            QRcode::png(md5($name . $surname . $from . $i), 'qr-images/' . iconv("UTF-8", "cp1251", $name . $surname .substr($phone, -3). $i . '.png')); //генерируем кр-коды
-            }
-        }
-    } else QRcode::png(md5($_POST['name'] . $_POST['surname']), 'qr-images/' . $_POST['name'] . $_POST['surname'] . '.png'); //генерируем кр-код для одного пользователя
-
         if ($admin_letter && $thank_letter && $result) {
 
-        echo '<div style="margin-top:25%; margin-left:25%; border:solid 1px black; height:20%; width:40%;">
-                    <div style=" margin-left:2%;"><h2>Спасибо за регистрацию на форуме!</h2>
-                        <br><h3>Переадресация на главную страницу через: <span id="count">5</span></h3>
-                    </div>
-              </div>';
-
-
-    } else {
-        echo '<h1 class="modal_main_h">Призошла ошибка, очень сожалеем ;(</h1>
-                <p>Попробуйте еще раз позже</p>';
-    }
-    if (isset($_POST['volunteer_form'])) { //если пришла форма регистрации волонтера
-
-        $volunteer = "Волонтер";
-        $name = strip_tags($_POST['name']);
-
-        $from = strip_tags($_POST['email']);
-
-        if (isset($_POST['surname']) && $_POST['surname'] != '') {
-
-            $surname = $_POST['surname'];
-        } else $surname = "Фамилия не указана";
-
-        if (isset($_POST['company']) && $_POST['company'] != '') {
-            $company = $_POST['company'];
-        } else $company = "Компания не указана";
-
-        if (isset($_POST['activity']) && $_POST['activity'] != '') {
-            $activity = $_POST['activity'];
-        } else $activity = "Сфера деятельности не указана";
-
-        if (isset($_POST['phone']) && $_POST['phone'] != '') {
-
-            $phone = $_POST['phone'];
-        }
-
-        if (isset($_POST['comments']) && $_POST['comments'] != '') {
-
-            $comment = $_POST['comments'];
-        } else $comment = "Комментариев нет";
-
-        $to = 'support@crepla.com';
-        $to1 = $from;
-
-        $subject = $name . " хочет быть волонтером на форуме";
-        $subject1 = "Международный бизнес-форум";
-
-        $message = '';
-
-        if (isset($name)) {
-            $message .= '<p>Имя: ' . strip_tags($name) . ' ' . strip_tags($surname) . '</p>';
-        }
-
-        if (isset($company)) {
-            $message .= '<p>Работает в компании: ' . strip_tags($company) . ' </p>';
-        }
-
-        if (isset($activity)) {
-            $message .= '<p>Сфера деятельности: ' . strip_tags($activity) . ' </p>';
-        }
-
-        if (isset($phone)) {
-            $message .= '<p>Телефон: ' . strip_tags($phone) . ' </p>';
-        }
-        if (isset($from)) {
-            $message .= '<p>Имейл: ' . strip_tags($from) . ' </p>';
-        }
-
-        if (isset($comment)) {
-            $message .= '<p>Комментарий: ' . strip_tags($comment) . ' </p>';
-        }
-
-        $message1 = 'Добрый день, ' . $name . '!<br> 
-                     Спасибо за ваш интерес к форуму и желание нас помочь с его организацией!<br>
-                     Мы свяжемся с Вами в ближайшее время для уточнения деталей';
-
-        $headers = 'MIME-Version: 1.0' . "\r\n";
-        $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
-
-        $admin_letter = mail($to, $subject, $message, $headers);
-        $thank_letter = mail($to1, $subject1, $message1, $headers);
-
-        if ($admin_letter && $thank_letter) {
             echo '<div style="margin-top:25%; margin-left:25%; border:solid 1px black; height:20%; width:40%;">
-                    <div style=" margin-left:2%;"><h2>Спасибо за желание помочь форуму!</h2>
+                    <div style=" margin-left:2%;"><h2>Спасибо за регистрацию на форуме!</h2>
                         <br><h3>Переадресация на главную страницу через: <span id="count">5</span></h3>
                     </div>
               </div>';
@@ -268,8 +203,91 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
             echo '<h1 class="modal_main_h">Призошла ошибка, очень сожалеем ;(</h1>
                 <p>Попробуйте еще раз позже</p>';
         }
-    }
+        if (isset($_POST['volunteer_form'])) { //если пришла форма регистрации волонтера
 
+            $volunteer = "Волонтер";
+            $name = strip_tags($_POST['name']);
+
+            $from = strip_tags($_POST['email']);
+
+            if (isset($_POST['surname']) && $_POST['surname'] != '') {
+
+                $surname = $_POST['surname'];
+            } else $surname = "Фамилия не указана";
+
+            if (isset($_POST['company']) && $_POST['company'] != '') {
+                $company = $_POST['company'];
+            } else $company = "Компания не указана";
+
+            if (isset($_POST['activity']) && $_POST['activity'] != '') {
+                $activity = $_POST['activity'];
+            } else $activity = "Сфера деятельности не указана";
+
+            if (isset($_POST['phone']) && $_POST['phone'] != '') {
+
+                $phone = $_POST['phone'];
+            }
+
+            if (isset($_POST['comments']) && $_POST['comments'] != '') {
+
+                $comment = $_POST['comments'];
+            } else $comment = "Комментариев нет";
+
+            $to = 'support@crepla.com';
+            $to1 = $from;
+
+            $subject = $name . " хочет быть волонтером на форуме";
+            $subject1 = "Международный бизнес-форум";
+
+            $message = '';
+
+            if (isset($name)) {
+                $message .= '<p>Имя: ' . strip_tags($name) . ' ' . strip_tags($surname) . '</p>';
+            }
+
+            if (isset($company)) {
+                $message .= '<p>Работает в компании: ' . strip_tags($company) . ' </p>';
+            }
+
+            if (isset($activity)) {
+                $message .= '<p>Сфера деятельности: ' . strip_tags($activity) . ' </p>';
+            }
+
+            if (isset($phone)) {
+                $message .= '<p>Телефон: ' . strip_tags($phone) . ' </p>';
+            }
+            if (isset($from)) {
+                $message .= '<p>Имейл: ' . strip_tags($from) . ' </p>';
+            }
+
+            if (isset($comment)) {
+                $message .= '<p>Комментарий: ' . strip_tags($comment) . ' </p>';
+            }
+
+            $message1 = 'Добрый день, ' . $name . '!<br> 
+                     Спасибо за ваш интерес к форуму и желание нас помочь с его организацией!<br>
+                     Мы свяжемся с Вами в ближайшее время для уточнения деталей';
+
+            $headers = 'MIME-Version: 1.0' . "\r\n";
+            $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+
+            $admin_letter = mail($to, $subject, $message, $headers);
+            $thank_letter = mail($to1, $subject1, $message1, $headers);
+
+            if ($admin_letter && $thank_letter) {
+                echo '<div style="margin-top:25%; margin-left:25%; border:solid 1px black; height:20%; width:40%;">
+                    <div style=" margin-left:2%;"><h2>Спасибо за желание помочь форуму!</h2>
+                        <br><h3>Переадресация на главную страницу через: <span id="count">5</span></h3>
+                    </div>
+              </div>';
+
+
+            } else {
+                echo '<h1 class="modal_main_h">Призошла ошибка, очень сожалеем ;(</h1>
+                <p>Попробуйте еще раз позже</p>';
+            }
+        }
+    }
 } else {
     http_response_code(403);
     echo "Попробуйте еще раз";
@@ -284,7 +302,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
 
             setInterval(function () {
                 if (counter >= 0) {
-                    span = document.POSTElementById("count");
+                    span = document.getElementById("count");
                     span.innerHTML = counter;
                 } else {
                     window.location = "http://www.crepla.com/business-forum/index.html";
