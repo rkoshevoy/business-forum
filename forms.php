@@ -118,6 +118,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
 
         $message .= "<p>И в качестве способа платежа выбрал " . $radio1 . "</p>";
 
+        $summ = 4000 * $promo_code * (int)$tickets;
+
         if ($tickets > 1) {
             //$folder = iconv("UTF-8", "cp1251", 'qr-images/' . $_POST['name'] . $_POST['surname']);
             //echo $folder; die;
@@ -142,7 +144,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
 
         $message1 = 'Добрый день, ' . $name . '!<br> 
                      Спасибо за ваш интерес к форуму!<br>
-                     Вы заказали ' . (int)$tickets . ' билетов. На сумму ' . 4000 * $promo_code * (int)$tickets . 'грн.<br> 
+                     Вы заказали ' . (int)$tickets . ' билетов. На сумму ' . $summ . 'грн.<br>                      
                      Их можно приобрести кликнув по ссылке: (тут будет Приват24)<br>
                      Со стоимостью и датами проведения мероприятий можно ознакомиться здесь: (ссылка на цены)<br>
                      Мы свяжемся с Вами в ближайшее время для уточнения деталей<br>
@@ -175,10 +177,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
         $data['entry.946035065'] = $qr_hash_result;
 
         $data = http_build_query($data); // теперь сериализуем массив данных в строку для отправки
-        foreach ($checkbox1 as $key => $value) { // если у нас есть элементы с нескольки значениями (например чекбоксы), надо пройтись по каждому и заменить кое что в отправляемой строке
-            $data = str_replace('entry.1364161321%5B' . $key . '%5D', 'entry.1364161321', $data); // а именно выпилить [0], [1], [2].. из ключей, иначе в гугл форму это поле с несколькими значениями не запишется
+        if(is_array($checkbox1)) {
+            foreach ($checkbox1 as $key => $value) { // если у нас есть элементы с нескольки значениями (например чекбоксы), надо пройтись по каждому и заменить кое что в отправляемой строке
+                $data = str_replace('entry.1364161321%5B' . $key . '%5D', 'entry.1364161321', $data); // а именно выпилить [0], [1], [2].. из ключей, иначе в гугл форму это поле с несколькими значениями не запишется
+            }
         }
-
 
         $options = array( // задаем параметры запроса
             'http' => array(
@@ -190,7 +193,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
         $context = stream_context_create($options); // создаем контекст отправки
         $result = file_get_contents($url, false, $context); // отправляем
 
-        if ($admin_letter && $thank_letter && $result) {
+        if ($admin_letter && $thank_letter && $result && $radio1 == 'Приват24') {
+            ?>
+            <div style="margin-top:25%; margin-left:25%; border:solid 1px black; height:30%; width:40%;">
+                <div style=" margin-left:2%;"><h2>Спасибо за регистрацию на форуме!</h2>
+                    <h3> Дорогой <?php echo $name; ?>, вы указали способом оплаты <?php echo $radio1 ?>.<br>
+                        Данные платежа сформированы и вы можете оплатить билеты нажав на кнопку ниже<br>
+                    Если по каким-либо причинам вы захотите это сделать позже - на ваш электронный адрес также выслано письмо с платежом.<br>
+                    После оплаты на Ваш e-mail придет письмо с qr-кодами (электронными билетами), по которым вы попадете на мероприятие</h3>
+                </div>
+
+                <div style="text-align: center;">
+                    <form method="POST" action="https://api.privatbank.ua/p24api/ishop">
+                    <input type="hidden" name="amt" value="<?php echo $summ; ?>" />
+                    <input type="hidden" name="ccy" value="UAH" />
+                    <input type="hidden" name="merchant" value="127032" />
+                    <input type="hidden" name="order" value="<?php echo rand(1, 9999); ?>" />
+                    <input type="hidden" name="details" value="Оплата билетов. Заказано билетов: <?php echo $tickets; ?> " />
+                    <input type="hidden" name="ext_details" value="Наш международный бизнес-форум - это мероприятие, объединяющие десятки лучших отечественных спикеров в области ведения собственного дела" />
+                    <input type="hidden" name="pay_way" value="privat24" />
+                    <input type="hidden" name="return_url" value="http://business-forum/forms.php" />
+                    <input type="hidden" name="server_url" value="http://business-forum/forms.php" />
+                    <button type="submit"><img src="https://privat24.privatbank.ua/p24/img/buttons/api_logo_1.jpg" border="0" /></button>
+                </form>
+                </div>
+            </div>
+            <?php
+        } else if ($admin_letter && $thank_letter && $result) {
 
             echo '<div style="margin-top:25%; margin-left:25%; border:solid 1px black; height:20%; width:40%;">
                     <div style=" margin-left:2%;"><h2>Спасибо за регистрацию на форуме!</h2>
