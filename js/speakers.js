@@ -4,7 +4,11 @@ $(document).ready(function() {
 	var speakerClose = $('.speaker-details__close');
 
 	$(speaker).click(function() {
-		$(speakerDetails).toggleClass('hide'),
-		$(speakerDetails).toggleClass('zoomIn');
+		$(speakerDetails).removeClass('hide'),
+		$(speakerDetails).addClass('zoomIn');
+	})
+
+	$(speakerClose).click(function() {
+		$(speakerDetails).addClass('hide');
 	})
 });

@@ -122,17 +122,34 @@
 		font-size: 14px;
 		color: #bdd63d;
 	}
+
+	&--hidden {
+		display: none;
+
+		@media @tablet {
+			display: none;
+		}
+	}
 }
 
 .speaker-details {
-	position: absolute;
+	position: fixed;
 	z-index: 1;
-	top: -50px;
-	margin-bottom: 40px;
+	top: 50px;
+	left: 0;
 	border-top-right-radius: 10px;
 	border-top-left-radius: 10px;
 	background-color: #fff;
 	text-align: center;
+
+	@media @tablet {
+		left: ~"calc(50% - 200px)";
+		width: 400px;
+	}
+
+	&__text {
+		padding: 15px;
+	}
 
 	&__header {
 		padding: 15px 0;
@@ -146,6 +163,7 @@
 
 	&__close {
 		position: absolute;
+		z-index: 100;
 		top: 0;
 		right: 0;
 		width: 30px;
