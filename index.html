@@ -62,7 +62,7 @@
         <input type="text" name="phone" required minlength="11" maxlength="20" pattern="\+\d*" title="начните ввод с символа +" placeholder="Телефон в международном формате*">
         <input type="text" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="E-mail" title="не похоже на E-mail :(">
         <input type="text" name="position" placeholder="Должность">
-        <input type="number" step="1" name="tickets" required placeholder="Количество билетов*">
+        <input type="number" step="1" min="1" name="tickets" required placeholder="Количество билетов* (стоимость одного билета 8 500 грн)">
         <input type="text" name="promo" placeholder="Промокод">
 
         <p class="modal-registration__interesting">Интересные направления работы форума:</p>
