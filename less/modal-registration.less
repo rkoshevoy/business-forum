@@ -85,7 +85,8 @@
 			-webkit-appearance: none;
 		}
 
-		input {
+		input[type="text"],
+		input[type="number"] {
 			width: 100%;
 			margin-bottom: 14px;
 			padding: 15px;
@@ -142,19 +143,19 @@
 	}
 
 	&__interesting {
-			margin-top: 20px;
-			margin-bottom: 30px;
-			text-align: left;
+		margin-top: 20px;
+		margin-bottom: 30px;
+		text-align: left;
 
-			@media @tablet {
-				margin-top: 0;
-				margin-left: 10px;
-			}
-
-			@media @desktop {
-				font-size: 14px;
-			}
+		@media @tablet {
+			margin-top: 0;
+			margin-left: 10px;
 		}
+
+		@media @desktop {
+			font-size: 14px;
+		}
+	}
 
 	input[type='submit'] {
 		width: 165px;
@@ -206,6 +207,7 @@
 
 		input[type="checkbox"] {
 			position: absolute;
+			left: 10px;
 			z-index: 11;
 			opacity: 0;
 			cursor: pointer;
@@ -308,15 +310,37 @@
 
 	&__bottom-text {
 		margin-bottom: 30px;
-			font-size: 12px;
+		font-size: 12px;
 
-			@media @tablet {
-				font-size: 14px;
-				margin-left: 5px;
-			}
-
-			@media @desktop {
-				font-size: 19px;
-			}
+		@media @tablet {
+			font-size: 14px;
+			margin-left: 5px;
 		}
+
+		@media @desktop {
+			font-size: 19px;
+		}
+	}
+
+	&__tickets-count {
+		display: inline-block;
+		width: 100%;
+
+		@media @tablet {
+			width: 48%;
+		}
+	}
+
+	 &__ticket {
+	 	width: 100%;
+		text-align: left;
+	
+		input {
+			display: inline-block;
+		}
+	
+		label {
+			display: inline-block;
+		}
+	}  
 }

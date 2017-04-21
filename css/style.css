@@ -290,28 +290,33 @@ p {
 .modal-registration form input[type="submit"] {
   -webkit-appearance: none;
 }
-.modal-registration form input {
+.modal-registration form input[type="text"],
+.modal-registration form input[type="number"] {
   width: 100%;
   margin-bottom: 14px;
   padding: 15px;
   border: 1px solid #ececec;
 }
-.modal-registration form input::-webkit-input-placeholder {
+.modal-registration form input[type="text"]::-webkit-input-placeholder,
+.modal-registration form input[type="number"]::-webkit-input-placeholder {
   font-family: BlissProHeavy;
   font-size: 11px;
   color: #999999;
 }
-.modal-registration form input::-moz-placeholder {
+.modal-registration form input[type="text"]::-moz-placeholder,
+.modal-registration form input[type="number"]::-moz-placeholder {
   font-family: BlissProHeavy;
   font-size: 11px;
   color: #999999;
 }
-.modal-registration form input:-ms-input-placeholder {
+.modal-registration form input[type="text"]:-ms-input-placeholder,
+.modal-registration form input[type="number"]:-ms-input-placeholder {
   font-family: BlissProHeavy;
   font-size: 11px;
   color: #999999;
 }
-.modal-registration form input::placeholder {
+.modal-registration form input[type="text"]::placeholder,
+.modal-registration form input[type="number"]::placeholder {
   font-family: BlissProHeavy;
   font-size: 11px;
   color: #999999;
@@ -380,6 +385,7 @@ p {
 }
 .modal-registration__checkbox input[type="checkbox"] {
   position: absolute;
+  left: 10px;
   z-index: 11;
   opacity: 0;
   cursor: pointer;
@@ -447,6 +453,20 @@ p {
 .modal-registration__bottom-text {
   margin-bottom: 30px;
   font-size: 12px;
+}
+.modal-registration__tickets-count {
+  display: inline-block;
+  width: 100%;
+}
+.modal-registration__ticket {
+  width: 100%;
+  text-align: left;
+}
+.modal-registration__ticket input {
+  display: inline-block;
+}
+.modal-registration__ticket label {
+  display: inline-block;
 }
 .cost {
   position: absolute;
@@ -1796,13 +1816,16 @@ p {
     padding-bottom: 20px;
     font-size: 24px;
   }
-  .modal-registration form input {
+  .modal-registration form input[type="text"],
+  .modal-registration form input[type="number"] {
     width: 48%;
   }
-  .modal-registration form input:nth-of-type(2n-1) {
+  .modal-registration form input[type="text"]:nth-of-type(2n-1),
+  .modal-registration form input[type="number"]:nth-of-type(2n-1) {
     margin-right: 20px;
   }
-  .modal-registration form input:nth-of-type(9) {
+  .modal-registration form input[type="text"]:nth-of-type(9),
+  .modal-registration form input[type="number"]:nth-of-type(9) {
     margin-right: 50.5%;
   }
   .modal-registration form textarea {
@@ -1836,6 +1859,9 @@ p {
   .modal-registration__bottom-text {
     font-size: 14px;
     margin-left: 5px;
+  }
+  .modal-registration__tickets-count {
+    width: 48%;
   }
   .cost {
     top: 320px;
@@ -2341,16 +2367,20 @@ p {
   .modal-registration form h2 {
     font-size: 32px;
   }
-  .modal-registration form input::-webkit-input-placeholder {
+  .modal-registration form input[type="text"]::-webkit-input-placeholder,
+  .modal-registration form input[type="number"]::-webkit-input-placeholder {
     font-size: 14px;
   }
-  .modal-registration form input::-moz-placeholder {
+  .modal-registration form input[type="text"]::-moz-placeholder,
+  .modal-registration form input[type="number"]::-moz-placeholder {
     font-size: 14px;
   }
-  .modal-registration form input:-ms-input-placeholder {
+  .modal-registration form input[type="text"]:-ms-input-placeholder,
+  .modal-registration form input[type="number"]:-ms-input-placeholder {
     font-size: 14px;
   }
-  .modal-registration form input::placeholder {
+  .modal-registration form input[type="text"]::placeholder,
+  .modal-registration form input[type="number"]::placeholder {
     font-size: 14px;
   }
   .modal-registration form textarea::-webkit-input-placeholder {
