@@ -160,6 +160,7 @@
 	input[type='submit'] {
 		width: 165px;
 		margin-bottom: 45px;
+		padding: 15px;
 		border: 1px solid #4aa08b;
 	}
 
@@ -235,6 +236,14 @@
 			border-right: 2px solid #6c6c6d;
 			transform: rotate(135deg);
 		}
+
+		&:last-of-type {
+			margin-right: 49%;
+
+			@media @tablet {
+				margin-right: 0;
+			}
+		}
 	}
 
 	&__payment {
@@ -257,8 +266,48 @@
 			}
 
 			@media @desktop {
-				margin-right: 85px;
+				margin-right: 50px;
 			}
+		}
+
+		label {
+			position: relative;
+			display: inline-block;
+			margin-top: 50px;
+			padding-left: 25px;
+			cursor: pointer;
+
+			@media @tablet {
+				margin-top: 100px;
+			}
+		}
+
+		input[type=radio] {
+			display: none;
+		}
+
+		label::before {
+			content: "";
+			position: absolute;
+			top: -2px;
+			left: 0;
+			display: inline-block;
+			width: 14px;
+			height: 14px;
+			border: 1px solid #ebebeb;
+			border-radius: 50%;
+			background-color: #fff;
+		}
+
+		input[type=radio]:checked + label::after {
+			content: '';
+			position: absolute;
+			top: 1px;
+			left: 3px;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background-color: #6c6c6d;
 		}
 	}
 
@@ -268,44 +317,32 @@
 		height: 40px;
 		margin-bottom: 35px;
 		cursor: pointer;
+		background-position: top;
+		height: 130px;
+		background-size: 40px;
 
 		@media @tablet {
-			width: 40px;
+			width: 80px;
 			margin-right: 25px;
 			vertical-align: middle;
-		}
-
-		@media @desktop {
-			margin-right: 50px;
+			background-position: center;
 		}
 	}
 
 	&__payment-type--first {
 		background-image: url('../images/privat.png');
-		background-position: center;
-		background-size: 40px;
-		height: 130px;
 	}
 
 	&__payment-type--second {
 		background-image: url('../images/money.png');
-		background-position: center;
-		background-size: 40px;
-		height: 130px;
 	}
 
 	&__payment-type--third {
 		background-image: url('../images/contract.png');
-		background-position: center;
-		background-size: 40px;
-		height: 130px;
 	}
 
 	&__payment-type--fourth {
 		background-image: url('../images/card.png');
-		background-position: center;
-		background-size: 40px;
-		height: 130px;
 	}
 
 	&__bottom-text {
@@ -327,20 +364,82 @@
 		width: 100%;
 
 		@media @tablet {
-			width: 48%;
+			position: absolute;
+			top: 380px;
+			left: 50%;
+			width: 40%;
+		}
+
+		@media @desktop {
+			top: 385px;
 		}
 	}
 
-	 &__ticket {
-	 	width: 100%;
+	&__ticket {
+		width: 100%;
 		text-align: left;
-	
+
+		&:first-of-type {
+
+			label {
+				margin-bottom: 20px;
+
+				@media @tablet {
+					margin-bottom: 5px;
+				}
+			}
+		}
+
 		input {
 			display: inline-block;
 		}
-	
+
 		label {
+			position: relative;
 			display: inline-block;
+			margin-left: 15px;
+			padding-left: 25px;
+			cursor: pointer;
+
+			@media @desktop {
+				font-size: 14px;
+			}
+		}
+
+		input[type=radio] {
+			display: none;
+		}
+
+		label::before {
+			content: "";
+			position: absolute;
+			top: -2px;
+			left: 0;
+			display: inline-block;
+			width: 14px;
+			height: 14px;
+			border: 1px solid #ebebeb;
+			border-radius: 50%;
+			background-color: #fff;
+
+			@media @desktop {
+				top: 0;
+			}
+		}
+
+		input[type=radio]:checked + label::after {
+			content: '';
+			position: absolute;
+			top: 1px;
+			left: 3px;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background-color: #6c6c6d;
+
+			@media @desktop {
+				top: 3px;
+			}
 		}
 	}  
 }

@@ -67,36 +67,38 @@
         <input type="text" name="promo" placeholder="Промокод">
         <div class="modal-registration__tickets-count">
           <div class="modal-registration__ticket">
-            <input type="radio" name="tickets">
-            <label for="">Билет на один день</label>
+            <input type="radio" name="tickets" id="one_ticket">
+            <label for="one_ticket">Билет на один день</label>
           </div>
           <div class="modal-registration__ticket">
-            <input type="radio" name="tickets">
-            <label for="">Билет на два дня</label>
+            <input type="radio" name="tickets" id="two_tickets">
+            <label for="two_tickets">Билет на два дня</label>
           </div>
         </div> 
 
-        <p class="modal-registration__interesting">Интересные направления работы форума:</p>
+        <div class="modal-registration__checkboxes">
+          <p class="modal-registration__interesting">Интересные направления работы форума:</p>
 
-        <div class="modal-registration__checkbox">
-          <input type="checkbox" value="Инвестиции" name="checkbox1[]">
-          <label>Инвестиции</label>
-        </div>
-        <div class="modal-registration__checkbox">
-          <input type="checkbox" value="Экспорт/Импорт" name="checkbox1[]">
-          <label>Экспорт/Импорт</label>
-        </div>
-        <div class="modal-registration__checkbox">
-          <input type="checkbox" value="IT" name="checkbox1[]">
-          <label>IT</label>
-        </div>
-        <div class="modal-registration__checkbox">
-          <input type="checkbox" value="Энергоэффективность" name="checkbox1[]">
-          <label>Энергоэффективность</label>
-        </div>
-        <div class="modal-registration__checkbox">
-          <input type="checkbox" value="Гранты для бизнеса" name="checkbox1[]">
-          <label>Гранты для бизнеса</label>
+          <div class="modal-registration__checkbox">
+            <input type="checkbox" value="Инвестиции" name="checkbox1[]" id="checkbox1">
+            <label for="checkbox1">Инвестиции</label>
+          </div>
+          <div class="modal-registration__checkbox">
+            <input type="checkbox" value="Экспорт/Импорт" name="checkbox1[]" id="checkbox2">
+            <label for="checkbox2">Экспорт/Импорт</label>
+          </div>
+          <div class="modal-registration__checkbox">
+            <input type="checkbox" value="IT" name="checkbox1[]" id="checkbox3">
+            <label for="checkbox3">IT</label>
+          </div>
+          <div class="modal-registration__checkbox">
+            <input type="checkbox" value="Энергоэффективность" name="checkbox1[]" id="checkbox4">
+            <label for="checkbox4">Энергоэффективность</label>
+          </div>
+          <div class="modal-registration__checkbox">
+            <input type="checkbox" value="Гранты для бизнеса" name="checkbox1[]" id="checkbox5">
+            <label for="checkbox5">Гранты для бизнеса</label>
+          </div>
         </div>
 
         <textarea name="comments" id="1" cols="30" rows="10" class="modal-registration_textarea" placeholder="Комментарии/предложения..."></textarea>
@@ -104,16 +106,20 @@
         <div class="modal-registration__payment">
           <p>Выберете удобный способ оплаты:</p>
           <div class="modal-registration__payment-type modal-registration__payment-type--first">
-            <label><input type="radio" name="radio1" value="Приват24">Приват24</label>
+            <input type="radio" name="radio1" value="Приват24" id="radio1">
+            <label for="radio1">Приват24</label>
           </div>
           <div class="modal-registration__payment-type modal-registration__payment-type--second">
-            <label><input type="radio" name="radio1" value="Наличными">Наличными</label>
+            <input type="radio" name="radio1" value="Наличными" id="radio2">
+            <label for="radio2">Наличными</label>
           </div>
           <div class="modal-registration__payment-type modal-registration__payment-type--third">
-            <label><input type="radio" name="radio1" value="Счет-фактура">Счет-фактура</label>
+            <input type="radio" name="radio1" value="Счет-фактура" id="radio3">
+            <label for="radio3">Счет-фактура</label>
           </div>
           <div class="modal-registration__payment-type modal-registration__payment-type--fourth">
-            <label><input type="radio" name="radio1" value="Перевод на карту VIsa/Mastercard">Перевод VISA/Mastercard</label>
+            <input type="radio" name="radio1" value="Перевод на карту VIsa/Mastercard" id="radio4">
+            <label for="radio4">Перевод VISA/Mastercard</label>
           </div>
         </div>
 

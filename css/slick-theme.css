@@ -19,7 +19,7 @@
 .slick-prev,
 .slick-next
 {    position: absolute;
-    z-index: 10;
+    z-index: 9;
     top: 50%;
     border-top: 1px solid #3c9fb5;
     border-right: 1px solid #3c9fb5;
