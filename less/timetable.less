@@ -626,6 +626,30 @@
 	}
 }
 
+.mySlider{
+	&__slide:nth-child(2){
+		border-right: 2px solid #b5b5b6;
+		border-left: 2px solid #b5b5b6;
+	}
+	.mySlider &__slide{
+
+		.member{
+			margin-bottom: 26px;
+			&__about{
+				top: -10px;
+			}
+			&__circle{
+				position: relative;
+			}
+			img{
+				transform: translateY(-50%);
+			    top: 50%;
+			    position: relative;
+		    }
+	    }
+	}
+}
+
 .slider-sections {
 	position: relative;
 
