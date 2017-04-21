@@ -3,9 +3,37 @@
 ini_set("ERROR_REPORTING", 1);
 ini_set("default_charset", "UTF-8");
 
-//if (is_dir('qr-images/'. iconv("UTF-8", "cp1251", 'ОлегДементьев465'))){
-//    $result = scandir('qr-images/'. iconv("UTF-8", "cp1251", 'ОлегДементьев465'));
-//    var_dump($result);
+//$to = "vyzovyivozmozhnosti@gmail.com"; //Кому
+//$subject = "Test"; //Тема
+//$message = "Текстовое сообщение"; //Текст письма
+//$boundary = "---"; //Разделитель
+///* Заголовки */
+//$headers = "Content-Type: multipart/mixed; boundary=\"$boundary\"";
+//$body = "--$boundary\n";
+///* Присоединяем текстовое сообщение */
+//$body .= "Content-type: text/html; charset='utf-8'\n";
+//$body .= "Content-Transfer-Encoding: quoted-printablenn";
+//$body .= "Content-Disposition: attachment; filename==?utf-8?B?".base64_encode($filename)."?=\n\n";
+//$body .= $message."\n";
+//$body .= "--$boundary\n";
+//if (is_dir('qr-images/'. iconv("UTF-8", "cp1251", 'АндрейАнтонов567'))){
+//    $files = scandir('qr-images/'. iconv("UTF-8", "cp1251", 'АндрейАнтонов567'));
+//    foreach($files as $value){
+//        if (substr(strrchr($value, '.'), 1) == 'png'){
+//            $filename = 'qr-images/'. iconv("UTF-8", "cp1251", 'АндрейАнтонов567').'/'.$value; //Имя файла для прикрепления
+//            $file = file_get_contents($filename); //Открываем файл
+//            /* Добавляем тип содержимого, кодируем текст файла и добавляем в тело письма */
+//            $body .= "Content-Type: application/octet-stream; name==?utf-8?B?".base64_encode($filename)."?=\n";
+//            $body .= "Content-Transfer-Encoding: base64\n";
+//            $body .= "Content-Disposition: attachment; filename==?utf-8?B?".base64_encode($filename)."?=\n\n";
+//            $body .= chunk_split(base64_encode($file))."\n";
+//            $body .= "--".$boundary ."--\n";
+//        }
+//    }
+//}
+//$result = mail($to, $subject, $body, $headers);
+//if($result) {
+//    var_dump($result); die;
 //} else die("bolt");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытается попасть в наш файл напрямую, не через отправку формы - получит болт
@@ -173,6 +201,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
                      Если Вы уже приобретали билеты и у вас есть qr-коды на мероприятие, переходить по ссылке не нужно.
                      Со стоимостью и датами проведения мероприятий можно ознакомиться здесь: (ссылка на цены)<br>
                      Мы свяжемся с Вами в ближайшее время для уточнения деталей<br>
+                     По вопросам регистрации можно обратиться по номеру 067 556 71 66<br>
                      По факту оплаты Вам будут предоставлены qr-коды для посещения мероприятия. Их можно распечатать или предъявить на экране телефона';
         } else if($radio1 == 'Перевод на карту VIsa/Mastercard'){
             $message1 = 'Добрый день, ' . $name . '!<br> 
@@ -184,7 +213,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
                      По вопросам регистрации можно обратиться по номеру 067 556 71 66<br>                      
                      Мы свяжемся с Вами в ближайшее время для уточнения деталей<br>
                      По факту оплаты Вам будут предоставлены qr-коды для посещения мероприятия. Их можно распечатать или предъявить на экране телефона';
-        }
+        } else $message1 = 'Добрый день, ' . $name . '!<br> 
+                     Спасибо за ваш интерес к форуму!<br>
+                     Вы заказали ' . (int)$tickets . ' билетов. На сумму ' . $summ . 'грн.<br>                   
+                     По вопросам регистрации можно обратиться по номеру 067 556 71 66<br>                      
+                     В любом случае, мы свяжемся с Вами в ближайшее время для уточнения деталей<br>
+                     По факту оплаты Вам будут предоставлены qr-коды для посещения мероприятия. Их можно распечатать или предъявить на экране телефона';
 
         $headers = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=UTF-8' . " \r\n";
@@ -420,12 +454,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
             $result = mail($to, $subject, $body, $headers);
                         var_dump($result);
 
-//            echo '<div style="margin-top:25%; margin-left:25%; border:solid 1px black; height:20%; width:40%;">
-//                    <div style=" margin-left:2%;"><h2>Спасибо за оплату!</h2>
-//                        <br><h3>Ваши электронные билеты должны быть уже на Вашей электронной почте!</h3>
-//                        <br><h3>Переадресация на главную страницу через: <span id="count">5</span></h3>
-//                    </div>
-//              </div>';
+            echo '<div style="margin-top:25%; margin-left:25%; border:solid 1px black; height:20%; width:40%;">
+                    <div style=" margin-left:2%;"><h2>Спасибо за оплату!</h2>
+                        <br><h3>Ваши электронные билеты должны быть уже на Вашей электронной почте!</h3>
+                        <br><h3>Переадресация на главную страницу через: <span id="count">5</span></h3>
+                    </div>
+              </div>';
         } else {
                 echo "Ошибка! Но на вашем имейле уже есть письмо для повторной оплаты ;)" . $signature;
                 //var_dump($request_data);
