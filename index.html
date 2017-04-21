@@ -1,2065 +1,2120 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Бизнес-форум 2017</title>
-	<link rel="shortcut icon" href="images/logo.png" type="image/png">
-	<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Бизнес-форум 2017</title>
+  <link rel="shortcut icon" href="images/logo.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animate.css">
 
+  <link rel="stylesheet" type="text/css" href="css/slick.css">
+  <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+  <link rel="stylesheet" href="css/slider-styles.css">
 </head>
 <body>
 
-	<header class="header">
-		<button class="header__menu-button">
-			<div class="header__button-line"></div>
-			<div class="header__button-line"></div>
-			<div class="header__button-line"></div>
-		</button>
-
-		<div class="header__right">
-			<div class="header__dates"><p>21-22 июня 2017</p></div>
-
-			<div class="social">
-				<a href="#">
-					<div class="social__button social__button--fb"></div>
-				</a>
-
-				<a href="#">
-					<div class="social__button social__button--yt"></div>
-				</a>
-			</div>
-		</div>
-		<div class="header__button-wrapper">
-			<button class="header__button">Регистрация</button>
-
-			<ul class="menu menu--hide">
-				<li class="menu__item">Вопросы форума</li>
-				<li class="menu__item menu__item--modal">Стоимость</li>
-				<li class="menu__item">Спикеры</li>
-				<li class="menu__item">Программа</li>
-				<li class="menu__item">Контакты</li>
-				<li class="menu__item">Новости</li>
-				<li class="menu__item">История форума</li>
-			</ul>
-		</div>
-	</header>
-
-	<section class="modal-registration hide">
-		<form method="POST" action="forms.php">
-			<h2>Регистрация на бизнес-форум 2017</h2>
-			<div class="wrapper">
-				<div class="modal-registration__close"></div>
-				<input type="text" name="name"  placeholder="Имя*">
-				<input type="text" name="surname" placeholder="Фамилия">
-				<input type="text" name="company" placeholder="Компания">
-				<input type="text" name="activity" placeholder="Сфера деятельности">
-				<input type="text" name="phone" placeholder="Телефон*">
-				<input type="text" name="email" placeholder="E-mail">
-				<input type="text" name="position" placeholder="Должность">
-				<input type="text" name="tickets" placeholder="Количество билетов*">
-				<input type="text" name="promo" placeholder="Промокод">
-
-				<p>Интересные направления работы форума:</p>			
-
-				<div class="modal-registration__checkbox">
-					<input type="checkbox" name="investment">
-					<label>Инвестиции</label>
-				</div>
-				<div class="modal-registration__checkbox">
-					<input type="checkbox" name="export">
-					<label>Экспорт/Импорт</label>
-				</div>
-				<div class="modal-registration__checkbox">
-					<input type="checkbox" name="it">
-					<label>IT</label>
-				</div>
-				<div class="modal-registration__checkbox">
-					<input type="checkbox" name="energy_saving">
-					<label>Энергоэффективность</label>
-				</div>
-				<div class="modal-registration__checkbox">
-					<input type="checkbox" name="grants">
-					<label>Гранты для бизнеса</label>
-				</div>
-
-				<textarea name="comments" id="1" cols="30" rows="10" class="modal-registration_textarea" placeholder="Комментарии/предложения..."></textarea>
-
-				<input type="submit" class="modal-registration__button">
-				<input type="hidden" name="registration_form" />
-			</div>
-		</form>
-	</section>
-
-	<section class="cost hide">
-		<h2>Стоимость</h2>
-		<div class="cost__close"></div>
-
-		<div class="price">
-			<h3>Стоимость на один день</h3>
-			<ul class="price__list">
-				<li class="price__item">с 01.02 по 31.02<br>4 000 грн</li>
-				<li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
-				<li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
-				<li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
-				<li class="price__item">с 20.06 по 21.06<br>8 500 грн</li>
-			</ul>
-
-			<button class="price__button">Купить</button>
-		</div>
-
-		<div class="price">
-			<h3>Стоимость на оба дня</h3>
-			<ul class="price__list">
-				<li class="price__item">с 01.02 по 31.02<br>4 000 грн</li>
-				<li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
-				<li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
-				<li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
-				<li class="price__item">с 20.06 по 21.06<br>8 500 грн</li>
-			</ul>
-
-			<button class="price__button">Купить</button>
-		</div>
-
-		<div class="price">
-			<h3>Стоимость за один из дней</h3>
-			<ul class="price__list">
-				<li class="price__item">с 01.02 по 31.02<br>4 000 грн</li>
-				<li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
-				<li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
-				<li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
-				<li class="price__item">с 20.06 по 21.06<br>8 500 грн</li>
-			</ul>
-
-			<button class="price__button">Купить</button>
-		</div> 
-	</section>
-
-	<section class="first">
-		<div class="wrapper">
-			<div class="first__text">
-				<p>Украина 2017<br>стратегическое видение:</p>
-				<h1>Вызовы и возможности</h1>
-
-				<button class="first__button">Регистрация</button>
-			</div>
-
-			<div class="video">
-				<img src="images/video.jpg" alt="">
-				<button class="video__play-button"></button>
-			</div>
-		</div>
-	</section>
-
-	<section class="mission">
-
-		<div class="wrapper">
-			<h2>Миссия бизнес-форума</h2>
-			<p>Харьковский международный бизнес-форум  является  коммуникационной, дискуссионной  площадкой, раскрывающей актуальные вопросы и направления внутренних преобразований украинского бизнеса, направленных на повышение конкурентности, адаптацию к интеграционным процессам, повышение инвестиционной привлекательности и получения  новых коммерческих возможностей.</p>
-		</div>
-	</section>
-
-	<section class="questions">
-		<div class="questions__header">
-			<h2>Вопросы форума</h2>
-		</div>
-
-		<div class="slider">
-			<div class="slider__arrow slider__arrow--left"></div>
-			<div class="slide">
-				<p class="slide__text">Глобальный мир или где потерялась наша страна?<br>Вызовы или вызовы и возможности?</p>
-			</div>
-			<div class="slider__bullets">
-				<ul>
-					<li></li>
-					<li class="active-bullet"></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-				</ul>
-			</div>	
-			<div class="slider__arrow slider__arrow--right"></div>
-		</div>
-	</section>
-
-	<section class="business-missions">
-		<div class="wrapper">
-			<h2>Бизнес-миссии</h2>
-			<p class="business-missions__text"><font size="+8">Lorem ipsum</font> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-			<div class="question">
-				<img src="images/mission.jpg" alt="">
-				<h3>Какие вопросы будут затронуты</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur</p>
-				<div class="question__more-button"></div>
-			</div>
-
-			<div class="question">
-				<img src="images/mission.jpg" alt="">
-				<h3>Какие вопросы будут затронуты</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur</p>
-				<div class="question__more-button"></div>
-			</div>
-
-			<div class="question">
-				<img src="images/mission.jpg" alt="">
-				<h3>Какие вопросы будут затронуты</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur</p>
-				<div class="question__more-button"></div>
-			</div>
-
-			<div class="business-missions__tablet">
-				<div class="question">
-					<img src="images/mission.jpg" alt="">
-					<h3>Какие вопросы будут затронуты</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur</p>
-					<div class="question__more-button"></div>
-				</div>
-			</div>
-
-			<div class="business-missions__desktop">
-				<div class="question">
-					<img src="images/mission.jpg" alt="">
-					<h3>Какие вопросы будут затронуты</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur</p>
-					<div class="question__more-button"></div>
-				</div>
-			</div>
-
-			<div class="business-missions__desktop">
-				<div class="question">
-					<img src="images/mission.jpg" alt="">
-					<h3>Какие вопросы будут затронуты</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur</p>
-					<div class="question__more-button"></div>
-				</div>
-			</div>
-
-			<div class="business-missions__more"></div>
-		</div>
-	</section>
-
-	<section class="directions">
-		<div class="directions__header">
-			<h2>Направления работы форума</h2>
-		</div>
-
-		<div class="direction">
-			<div class="direction__header">
-				<h2>Экспорт/импорт</h2>
-				<div class="direction__more-header"></div>
-			</div>
-			<p>Внешние рынки для МСБ: мифы и реалии</p>
-			<div class="direction__more"></div>
-		</div>
-
-		<div class="direction">
-			<div class="direction__header">
-				<h2>Энергоэффективность</h2>
-				<div class="direction__more-header"></div>
-			</div>
-			<p>Энергоэффективность как вызовы и возможности украинского бизнеса</p>
-			<div class="direction__more"></div>
-		</div>
-
-		<div class="direction">
-			<div class="direction__header">
-				<h2>Инвестиции</h2>
-				<div class="direction__more-header"></div>
-			</div>
-			<p>Энергоэффективность как вызовы и возможности украинского бизнеса</p>
-			<div class="direction__more"></div>
-		</div>
-	</section>
-
-	<section class="speakers">
-
-		<div class="speakers__header">
-			<h2>Спикеры</h2>
-		</div>
-		<div class="wrapper">
-
-			<div class="speaker">
-				<img src="images/speaker4.png" alt="">
-				<p class="speaker__name">Станислав Игнатьев</p>
-				<p class="speaker__company">SP Advisors</p>
-
-				<div class="speaker-details hide">
-					<div class="speaker-details__header">
-						<h3>Информация</h3>
-					</div>
-
-					<div class="speaker-details__close"></div>
-					<img src="images/speaker1.png" class="speaker-details__avatar" alt="">
-					<div class="wrapper">
-						<h3 class="speaker-details__name">Станислав Игнатьев</h3>
-						<p class="speaker-details__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, quis</p>
-						<p class="speaker-details__company">Компания</p>
-						<p class="speaker-details__position">Должность</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="speaker">
-				<img src="images/speaker2.png" alt="">
-				<p class="speaker__name">Ник Пиацца</p>
-				<p class="speaker__company">SP Advisors</p>
-			</div>
-
-			<div class="speaker">
-				<img src="images/speaker3.png" alt="">
-				<p class="speaker__name">Ник Пиацца</p>
-				<p class="speaker__company">SP Advisors</p>
-			</div>	
-
-			<br>
-
-			<div class="speaker">
-				<img src="images/speaker4.png" alt="">
-				<p class="speaker__name">Василий Петров</p>
-				<p class="speaker__company">SP Advisors</p>
-			</div>
-
-			<div class="speaker">
-				<img src="images/speaker3.png" alt="">
-				<p class="speaker__name">Ник Пиацца</p>
-				<p class="speaker__company">SP Advisors</p>
-			</div>
-
-			<div class="speakers__tablet">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-
-			<div class="speakers__desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-			<div class="speakers__desktop">
-				<div class="speaker">
-					<img src="images/speaker2.png" alt="">
-					<p class="speaker__name">Ник Пиацца</p>
-					<p class="speaker__company">SP Advisors</p>
-				</div>
-			</div>
-
-			<div class="speakers__more"></div>
-		</div>
-	</section>
-
-	<section class="timetable">
-		<h2>Программа форума</h2>
-
-		<div class="timetable__dates">
-			<div class="timetable__date timetable__date--first">
-				<h2>21 июня</h2>
-			</div>
-			<div class="timetable__date timetable__date--second">
-				<h2>22 июня</h2>
-			</div>
-		</div>
-
-		<div class="date">
-			<div class="time">
-				<div class="time__header time__header--not-important">
-					<p>09:00</p>
-
-					<div class="time__description">
-						<p>Регистрация, велкам кофе</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="time">
-				<div class="time__header time__header--not-important">
-					<p>09:30</p>
-
-					<div class="time__description">
-						<p>Приветствие</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="time">
-				<div class="time__header time__header--important">
-					<p>10:00</p>
-
-					<div class="time__description">
-						<p>Панельная дискуссия №1</p>
-					</div>
-				</div>
-
-				<div class="time__about"><p>Направленность: “4-ая индустриальная революция Глобализация VS национальные приоритеты:  каким путем пойдет Украина?”</p></div>
-
-				<div class="wrapper">
-					<div class="members">
-
-						<div class="member">
-							<img src="images/member.png" alt="">
-							<div class="member__moderator">
-								<p>Модератор</p>
-							</div>
-
-							<div class="member__about">
-								<div class="member__left">
-									<p>Юрий Сапронов</p>
-									<p>SP Advisors</p>
-									<div class="member__more"></div>
-								</div>
-								<div class="member__right">
-									<p>9:30</p>
-								</div>
-							</div>
-
-							<div class="member__circle member__circle--moderator"></div>
-							<div class="member__line1 member__line1--moderator"></div>
-							<div class="member__line2"></div>
-						</div>
-
-						<br>
-
-						<div class="member">
-							<img src="images/member.png" alt="">
-
-							<div class="member__about">
-								<div class="member__left">
-									<p>Юрий Сапронов</p>
-									<p>SP Advisors</p>
-									<div class="member__more"></div>
-								</div>
-								<div class="member__right">
-									<p>9:30</p>
-								</div>
-							</div>
-
-							<div class="member__circle"></div>
-							<div class="member__line1"></div>
-							<div class="member__line3"></div>
-						</div>
-
-						<div class="member">
-							<img src="images/member.png" alt="">
-
-							<div class="member__about">
-								<div class="member__left">
-									<p>Юрий Сапронов</p>
-									<p>SP Advisors</p>
-									<div class="member__more"></div>
-								</div>
-								<div class="member__right">
-									<p>9:30</p>
-								</div>
-							</div>
-
-							<div class="member__circle"></div>
-							<div class="member__line1"></div>
-						</div>
-
-						<div class="member">
-							<img src="images/member.png" alt="">
-
-							<div class="member__about">
-								<div class="member__left">
-									<p>Юрий Сапронов</p>
-									<p>SP Advisors</p>
-									<div class="member__more"></div>
-								</div>
-								<div class="member__right">
-									<p>9:30</p>
-								</div>
-							</div>
-
-							<div class="member__circle"></div>
-							<div class="member__line1"></div>
-						</div>
-
-						<div class="member">
-							<img src="images/member.png" alt="">
-
-							<div class="member__about">
-								<div class="member__left">
-									<p>Юрий Сапронов</p>
-									<p>SP Advisors</p>
-									<div class="member__more"></div>
-								</div>
-								<div class="member__right">
-									<p>9:30</p>
-								</div>
-							</div>
-
-							<div class="member__circle"></div>
-							<div class="member__line1"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="time">
-				<div class="time__header time__header--not-important">
-					<p>12:00</p>
-
-					<div class="time__description">
-						<p>Кофе-брейк</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="time">
-				<div class="time__header time__header--important">
-					<p>12:30</p>
-
-					<div class="time__description">
-						<p>Продолжение панельной дискуссии №1</p>
-					</div>
-				</div>
-
-				<div class="members">
-
-					<div class="member">
-						<img src="images/member.png" alt="">
-						<div class="member__moderator">
-							<p>Модератор</p>
-						</div>
-
-						<div class="member__about">
-							<div class="member__left">
-								<p>Юрий Сапронов</p>
-								<p>SP Advisors</p>
-								<div class="member__more"></div>
-							</div>
-							<div class="member__right">
-								<p>9:30</p>
-							</div>
-						</div>
-
-						<div class="member__circle member__circle--moderator"></div>
-						<div class="member__line1 member__line1--moderator"></div>
-						<div class="member__line2"></div>
-					</div>
-
-					<br>
-
-					<div class="member">
-						<img src="images/member.png" alt="">
-
-						<div class="member__about">
-							<div class="member__left">
-								<p>Юрий Сапронов</p>
-								<p>SP Advisors</p>
-								<div class="member__more"></div>
-							</div>
-							<div class="member__right">
-								<p>9:30</p>
-							</div>
-						</div>
-
-						<div class="member__circle"></div>
-						<div class="member__line1"></div>
-						<div class="member__line3"></div>
-					</div>
-
-					<div class="member">
-						<img src="images/member.png" alt="">
-
-						<div class="member__about">
-							<div class="member__left">
-								<p>Юрий Сапронов</p>
-								<p>SP Advisors</p>
-								<div class="member__more"></div>
-							</div>
-							<div class="member__right">
-								<p>9:30</p>
-							</div>
-						</div>
-
-						<div class="member__circle"></div>
-						<div class="member__line1"></div>
-					</div>
-
-					<div class="member">
-						<img src="images/member.png" alt="">
-
-						<div class="member__about">
-							<div class="member__left">
-								<p>Юрий Сапронов</p>
-								<p>SP Advisors</p>
-								<div class="member__more"></div>
-							</div>
-							<div class="member__right">
-								<p>9:30</p>
-							</div>
-						</div>
-
-						<div class="member__circle"></div>
-						<div class="member__line1"></div>
-					</div>
-
-					<div class="member">
-						<img src="images/member.png" alt="">
-
-						<div class="member__about">
-							<div class="member__left">
-								<p>Юрий Сапронов</p>
-								<p>SP Advisors</p>
-								<div class="member__more"></div>
-							</div>
-							<div class="member__right">
-								<p>9:30</p>
-							</div>
-						</div>
-
-						<div class="member__circle"></div>
-						<div class="member__line1"></div>
-					</div>
-
-					<div class="member">
-						<img src="images/member.png" alt="">
-
-						<div class="member__about">
-							<div class="member__left">
-								<p>Юрий Сапронов</p>
-								<p>SP Advisors</p>
-								<div class="member__more"></div>
-							</div>
-							<div class="member__right">
-								<p>9:30</p>
-							</div>
-						</div>
-
-						<div class="member__circle"></div>
-						<div class="member__line1"></div>
-					</div>
-
-					<div class="member">
-						<img src="images/member.png" alt="">
-
-						<div class="member__about">
-							<div class="member__left">
-								<p>Юрий Сапронов</p>
-								<p>SP Advisors</p>
-								<div class="member__more"></div>
-							</div>
-							<div class="member__right">
-								<p>9:30</p>
-							</div>
-						</div>
-
-						<div class="member__circle"></div>
-						<div class="member__line1"></div>
-					</div>
-
-					<div class="member">
-						<img src="images/member.png" alt="">
-
-						<div class="member__about">
-							<div class="member__left">
-								<p>Юрий Сапронов</p>
-								<p>SP Advisors</p>
-								<div class="member__more"></div>
-							</div>
-							<div class="member__right">
-								<p>9:30</p>
-							</div>
-						</div>
-
-						<div class="member__circle"></div>
-						<div class="member__line1"></div>
-					</div>
-
-					<div class="member">
-						<img src="images/member.png" alt="">
-
-						<div class="member__about">
-							<div class="member__left">
-								<p>Юрий Сапронов</p>
-								<p>SP Advisors</p>
-								<div class="member__more"></div>
-							</div>
-							<div class="member__right">
-								<p>9:30</p>
-							</div>
-						</div>
-
-						<div class="member__circle"></div>
-						<div class="member__line1"></div>
-					</div>
-				</div>
-			</div>
-
-			<div class="time">
-				<div class="time__header time__header--not-important">
-					<p>14:00</p>
-
-					<div class="time__description">
-						<p>Ланч</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="time">
-				<div class="time__header time__header--important">
-					<p>15:00</p>
-
-					<div class="time__description">
-						<p>Работа секций</p>
-					</div>
-				</div>
-
-				<div class="slider-sections">
-					<div class="slider-sections__arrow slider-sections__arrow--left"></div>
-
-					<div class="slider-sections__slide">	
-						<h4>IT/HITECH</h4>
-
-						<div class="member">
-							<img src="images/member.png" alt="">
-							<div class="member__moderator">
-								<p>Модератор</p>
-							</div>
-
-							<div class="member__about">
-								<div class="member__left">
-									<p>Юрий Сапронов</p>
-									<p>SP Advisors</p>
-									<div class="member__more"></div>
-								</div>
-								<div class="member__right">
-									<p>9:30</p>
-								</div>
-							</div>
-
-							<div class="member__circle"></div>
-							<div class="member__line1"></div>
-							<div class="member__line3"></div>
-						</div>
-
-						<div class="member">
-							<img src="images/member.png" alt="">
-
-							<div class="member__about">
-								<div class="member__left">
-									<p>Юрий Сапронов</p>
-									<p>SP Advisors</p>
-									<div class="member__more"></div>
-								</div>
-								<div class="member__right">
-									<p>9:30</p>
-								</div>
-							</div>
-
-							<div class="member__circle"></div>
-							<div class="member__line1"></div>
-							<div class="member__line3"></div>
-						</div>
-
-						<div class="member">
-							<img src="images/member.png" alt="">
-
-							<div class="member__about">
-								<div class="member__left">
-									<p>Юрий Сапронов</p>
-									<p>SP Advisors</p>
-									<div class="member__more"></div>
-								</div>
-								<div class="member__right">
-									<p>9:30</p>
-								</div>
-							</div>
-
-							<div class="member__circle"></div>
-							<div class="member__line1"></div>
-							<div class="member__line3"></div>
-						</div>
-					</div>
-
-					<div class="slider-sections__tablet">
-						<div class="slider-sections__slide">	
-							<h4>IT/HITECH</h4>
-
-							<div class="member">
-								<img src="images/member.png" alt="">
-								<div class="member__moderator">
-									<p>Модератор</p>
-								</div>
-
-								<div class="member__about">
-									<div class="member__left">
-										<p>Юрий Сапронов</p>
-										<p>SP Advisors</p>
-										<div class="member__more"></div>
-									</div>
-									<div class="member__right">
-										<p>9:30</p>
-									</div>
-								</div>
-
-								<div class="member__circle"></div>
-								<div class="member__line1"></div>
-								<div class="member__line3"></div>
-							</div>
-
-							<div class="member">
-								<img src="images/member.png" alt="">
-
-								<div class="member__about">
-									<div class="member__left">
-										<p>Юрий Сапронов</p>
-										<p>SP Advisors</p>
-										<div class="member__more"></div>
-									</div>
-									<div class="member__right">
-										<p>9:30</p>
-									</div>
-								</div>
-
-								<div class="member__circle"></div>
-								<div class="member__line1"></div>
-								<div class="member__line3"></div>
-							</div>
-
-							<div class="member">
-								<img src="images/member.png" alt="">
-
-								<div class="member__about">
-									<div class="member__left">
-										<p>Юрий Сапронов</p>
-										<p>SP Advisors</p>
-										<div class="member__more"></div>
-									</div>
-									<div class="member__right">
-										<p>9:30</p>
-									</div>
-								</div>
-
-								<div class="member__circle"></div>
-								<div class="member__line1"></div>
-								<div class="member__line3"></div>
-							</div>
-						</div>
-					</div>
-
-					<div class="slider-sections__tablet">
-						<div class="slider-sections__slide">	
-							<h4 class="slider-sections__rounded-header">IT/HITECH</h4>
-
-							<div class="member">
-								<img src="images/member.png" alt="">
-								<div class="member__moderator">
-									<p>Модератор</p>
-								</div>
-
-								<div class="member__about">
-									<div class="member__left">
-										<p>Юрий Сапронов</p>
-										<p>SP Advisors</p>
-										<div class="member__more"></div>
-									</div>
-									<div class="member__right">
-										<p>9:30</p>
-									</div>
-								</div>
-
-								<div class="member__circle"></div>
-								<div class="member__line1"></div>
-								<div class="member__line3"></div>
-							</div>
-
-							<div class="member">
-								<img src="images/member.png" alt="">
-
-								<div class="member__about">
-									<div class="member__left">
-										<p>Юрий Сапронов</p>
-										<p>SP Advisors</p>
-										<div class="member__more"></div>
-									</div>
-									<div class="member__right">
-										<p>9:30</p>
-									</div>
-								</div>
-
-								<div class="member__circle"></div>
-								<div class="member__line1"></div>
-								<div class="member__line3"></div>
-							</div>
-
-							<div class="member">
-								<img src="images/member.png" alt="">
-
-								<div class="member__about">
-									<div class="member__left">
-										<p>Юрий Сапронов</p>
-										<p>SP Advisors</p>
-										<div class="member__more"></div>
-									</div>
-									<div class="member__right">
-										<p>9:30</p>
-									</div>
-								</div>
-
-								<div class="member__circle"></div>
-								<div class="member__line1"></div>
-								<div class="member__line3"></div>
-							</div>
-						</div>
-					</div>
-
-					<div class="slider-sections__arrow slider-sections__arrow--right"></div>
-				</div>
-			</div>
-
-			<div class="time">
-				<div class="time__header time__header--not-important">
-					<p>17:00</p>
-
-					<div class="time__description">
-						<p>Кофе-брейк</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="time">
-				<div class="time__header time__header--important">
-					<p>17:30</p>
-
-					<div class="time__description">
-						<p>Работа секций</p>
-					</div>
-				</div>
-
-				<div class="slider-sections">
-					<div class="slider-sections__arrow slider-sections__arrow--left"></div>
-
-					<div class="slider-sections__slide">	
-						<h4>IT/HITECH</h4>
-
-						<div class="member">
-							<img src="images/member.png" alt="">
-							<div class="member__moderator">
-								<p>Модератор</p>
-							</div>
-
-							<div class="member__about">
-								<div class="member__left">
-									<p>Юрий Сапронов</p>
-									<p>SP Advisors</p>
-									<div class="member__more"></div>
-								</div>
-								<div class="member__right">
-									<p>9:30</p>
-								</div>
-							</div>
-
-							<div class="member__circle"></div>
-							<div class="member__line1"></div>
-							<div class="member__line3"></div>
-						</div>
-
-						<div class="member">
-							<img src="images/member.png" alt="">
-
-							<div class="member__about">
-								<div class="member__left">
-									<p>Юрий Сапронов</p>
-									<p>SP Advisors</p>
-									<div class="member__more"></div>
-								</div>
-								<div class="member__right">
-									<p>9:30</p>
-								</div>
-							</div>
-
-							<div class="member__circle"></div>
-							<div class="member__line1"></div>
-							<div class="member__line3"></div>
-						</div>
-
-						<div class="member">
-							<img src="images/member.png" alt="">
-
-							<div class="member__about">
-								<div class="member__left">
-									<p>Юрий Сапронов</p>
-									<p>SP Advisors</p>
-									<div class="member__more"></div>
-								</div>
-								<div class="member__right">
-									<p>9:30</p>
-								</div>
-							</div>
-
-							<div class="member__circle"></div>
-							<div class="member__line1"></div>
-							<div class="member__line3"></div>
-						</div>
-					</div>
-
-					<div class="slider-sections__tablet">
-						<div class="slider-sections__slide">	
-							<h4>IT/HITECH</h4>
-
-							<div class="member">
-								<img src="images/member.png" alt="">
-								<div class="member__moderator">
-									<p>Модератор</p>
-								</div>
-
-								<div class="member__about">
-									<div class="member__left">
-										<p>Юрий Сапронов</p>
-										<p>SP Advisors</p>
-										<div class="member__more"></div>
-									</div>
-									<div class="member__right">
-										<p>9:30</p>
-									</div>
-								</div>
-
-								<div class="member__circle"></div>
-								<div class="member__line1"></div>
-								<div class="member__line3"></div>
-							</div>
-
-							<div class="member">
-								<img src="images/member.png" alt="">
-
-								<div class="member__about">
-									<div class="member__left">
-										<p>Юрий Сапронов</p>
-										<p>SP Advisors</p>
-										<div class="member__more"></div>
-									</div>
-									<div class="member__right">
-										<p>9:30</p>
-									</div>
-								</div>
-
-								<div class="member__circle"></div>
-								<div class="member__line1"></div>
-								<div class="member__line3"></div>
-							</div>
-
-							<div class="member">
-								<img src="images/member.png" alt="">
-
-								<div class="member__about">
-									<div class="member__left">
-										<p>Юрий Сапронов</p>
-										<p>SP Advisors</p>
-										<div class="member__more"></div>
-									</div>
-									<div class="member__right">
-										<p>9:30</p>
-									</div>
-								</div>
-
-								<div class="member__circle"></div>
-								<div class="member__line1"></div>
-								<div class="member__line3"></div>
-							</div>
-						</div>
-					</div>
-
-					<div class="slider-sections__tablet">
-						<div class="slider-sections__slide">	
-							<h4 class="slider-sections__rounded-header">IT/HITECH</h4>
-
-							<div class="member">
-								<img src="images/member.png" alt="">
-								<div class="member__moderator">
-									<p>Модератор</p>
-								</div>
-
-								<div class="member__about">
-									<div class="member__left">
-										<p>Юрий Сапронов</p>
-										<p>SP Advisors</p>
-										<div class="member__more"></div>
-									</div>
-									<div class="member__right">
-										<p>9:30</p>
-									</div>
-								</div>
-
-								<div class="member__circle"></div>
-								<div class="member__line1"></div>
-								<div class="member__line3"></div>
-							</div>
-
-							<div class="member">
-								<img src="images/member.png" alt="">
-
-								<div class="member__about">
-									<div class="member__left">
-										<p>Юрий Сапронов</p>
-										<p>SP Advisors</p>
-										<div class="member__more"></div>
-									</div>
-									<div class="member__right">
-										<p>9:30</p>
-									</div>
-								</div>
-
-								<div class="member__circle"></div>
-								<div class="member__line1"></div>
-								<div class="member__line3"></div>
-							</div>
-
-							<div class="member">
-								<img src="images/member.png" alt="">
-
-								<div class="member__about">
-									<div class="member__left">
-										<p>Юрий Сапронов</p>
-										<p>SP Advisors</p>
-										<div class="member__more"></div>
-									</div>
-									<div class="member__right">
-										<p>9:30</p>
-									</div>
-								</div>
-
-								<div class="member__circle"></div>
-								<div class="member__line1"></div>
-								<div class="member__line3"></div>
-							</div>
-						</div>
-					</div>
-
-					<div class="slider-sections__arrow slider-sections__arrow--right"></div>
-				</div>
-			</div>
-
-			<div class="time">
-				<div class="time__header time__header--not-important">
-					<p>19:30</p>
-
-					<div class="time__description">
-						<p>Завершение первого бизнес-форума</p>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="timetable__dates timetable__dates--second">
-			<div class="timetable__date timetable__date--third">
-				<h2>22 июня</h2>
-			</div>
-		</div>
-
-		<div class="date">
-			<div class="time">
-				<div class="time__header time__header--not-important">
-					<p>9:30</p>
-
-					<div class="time__description">
-						<p>Регистрация</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="time">
-				<div class="time__header time__header--not-important">
-					<p>10:00</p>
-
-					<div class="time__description time__description--little">
-						<p>Презетация бизнес-миссий, доклады откаждого из представителей</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="time">
-				<div class="time__header time__header--not-important">
-					<p>12:00</p>
-
-					<div class="time__description">
-						<p>Инвестиционная панель</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="time">
-				<div class="time__header time__header--not-important">
-					<p>13:00</p>
-
-					<div class="time__description">
-						<p>Ланч</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="time">
-				<div class="time__header time__header--important">
-					<p>14:00</p>
-
-					<div class="time__description">
-						<p>Работа секций</p>
-					</div>
-				</div>
-
-				<div class="slider-sections">
-					<div class="slider-sections__arrow slider-sections__arrow--left"></div>
-
-					<div class="slider-sections__slide">	
-						<h4>IT/HITECH</h4>
-
-						<div class="member">
-							<img src="images/member.png" alt="">
-							<div class="member__moderator">
-								<p>Модератор</p>
-							</div>
-
-							<div class="member__about">
-								<div class="member__left">
-									<p>Юрий Сапронов</p>
-									<p>SP Advisors</p>
-									<div class="member__more"></div>
-								</div>
-								<div class="member__right">
-									<p>9:30</p>
-								</div>
-							</div>
-
-							<div class="member__circle"></div>
-							<div class="member__line1"></div>
-							<div class="member__line3"></div>
-						</div>
-
-						<div class="member">
-							<img src="images/member.png" alt="">
-
-							<div class="member__about">
-								<div class="member__left">
-									<p>Юрий Сапронов</p>
-									<p>SP Advisors</p>
-									<div class="member__more"></div>
-								</div>
-								<div class="member__right">
-									<p>9:30</p>
-								</div>
-							</div>
-
-							<div class="member__circle"></div>
-							<div class="member__line1"></div>
-							<div class="member__line3"></div>
-						</div>
-
-						<div class="member">
-							<img src="images/member.png" alt="">
-
-							<div class="member__about">
-								<div class="member__left">
-									<p>Юрий Сапронов</p>
-									<p>SP Advisors</p>
-									<div class="member__more"></div>
-								</div>
-								<div class="member__right">
-									<p>9:30</p>
-								</div>
-							</div>
-
-							<div class="member__circle"></div>
-							<div class="member__line1"></div>
-							<div class="member__line3"></div>
-						</div>
-					</div>
-
-					<div class="slider-sections__tablet">
-						<div class="slider-sections__slide">	
-							<h4>IT/HITECH</h4>
-
-							<div class="member">
-								<img src="images/member.png" alt="">
-								<div class="member__moderator">
-									<p>Модератор</p>
-								</div>
-
-								<div class="member__about">
-									<div class="member__left">
-										<p>Юрий Сапронов</p>
-										<p>SP Advisors</p>
-										<div class="member__more"></div>
-									</div>
-									<div class="member__right">
-										<p>9:30</p>
-									</div>
-								</div>
-
-								<div class="member__circle"></div>
-								<div class="member__line1"></div>
-								<div class="member__line3"></div>
-							</div>
-
-							<div class="member">
-								<img src="images/member.png" alt="">
-
-								<div class="member__about">
-									<div class="member__left">
-										<p>Юрий Сапронов</p>
-										<p>SP Advisors</p>
-										<div class="member__more"></div>
-									</div>
-									<div class="member__right">
-										<p>9:30</p>
-									</div>
-								</div>
-
-								<div class="member__circle"></div>
-								<div class="member__line1"></div>
-								<div class="member__line3"></div>
-							</div>
-
-							<div class="member">
-								<img src="images/member.png" alt="">
-
-								<div class="member__about">
-									<div class="member__left">
-										<p>Юрий Сапронов</p>
-										<p>SP Advisors</p>
-										<div class="member__more"></div>
-									</div>
-									<div class="member__right">
-										<p>9:30</p>
-									</div>
-								</div>
-
-								<div class="member__circle"></div>
-								<div class="member__line1"></div>
-								<div class="member__line3"></div>
-							</div>
-						</div>
-					</div>
-
-					<div class="slider-sections__tablet">
-						<div class="slider-sections__slide">	
-							<h4 class="slider-sections__rounded-header">IT/HITECH</h4>
-
-							<div class="member">
-								<img src="images/member.png" alt="">
-								<div class="member__moderator">
-									<p>Модератор</p>
-								</div>
-
-								<div class="member__about">
-									<div class="member__left">
-										<p>Юрий Сапронов</p>
-										<p>SP Advisors</p>
-										<div class="member__more"></div>
-									</div>
-									<div class="member__right">
-										<p>9:30</p>
-									</div>
-								</div>
-
-								<div class="member__circle"></div>
-								<div class="member__line1"></div>
-								<div class="member__line3"></div>
-							</div>
-
-							<div class="member">
-								<img src="images/member.png" alt="">
-
-								<div class="member__about">
-									<div class="member__left">
-										<p>Юрий Сапронов</p>
-										<p>SP Advisors</p>
-										<div class="member__more"></div>
-									</div>
-									<div class="member__right">
-										<p>9:30</p>
-									</div>
-								</div>
-
-								<div class="member__circle"></div>
-								<div class="member__line1"></div>
-								<div class="member__line3"></div>
-							</div>
-
-							<div class="member">
-								<img src="images/member.png" alt="">
-
-								<div class="member__about">
-									<div class="member__left">
-										<p>Юрий Сапронов</p>
-										<p>SP Advisors</p>
-										<div class="member__more"></div>
-									</div>
-									<div class="member__right">
-										<p>9:30</p>
-									</div>
-								</div>
-
-								<div class="member__circle"></div>
-								<div class="member__line1"></div>
-								<div class="member__line3"></div>
-							</div>
-						</div>
-					</div>
-
-					<div class="slider-sections__arrow slider-sections__arrow--right"></div>
-				</div>
-			</div>
-
-			<div class="time">
-				<div class="time__header time__header--not-important">
-					<p>16:00</p>
-
-					<div class="time__description">
-						<p>Кофе-брейк</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="time">
-				<div class="time__header time__header--important">
-					<p>16:30</p>
-
-					<div class="time__description">
-						<p>Работа секций</p>
-					</div>
-				</div>
-
-				<div class="slider-sections">
-					<div class="slider-sections__arrow slider-sections__arrow--left"></div>
-
-					<div class="slider-sections__slide">	
-						<h4>IT/HITECH</h4>
-
-						<div class="member">
-							<img src="images/member.png" alt="">
-							<div class="member__moderator">
-								<p>Модератор</p>
-							</div>
-
-							<div class="member__about">
-								<div class="member__left">
-									<p>Юрий Сапронов</p>
-									<p>SP Advisors</p>
-									<div class="member__more"></div>
-								</div>
-								<div class="member__right">
-									<p>9:30</p>
-								</div>
-							</div>
-
-							<div class="member__circle"></div>
-							<div class="member__line1"></div>
-							<div class="member__line3"></div>
-						</div>
-
-						<div class="member">
-							<img src="images/member.png" alt="">
-
-							<div class="member__about">
-								<div class="member__left">
-									<p>Юрий Сапронов</p>
-									<p>SP Advisors</p>
-									<div class="member__more"></div>
-								</div>
-								<div class="member__right">
-									<p>9:30</p>
-								</div>
-							</div>
-
-							<div class="member__circle"></div>
-							<div class="member__line1"></div>
-							<div class="member__line3"></div>
-						</div>
-
-						<div class="member">
-							<img src="images/member.png" alt="">
-
-							<div class="member__about">
-								<div class="member__left">
-									<p>Юрий Сапронов</p>
-									<p>SP Advisors</p>
-									<div class="member__more"></div>
-								</div>
-								<div class="member__right">
-									<p>9:30</p>
-								</div>
-							</div>
-
-							<div class="member__circle"></div>
-							<div class="member__line1"></div>
-							<div class="member__line3"></div>
-						</div>
-					</div>
-
-					<div class="slider-sections__tablet">
-						<div class="slider-sections__slide">	
-							<h4>IT/HITECH</h4>
-
-							<div class="member">
-								<img src="images/member.png" alt="">
-								<div class="member__moderator">
-									<p>Модератор</p>
-								</div>
-
-								<div class="member__about">
-									<div class="member__left">
-										<p>Юрий Сапронов</p>
-										<p>SP Advisors</p>
-										<div class="member__more"></div>
-									</div>
-									<div class="member__right">
-										<p>9:30</p>
-									</div>
-								</div>
-
-								<div class="member__circle"></div>
-								<div class="member__line1"></div>
-								<div class="member__line3"></div>
-							</div>
-
-							<div class="member">
-								<img src="images/member.png" alt="">
-
-								<div class="member__about">
-									<div class="member__left">
-										<p>Юрий Сапронов</p>
-										<p>SP Advisors</p>
-										<div class="member__more"></div>
-									</div>
-									<div class="member__right">
-										<p>9:30</p>
-									</div>
-								</div>
-
-								<div class="member__circle"></div>
-								<div class="member__line1"></div>
-								<div class="member__line3"></div>
-							</div>
-
-							<div class="member">
-								<img src="images/member.png" alt="">
-
-								<div class="member__about">
-									<div class="member__left">
-										<p>Юрий Сапронов</p>
-										<p>SP Advisors</p>
-										<div class="member__more"></div>
-									</div>
-									<div class="member__right">
-										<p>9:30</p>
-									</div>
-								</div>
-
-								<div class="member__circle"></div>
-								<div class="member__line1"></div>
-								<div class="member__line3"></div>
-							</div>
-						</div>
-					</div>
-
-					<div class="slider-sections__tablet">
-						<div class="slider-sections__slide">	
-							<h4 class="slider-sections__rounded-header">IT/HITECH</h4>
-
-							<div class="member">
-								<img src="images/member.png" alt="">
-								<div class="member__moderator">
-									<p>Модератор</p>
-								</div>
-
-								<div class="member__about">
-									<div class="member__left">
-										<p>Юрий Сапронов</p>
-										<p>SP Advisors</p>
-										<div class="member__more"></div>
-									</div>
-									<div class="member__right">
-										<p>9:30</p>
-									</div>
-								</div>
-
-								<div class="member__circle"></div>
-								<div class="member__line1"></div>
-								<div class="member__line3"></div>
-							</div>
-
-							<div class="member">
-								<img src="images/member.png" alt="">
-
-								<div class="member__about">
-									<div class="member__left">
-										<p>Юрий Сапронов</p>
-										<p>SP Advisors</p>
-										<div class="member__more"></div>
-									</div>
-									<div class="member__right">
-										<p>9:30</p>
-									</div>
-								</div>
-
-								<div class="member__circle"></div>
-								<div class="member__line1"></div>
-								<div class="member__line3"></div>
-							</div>
-
-							<div class="member">
-								<img src="images/member.png" alt="">
-
-								<div class="member__about">
-									<div class="member__left">
-										<p>Юрий Сапронов</p>
-										<p>SP Advisors</p>
-										<div class="member__more"></div>
-									</div>
-									<div class="member__right">
-										<p>9:30</p>
-									</div>
-								</div>
-
-								<div class="member__circle"></div>
-								<div class="member__line1"></div>
-								<div class="member__line3"></div>
-							</div>
-						</div>
-					</div>
-
-					<div class="slider-sections__arrow slider-sections__arrow--right"></div>
-				</div>
-			</div>
-
-			<div class="time">
-				<div class="time__header time__header--not-important">
-					<p>19:30</p>
-
-					<div class="time__description">
-						<p>Завершение форума</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<button class="timetable__download clearfix">Скачать программу</button>
-	</section>
-
-	<section class="partner">
-		<h2>Официальный партнер</h2>
-		<a href="#">
-			<img src="images/avec.png" alt="">
-		</a>
-	</section>
-
-	<section class="partners">
-		<h2>Партнёры</h2>
-
-		<a href="#">
-			<img src="images/ukr.png" alt="Укртелеком">
-		</a>
-		<a href="#">
-			<img src="images/owl.png" alt="Филин">
-		</a>
-		<a href="#">
-			<img src="images/bank.png" alt="КредоБанк">
-		</a>
-
-		<h3>Информационные партнеры</h3>
-
-		<div class="partners__partner">
-			<h4>Деловой интернет-партнер</h4>
-			<a href="">
-				<img src="images/finance.png" alt="Бизнес">
-			</a>
-		</div>
-
-		<div class="partners__partner">
-			<h4>Генеральный медиапартнер</h4>
-			<a href="">
-				<img src="images/business_fm.png" alt="Бизнес">
-			</a>
-		</div>
-
-		<div class="partners__partner">
-			<h4>Деловой медиапартнер</h4>
-			<a href="#">
-				<img src="images/business.png" alt="finance.ua">
-			</a>
-		</div>
-
-		<div class="partners__other">
-			<a href="#">
-				<img src="images/partner1.png" alt="">
-			</a>
-			<a href="#">
-				<img src="images/partner2.png" alt="">
-			</a>
-			<a href="#">
-				<img src="images/partner3.png" alt="">
-			</a>
-			<a href="#">
-				<img src="images/partner4.png" alt="">
-			</a>
-			<a href="#">
-				<img src="images/partner5.png" alt="">
-			</a>
-			<a href="#">
-				<img src="images/partner6.png" alt="">
-			</a>
-			<a href="#">
-				<img src="images/partner7.png" alt="">
-			</a>
-			<a href="#">
-				<img src="images/partner8.png" alt="">
-			</a>
-			<a href="#">
-				<img src="images/partner9.png" alt="">
-			</a>
-			<a href="#">
-				<img src="images/partner10.png" alt="">
-			</a>
-			<a href="#">
-				<img src="images/partner11.png" alt="">
-			</a>
-			<a href="#">
-				<img src="images/partner12.png" alt="">
-			</a>
-			<a href="#">
-				<img src="images/partner13.png" alt="">
-			</a>
-			<a href="#">
-				<img src="images/partner14.png" alt="">
-			</a>
-			<a href="#">
-				<img src="images/partner15.png" alt="">
-			</a>
-
-		</div>
-	</section>
-
-	<section class="organizers">
-		<h2>Организаторы</h2>
-
-		<a href="#">
-			<img src="images/monya.png" alt="MONYA GETS">
-		</a>
-		<a href="#">
-			<img src="images/icom.png" alt="ICOM">
-		</a>
-	</section>
-
-	<section class="faq">
-		<h2>Часто задаваемые вопросы</h2>
-		<div class="wrapper">
-			<ul class="faq__list">
-				<li class="faq__item">Где проходит безнес-форум?</li>
-				<li class="faq__item">Как добраться?</li>
-				<li class="faq__item">Где поселиться?</li>
-				<li class="faq__item">Где покушать?</li>
-				<li class="faq__item">Где парковка?</li>
-				<li class="faq__item">Какие есть такси?</li>
-				<li class="faq__item">Как зарегестрироваться?</li>
-				<li class="faq__item">Как оплатить?</li>
-				<li class="faq__item">Когда и как получить акты?</li>
-			</ul>
-
-			<p>«Харьков Палас» – первый в городе отель класса luxury+, воплощающий идею сдержанной роскоши третьего тысячелетия. Отель спроектирован в характерном для Харькова стиле конструктивизма и органично вписывается в ансамбль центральной площади города – площади Свободы.</p>
-		</div>
-	</section>
-
-	<section class="contacts">
-		<div class="wrapper">
-			<h2>Контакты</h2>
-
-			<div class="contact">
-				<h4>По вопросам участия</h4>
-				<a href="+380674432228" class="contact__phone">+38(067) 44-32-228</a>
-				<a href="mailti:join@businessforum.kharkov.ua" class="contact__mail">join@businessforum.kharkov.ua</a>
-				<button class="contact__button">Регистрация</button>
-			</div>
-
-			<div class="contact">
-				<h4>По вопросам партнерства</h4>
-				<a href="+380996604480" class="contact__phone">+38 (099) 66-04-480</a>
-				<a href="mailti:partner@businessforum.kharkov.ua" class="contact__mail">partner@businessforum.kharkov.ua</a>
-				<button class="contact__button">Связаться</button>
-			</div>
-
-			<div class="contact">
-				<h4>Аккредитация СМИ</h4>
-				<a href="+380637130615" class="contact__phone">+38 (063) 71-30-615</a>
-				<a href="mailti:pr@businessforum.kharkov.ua" class="contact__mail">pr@businessforum.kharkov.ua</a>
-				<button class="contact__button">Аккредитоваться</button>
-			</div>
-		</div>
-	</section>
-
-	<section class="volunteers">
-		<h2>Регистрация для волонтеров</h2>
-
-		<div class="wrapper">
-			<form method="POST" action="forms.php" class="form-volunteers">
-				<input type="text" required name="name" placeholder="Имя *">
-				<input type="text" name="surname" placeholder="Фамилия">
-				<input type="text" required name="phone" placeholder="Телефон *">
-				<input type="text" name="email" placeholder="E-mail">
-				<input type="text" name="company" placeholder="Компания">
-				<input type="text" name="activity" placeholder="Сфера деятельности">
-
-				<textarea name="comments" id="2" cols="30" rows="10" placeholder="Текст..."></textarea>
-
-				<input type="submit" value="Отправить" class="form-volunteers__button">
-				<input type="hidden" name="volunteer_form" />
-			</form>
-		</div>
-	</section>
-
-	<section class="last-forums">
-
-		<a href="#">
-			<h2>Бизнес-форум 2014</h2>
-			<div class="wrapper">
-				<img src="images/last1.jpg" alt="">
-				<img src="images/last2.jpg" alt="">
-
-				<div class="last-forums__tablet">
-					<img src="images/last1.jpg" alt="">
-				</div>
-
-				<div class="last-forums__tablet">
-					<img src="images/last2.jpg" alt="">
-				</div>
-
-				<div class="last-forums__tablet">
-					<img src="images/last1.jpg" alt="">
-				</div>
-
-				<div class="last-forums__tablet">
-					<img src="images/last2.jpg" alt="">
-				</div>
-
-				<div class="last-forums__tablet">
-					<img src="images/last1.jpg" alt="">
-				</div>
-
-				<div class="last-forums__tablet">
-					<img src="images/last2.jpg" alt="">
-				</div>
-
-				<div class="last-forums__tablet">
-					<img src="images/last1.jpg" alt="">
-				</div>
-
-				<div class="last-forums__tablet">
-					<img src="images/last2.jpg" alt="">
-				</div>
-			</div>
-		</a>
-
-		<a href="#">
-			<h2>Бизнес-форум 2015</h2>
-			<div class="wrapper">
-				<img src="images/last1.jpg" alt="">
-				<img src="images/last2.jpg" alt="">
-
-				<div class="last-forums__tablet">
-					<img src="images/last1.jpg" alt="">
-				</div>
-
-				<div class="last-forums__tablet">
-					<img src="images/last2.jpg" alt="">
-				</div>
-
-				<div class="last-forums__tablet">
-					<img src="images/last1.jpg" alt="">
-				</div>
-
-				<div class="last-forums__tablet">
-					<img src="images/last2.jpg" alt="">
-				</div>
-
-				<div class="last-forums__tablet">
-					<img src="images/last1.jpg" alt="">
-				</div>
-
-				<div class="last-forums__tablet">
-					<img src="images/last2.jpg" alt="">
-				</div>
-
-				<div class="last-forums__tablet">
-					<img src="images/last1.jpg" alt="">
-				</div>
-
-				<div class="last-forums__tablet">
-					<img src="images/last2.jpg" alt="">
-				</div>
-			</div>
-		</a>
-
-		<a href="#">
-			<h2>Бизнес-форум 2016</h2>
-			<div class="wrapper">
-				<img src="images/last1.jpg" alt="">
-				<img src="images/last2.jpg" alt="">
-
-				<div class="last-forums__tablet">
-					<img src="images/last1.jpg" alt="">
-				</div>
-
-				<div class="last-forums__tablet">
-					<img src="images/last2.jpg" alt="">
-				</div>
-
-				<div class="last-forums__tablet">
-					<img src="images/last1.jpg" alt="">
-				</div>
-
-				<div class="last-forums__tablet">
-					<img src="images/last2.jpg" alt="">
-				</div>
-
-				<div class="last-forums__tablet">
-					<img src="images/last1.jpg" alt="">
-				</div>
-
-				<div class="last-forums__tablet">
-					<img src="images/last2.jpg" alt="">
-				</div>
-
-				<div class="last-forums__tablet">
-					<img src="images/last1.jpg" alt="">
-				</div>
-
-				<div class="last-forums__tablet">
-					<img src="images/last2.jpg" alt="">
-				</div>
-			</div>
-		</a>
-	</section>
-
-	<footer class="footer">
-		<div class="wrapper">
-			<a href="7777777">Тел. 777-77-77</a>
-			<p>При поддержке</p>
-
-			<div class="footer__copyright">
-				<p>© 2017 Международный бизнес-форум. Регистрация</p>
-			</div>
-		</div>
-	</footer> 
-
-	<div class="feedback"></div>
-
-	<div class="up"></div>
-
-	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-
-	<script type="text/javascript" src="js/registration.js"></script>
-
-	<script type="text/javascript" src="js/mobile-menu.js"></script>
-
-	<script type="text/javascript" src="js/cost.js"></script>
+  <header class="header" id="top">
+    <button class="header__menu-button">
+      <div class="header__button-line"></div>
+      <div class="header__button-line"></div>
+      <div class="header__button-line"></div>
+    </button>
+
+    <div class="header__right">
+      <div class="header__dates"><p>21-22 июня 2017</p></div>
+
+      <div class="social">
+        <a href="#" target="blank">
+          <div class="social__button social__button--fb"></div>
+        </a>
+
+        <a href="#" target="blank">
+          <div class="social__button social__button--yt"></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="header__button-wrapper">
+      <button class="header__button">Регистрация</button>
+
+      <ul class="menu menu--hide animated">
+        <li class="menu__item animated"><a href="#questions">Вопросы форума</a></li>
+        <li class="menu__item menu__item--modal animated">Стоимость</li>
+        <li class="menu__item animated"><a href="#speakers">Спикеры</a></li>
+        <li class="menu__item animated"><a href="#timetable">Программа</a></li>
+        <li class="menu__item animated"><a href="#contacts">Контакты</a></li>
+        <li class="menu__item animated"><a href="#news">Новости</a></li>
+        <li class="menu__item animated"><a href="#history">История форума</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="modal-registration animated">
+    <form method="POST" action="forms.php">
+      <h2>Регистрация на бизнес-форум 2017</h2>
+      <div class="wrapper">
+        <div class="modal-registration__close"></div>
+        <input type="text" name="name"  required pattern="^[A-Za-zА-Яа-яЁё\s-]{1,50}" placeholder="Имя*">
+        <input type="text" name="surname" required pattern="^[A-Za-zА-Яа-яЁё\s-]{1,50}" placeholder="Фамилия*">
+        <input type="text" name="company" placeholder="Компания">
+        <input type="text" name="activity" placeholder="Сфера деятельности">
+        <input type="text" name="phone" required minlength="11" maxlength="20" pattern="\+\d*" title="начните ввод с символа +" placeholder="Телефон в международном формате*">
+        <input type="text" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="E-mail" title="не похоже на E-mail :(">
+        <input type="text" name="position" placeholder="Должность">
+        <input type="number" step="1" min="1" name="tickets" required placeholder="Количество билетов* (стоимость одного билета 8 500 грн)">
+        <input type="text" name="promo" placeholder="Промокод">
+        <div class="modal-registration__tickets-count">
+          <div class="modal-registration__ticket">
+            <input type="radio" name="tickets">
+            <label for="">Билет на один день</label>
+          </div>
+          <div class="modal-registration__ticket">
+            <input type="radio" name="tickets">
+            <label for="">Билет на два дня</label>
+          </div>
+        </div> 
+
+        <p class="modal-registration__interesting">Интересные направления работы форума:</p>
+
+        <div class="modal-registration__checkbox">
+          <input type="checkbox" value="Инвестиции" name="checkbox1[]">
+          <label>Инвестиции</label>
+        </div>
+        <div class="modal-registration__checkbox">
+          <input type="checkbox" value="Экспорт/Импорт" name="checkbox1[]">
+          <label>Экспорт/Импорт</label>
+        </div>
+        <div class="modal-registration__checkbox">
+          <input type="checkbox" value="IT" name="checkbox1[]">
+          <label>IT</label>
+        </div>
+        <div class="modal-registration__checkbox">
+          <input type="checkbox" value="Энергоэффективность" name="checkbox1[]">
+          <label>Энергоэффективность</label>
+        </div>
+        <div class="modal-registration__checkbox">
+          <input type="checkbox" value="Гранты для бизнеса" name="checkbox1[]">
+          <label>Гранты для бизнеса</label>
+        </div>
+
+        <textarea name="comments" id="1" cols="30" rows="10" class="modal-registration_textarea" placeholder="Комментарии/предложения..."></textarea>
+
+        <div class="modal-registration__payment">
+          <p>Выберете удобный способ оплаты:</p>
+          <div class="modal-registration__payment-type modal-registration__payment-type--first">
+            <label><input type="radio" name="radio1" value="Приват24">Приват24</label>
+          </div>
+          <div class="modal-registration__payment-type modal-registration__payment-type--second">
+            <label><input type="radio" name="radio1" value="Наличными">Наличными</label>
+          </div>
+          <div class="modal-registration__payment-type modal-registration__payment-type--third">
+            <label><input type="radio" name="radio1" value="Счет-фактура">Счет-фактура</label>
+          </div>
+          <div class="modal-registration__payment-type modal-registration__payment-type--fourth">
+            <label><input type="radio" name="radio1" value="Перевод на карту VIsa/Mastercard">Перевод VISA/Mastercard</label>
+          </div>
+        </div>
+
+        <input type="submit" class="modal-registration__button">
+        <input type="hidden" name="registration_form" />
+
+        <p class="modal-registration__bottom-text">После заполнения вами формы регистрации. Вам будет автоматически отправлено письмо на  почту.</p>
+      </div>
+    </form>
+  </section>
+
+  <section class="cost hide animated">
+    <h2>Стоимость</h2>
+    <div class="cost__close"></div>
+
+    <div class="price">
+      <h3>Стоимость на один день</h3>
+      <ul class="price__list">
+        <li class="price__item">с 01.02 по 31.02<br>4 000 грн</li>
+        <li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
+        <li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
+        <li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
+        <li class="price__item">с 20.06 по 21.06<br>8 500 грн</li>
+      </ul>
+
+      <button class="price__button">Купить</button>
+    </div>
+
+    <div class="price">
+      <h3>Стоимость на оба дня</h3>
+      <ul class="price__list">
+        <li class="price__item">с 01.02 по 31.02<br>4 000 грн</li>
+        <li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
+        <li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
+        <li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
+        <li class="price__item">с 20.06 по 21.06<br>8 500 грн</li>
+      </ul>
+
+      <button class="price__button">Купить</button>
+    </div>
+
+    <div class="price">
+      <h3>Стоимость за один из дней</h3>
+      <ul class="price__list">
+        <li class="price__item">с 01.02 по 31.02<br>4 000 грн</li>
+        <li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
+        <li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
+        <li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
+        <li class="price__item">с 20.06 по 21.06<br>8 500 грн</li>
+      </ul>
+
+      <button class="price__button">Купить</button>
+    </div>
+  </section>
+
+  <section class="first">
+    <div class="wrapper">
+      <div class="first__text">
+        <p>Украина 2017<br>стратегическое видение:</p>
+        <h1>Вызовы и возможности</h1>
+
+        <button class="first__button">Регистрация</button>
+      </div>
+
+      <div class="video">
+        <img src="images/video.jpg" alt="">
+        <button class="video__play-button"></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="mission">
+
+    <div class="wrapper">
+      <h2>Миссия бизнес-форума</h2>
+      <p>Харьковский международный бизнес-форум  является  коммуникационной, дискуссионной  площадкой, раскрывающей актуальные вопросы и направления внутренних преобразований украинского бизнеса, направленных на повышение конкурентности, адаптацию к интеграционным процессам, повышение инвестиционной привлекательности и получения  новых коммерческих возможностей.</p>
+    </div>
+  </section>
+
+  <section class="questions" id="questions">
+    <div class="questions__header">
+      <h2>Вопросы форума</h2>
+    </div>
+
+    <div class="regular slider">
+      <div class="slide">
+        <p class="slide__text">Глобальный мир или где потерялась наша страна?<br>Вызовы или вызовы и возможности?</p>
+      </div>
+      <div class="slide">
+        <p class="slide__text">Глобальный мир или где потерялась наша страна?<br>Вызовы или вызовы и возможности?</p>
+      </div>
+      <div class="slide">
+        <p class="slide__text">Глобальный мир или где потерялась наша страна?<br>Вызовы или вызовы и возможности?</p>
+      </div>
+      <div class="slide">
+        <p class="slide__text">Глобальный мир или где потерялась наша страна?<br>Вызовы или вызовы и возможности?</p>
+      </div>
+      <div class="slide">
+        <p class="slide__text">Глобальный мир или где потерялась наша страна?<br>Вызовы или вызовы и возможности?</p>
+      </div>
+      <div class="slide">
+        <p class="slide__text">Глобальный мир или где потерялась наша страна?<br>Вызовы или вызовы и возможности?</p>
+      </div>
+      <div class="slide">
+        <p class="slide__text">Глобальный мир или где потерялась наша страна?<br>Вызовы или вызовы и возможности?</p>
+      </div>
+      <div class="slide">
+        <p class="slide__text">Глобальный мир или где потерялась наша страна?<br>Вызовы или вызовы и возможности?</p>
+      </div>
+      <div class="slide">
+        <p class="slide__text">Глобальный мир или где потерялась наша страна?<br>Вызовы или вызовы и возможности?</p>
+      </div>
+      <div class="slide">
+        <p class="slide__text">Глобальный мир или где потерялась наша страна?<br>Вызовы или вызовы и возможности?</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="business-missions">
+    <div class="wrapper">
+      <h2>Бизнес-миссии</h2>
+      <p class="business-missions__text"><font size="+8">Lorem ipsum</font> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+      <div class="question">
+        <img src="images/mission.jpg" alt="">
+        <h3>Какие вопросы будут затронуты</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+        <div class="question__more-button"></div>
+      </div>
+
+      <div class="question">
+        <img src="images/mission.jpg" alt="">
+        <h3>Какие вопросы будут затронуты</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+        <div class="question__more-button"></div>
+      </div>
+
+      <div class="question">
+        <img src="images/mission.jpg" alt="">
+        <h3>Какие вопросы будут затронуты</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+        <div class="question__more-button"></div>
+      </div>
+      <div class="question question--hidden hide">
+        <img src="images/mission.jpg" alt="">
+        <h3>Какие вопросы будут затронуты</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+        <div class="question__more-button"></div>
+      </div>
+
+      <div class="question question--hidden hide">
+        <img src="images/mission.jpg" alt="">
+        <h3>Какие вопросы будут затронуты</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+        <div class="question__more-button"></div>
+      </div>
+
+      <div class="question question--hidden hide">
+        <img src="images/mission.jpg" alt="">
+        <h3>Какие вопросы будут затронуты</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+        <div class="question__more-button"></div>
+      </div>
+
+      <div class="question question--hidden hide">
+        <img src="images/mission.jpg" alt="">
+        <h3>Какие вопросы будут затронуты</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+        <div class="question__more-button"></div>
+      </div>
+
+      <div class="question question--hidden hide">
+        <img src="images/mission.jpg" alt="">
+        <h3>Какие вопросы будут затронуты</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+        <div class="question__more-button"></div>
+      </div>
+
+      <div class="question question--hidden hide">
+        <img src="images/mission.jpg" alt="">
+        <h3>Какие вопросы будут затронуты</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+        <div class="question__more-button"></div>
+      </div>
+
+      <div class="question question--hidden hide">
+        <img src="images/mission.jpg" alt="">
+        <h3>Какие вопросы будут затронуты</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+        <div class="question__more-button"></div>
+      </div>
+
+      <div class="question question--hidden hide">
+        <img src="images/mission.jpg" alt="">
+        <h3>Какие вопросы будут затронуты</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+        <div class="question__more-button"></div>
+      </div>
+
+      <div class="question question--hidden hide">
+        <img src="images/mission.jpg" alt="">
+        <h3>Какие вопросы будут затронуты</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+        <div class="question__more-button"></div>
+      </div>
+
+      <div class="business-missions__more"></div>
+      <div class="business-missions__less"></div>
+    </div>
+  </section>
+
+  <section class="directions">
+    <div class="directions__header">
+      <h2>Направления работы форума</h2>
+    </div>
+
+    <div class="direction">
+      <div class="direction__header">
+        <h2>Экспорт/импорт</h2>
+        <div class="direction__more-header"></div>
+      </div>
+      <p>Внешние рынки для МСБ: мифы и реалии</p>
+      <div class="direction__more"></div>
+    </div>
+
+    <div class="direction">
+      <div class="direction__header">
+        <h2>Энергоэффективность</h2>
+        <div class="direction__more-header"></div>
+      </div>
+      <p>Энергоэффективность как вызовы и возможности украинского бизнеса</p>
+      <div class="direction__more"></div>
+    </div>
+
+    <div class="direction">
+      <div class="direction__header">
+        <h2>Инвестиции</h2>
+        <div class="direction__more-header"></div>
+      </div>
+      <p>Энергоэффективность как вызовы и возможности украинского бизнеса</p>
+      <div class="direction__more"></div>
+    </div>
+  </section>
+
+  <section class="speakers" id="speakers">
+    <div class="speakers__header">
+      <h2>Спикеры</h2>
+    </div>
+    <div class="wrapper">
+
+      <div class="speaker-details hide animated">
+        <div class="speaker-details__header">
+          <h3>Информация</h3>
+        </div>
+
+        <div class="speaker-details__close"></div>
+        <img src="images/speaker4.png" class="speaker-details__avatar" alt="">
+        <div class="speaker-details__text">
+          <h3 class="speaker-details__name">Станислав Игнатьев</h3>
+          <p class="speaker-details__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, quis</p>
+          <p class="speaker-details__company">Компания</p>
+          <p class="speaker-details__position">Должность</p>
+        </div>
+      </div>
+
+      <div id="speaker1" class="speaker">
+        <img src="images/speaker4.png" alt="">
+        <p class="speaker__name">Станислав Игнатьев</p>
+        <p class="speaker__company">SP Advisors</p>
+      </div>
+
+      <div id="speaker2" class="speaker">
+        <img src="images/speaker2.png" alt="">
+        <p class="speaker__name">Ник Пиацца</p>
+        <p class="speaker__company">SP Advisors</p>
+      </div>
+
+      <div id="speaker3" class="speaker">
+        <img src="images/speaker3.png" alt="">
+        <p class="speaker__name">Ник Пиацца</p>
+        <p class="speaker__company">SP Advisors</p>
+      </div>
+
+      <br>
+
+      <div id="speaker4" class="speaker">
+        <img src="images/speaker4.png" alt="">
+        <p class="speaker__name">Василий Петров</p>
+        <p class="speaker__company">SP Advisors</p>
+      </div>
+
+      <div id="speaker5" class="speaker">
+        <img src="images/speaker3.png" alt="">
+        <p class="speaker__name">Ник Пиацца</p>
+        <p class="speaker__company">SP Advisors</p>
+      </div>
+
+      <div id="speaker6" class="speaker">
+        <img src="images/speaker3.png" alt="">
+        <p class="speaker__name">Ник Пиацца</p>
+        <p class="speaker__company">SP Advisors</p>
+      </div>
+
+      <div id="speaker7" class="speaker speaker--hidden">
+        <img src="images/speaker4.png" alt="">
+        <p class="speaker__name">Василий Петров</p>
+        <p class="speaker__company">SP Advisors</p>
+      </div>
+
+      <div id="speaker8" class="speaker speaker--hidden">
+        <img src="images/speaker3.png" alt="">
+        <p class="speaker__name">Ник Пиацца</p>
+        <p class="speaker__company">SP Advisors</p>
+      </div>
+
+      <div id="speaker9" class="speaker speaker--hidden">
+        <img src="images/speaker3.png" alt="">
+        <p class="speaker__name">Ник Пиацца</p>
+        <p class="speaker__company">SP Advisors</p>
+      </div>
+
+      <div id="speaker10" class="speaker speaker--hidden">
+        <img src="images/speaker4.png" alt="">
+        <p class="speaker__name">Василий Петров</p>
+        <p class="speaker__company">SP Advisors</p>
+      </div>
+
+      <div id="speaker11" class="speaker speaker--hidden">
+        <img src="images/speaker3.png" alt="">
+        <p class="speaker__name">Ник Пиацца</p>
+        <p class="speaker__company">SP Advisors</p>
+      </div>
+
+      <div id="speaker12" class="speaker speaker--hidden">
+        <img src="images/speaker3.png" alt="">
+        <p class="speaker__name">Ник Пиацца</p>
+        <p class="speaker__company">SP Advisors</p>
+      </div>
+
+      <div class="speakers__more"></div>
+      <div class="speakers__less"></div>
+    </div>
+  </section>
+
+  <section class="timetable" id="timetable">
+    <div class="wrapper">
+      <h2>Программа форума</h2>
+
+      <div class="timetable__dates">
+        <div class="timetable__date timetable__date--first">
+          <h2>21 июня</h2>
+        </div>
+        <a href="#second-date">
+          <div class="timetable__date timetable__date--second">
+            <h2>22 июня</h2>
+          </div>
+        </a>
+      </div>
+
+      <div class="date">
+        <div class="time">
+          <div class="time__header time__header--not-important">
+            <p>09:00</p>
+
+            <div class="time__description">
+              <p>Регистрация, велкам кофе</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="time">
+          <div class="time__header time__header--not-important">
+            <p>09:30</p>
+
+            <div class="time__description">
+              <p>Приветствие</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="time">
+          <div class="time__header time__header--important">
+            <p>10:00</p>
+
+            <div class="time__description">
+              <p>Панельная дискуссия №1</p>
+            </div>
+          </div>
+
+          <div class="time__about"><p>Направленность: “4-ая индустриальная революция Глобализация VS национальные приоритеты:  каким путем пойдет Украина?”</p></div>
+
+          <div class="wrapper">
+            <div class="members">
+
+              <div class="member">
+                <img src="images/member.png" alt="">
+                <div class="member__moderator">
+                  <p>Модератор</p>
+                </div>
+
+                <div class="member__about">
+                  <div class="member__left">
+                    <p>Юрий Сапронов</p>
+                    <p>SP Advisors</p>
+                    <div class="member__more"></div>
+                  </div>
+                  <div class="member__right">
+                    <p>9:30</p>
+                  </div>
+                </div>
+
+                <div class="member__circle member__circle--moderator"></div>
+                <div class="member__line1 member__line1--moderator"></div>
+                <div class="member__line2"></div>
+              </div>
+
+              <br>
+
+              <div class="member">
+                <img src="images/member.png" alt="">
+
+                <div class="member__about">
+                  <div class="member__left">
+                    <p>Юрий Сапронов</p>
+                    <p>SP Advisors</p>
+                    <div class="member__more"></div>
+                  </div>
+                  <div class="member__right">
+                    <p>9:30</p>
+                  </div>
+                </div>
+
+                <div class="member__circle"></div>
+                <div class="member__line1"></div>
+                <div class="member__line3"></div>
+              </div>
+
+              <div class="member">
+                <img src="images/member.png" alt="">
+
+                <div class="member__about">
+                  <div class="member__left">
+                    <p>Юрий Сапронов</p>
+                    <p>SP Advisors</p>
+                    <div class="member__more"></div>
+                  </div>
+                  <div class="member__right">
+                    <p>9:30</p>
+                  </div>
+                </div>
+
+                <div class="member__circle"></div>
+                <div class="member__line1"></div>
+              </div>
+
+              <div class="member">
+                <img src="images/member.png" alt="">
+
+                <div class="member__about">
+                  <div class="member__left">
+                    <p>Юрий Сапронов</p>
+                    <p>SP Advisors</p>
+                    <div class="member__more"></div>
+                  </div>
+                  <div class="member__right">
+                    <p>9:30</p>
+                  </div>
+                </div>
+
+                <div class="member__circle"></div>
+                <div class="member__line1"></div>
+              </div>
+
+              <div class="member">
+                <img src="images/member.png" alt="">
+
+                <div class="member__about">
+                  <div class="member__left">
+                    <p>Юрий Сапронов</p>
+                    <p>SP Advisors</p>
+                    <div class="member__more"></div>
+                  </div>
+                  <div class="member__right">
+                    <p>9:30</p>
+                  </div>
+                </div>
+
+                <div class="member__circle"></div>
+                <div class="member__line1"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="time">
+          <div class="time__header time__header--not-important">
+            <p>12:00</p>
+
+            <div class="time__description">
+              <p>Кофе-брейк</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="time">
+          <div class="time__header time__header--important">
+            <p>12:30</p>
+
+            <div class="time__description">
+              <p>Продолжение панельной дискуссии №1</p>
+            </div>
+          </div>
+
+          <div class="members">
+
+            <div class="member">
+              <img src="images/member.png" alt="">
+              <div class="member__moderator">
+                <p>Модератор</p>
+              </div>
+
+              <div class="member__about">
+                <div class="member__left">
+                  <p>Юрий Сапронов</p>
+                  <p>SP Advisors</p>
+                  <div class="member__more"></div>
+                </div>
+                <div class="member__right">
+                  <p>9:30</p>
+                </div>
+              </div>
+
+              <div class="member__circle member__circle--moderator"></div>
+              <div class="member__line1 member__line1--moderator"></div>
+              <div class="member__line2"></div>
+            </div>
+
+            <br>
+
+            <div class="member">
+              <img src="images/member.png" alt="">
+
+              <div class="member__about">
+                <div class="member__left">
+                  <p>Юрий Сапронов</p>
+                  <p>SP Advisors</p>
+                  <div class="member__more"></div>
+                </div>
+                <div class="member__right">
+                  <p>9:30</p>
+                </div>
+              </div>
+
+              <div class="member__circle"></div>
+              <div class="member__line1"></div>
+              <div class="member__line3"></div>
+            </div>
+
+            <div class="member">
+              <img src="images/member.png" alt="">
+
+              <div class="member__about">
+                <div class="member__left">
+                  <p>Юрий Сапронов</p>
+                  <p>SP Advisors</p>
+                  <div class="member__more"></div>
+                </div>
+                <div class="member__right">
+                  <p>9:30</p>
+                </div>
+              </div>
+
+              <div class="member__circle"></div>
+              <div class="member__line1"></div>
+            </div>
+
+            <div class="member">
+              <img src="images/member.png" alt="">
+
+              <div class="member__about">
+                <div class="member__left">
+                  <p>Юрий Сапронов</p>
+                  <p>SP Advisors</p>
+                  <div class="member__more"></div>
+                </div>
+                <div class="member__right">
+                  <p>9:30</p>
+                </div>
+              </div>
+
+              <div class="member__circle"></div>
+              <div class="member__line1"></div>
+            </div>
+
+            <div class="member">
+              <img src="images/member.png" alt="">
+
+              <div class="member__about">
+                <div class="member__left">
+                  <p>Юрий Сапронов</p>
+                  <p>SP Advisors</p>
+                  <div class="member__more"></div>
+                </div>
+                <div class="member__right">
+                  <p>9:30</p>
+                </div>
+              </div>
+
+              <div class="member__circle"></div>
+              <div class="member__line1"></div>
+            </div>
+
+            <div class="member">
+              <img src="images/member.png" alt="">
+
+              <div class="member__about">
+                <div class="member__left">
+                  <p>Юрий Сапронов</p>
+                  <p>SP Advisors</p>
+                  <div class="member__more"></div>
+                </div>
+                <div class="member__right">
+                  <p>9:30</p>
+                </div>
+              </div>
+
+              <div class="member__circle"></div>
+              <div class="member__line1"></div>
+            </div>
+
+            <div class="member">
+              <img src="images/member.png" alt="">
+
+              <div class="member__about">
+                <div class="member__left">
+                  <p>Юрий Сапронов</p>
+                  <p>SP Advisors</p>
+                  <div class="member__more"></div>
+                </div>
+                <div class="member__right">
+                  <p>9:30</p>
+                </div>
+              </div>
+
+              <div class="member__circle"></div>
+              <div class="member__line1"></div>
+            </div>
+
+            <div class="member">
+              <img src="images/member.png" alt="">
+
+              <div class="member__about">
+                <div class="member__left">
+                  <p>Юрий Сапронов</p>
+                  <p>SP Advisors</p>
+                  <div class="member__more"></div>
+                </div>
+                <div class="member__right">
+                  <p>9:30</p>
+                </div>
+              </div>
+
+              <div class="member__circle"></div>
+              <div class="member__line1"></div>
+            </div>
+
+            <div class="member">
+              <img src="images/member.png" alt="">
+
+              <div class="member__about">
+                <div class="member__left">
+                  <p>Юрий Сапронов</p>
+                  <p>SP Advisors</p>
+                  <div class="member__more"></div>
+                </div>
+                <div class="member__right">
+                  <p>9:30</p>
+                </div>
+              </div>
+
+              <div class="member__circle"></div>
+              <div class="member__line1"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="time">
+          <div class="time__header time__header--not-important">
+            <p>14:00</p>
+
+            <div class="time__description">
+              <p>Ланч</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="time">
+          <div class="time__header time__header--important">
+            <p>15:00</p>
+
+            <div class="time__description">
+              <p>Работа секций</p>
+            </div>
+          </div>
+
+          <div class="timeSlider timeSlider1 slider-sections">
+            <div class="timeSlider__slide">
+              <div class="partakers">
+                <div class="partakers__caption"><h4>IT/HITECH</h4></div>
+                <div class="partakers__content">
+                  <div class="partakers__content__title">Модератор</div>
+                  <div class="partakers__content__body">
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="timeSlider__slide">
+              <div class="partakers">
+                <div class="partakers__caption"><h4>IT/HITECH</h4></div>
+                <div class="partakers__content">
+                  <div class="partakers__content__title">Модератор</div>
+                  <div class="partakers__content__body">
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="timeSlider__slide">
+              <div class="partakers">
+                <div class="partakers__caption"><h4>IT/HITECH</h4></div>
+                <div class="partakers__content">
+                  <div class="partakers__content__title">Модератор</div>
+                  <div class="partakers__content__body">
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="time">
+          <div class="time__header time__header--not-important">
+            <p>17:00</p>
+
+            <div class="time__description">
+              <p>Кофе-брейк</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="time">
+          <div class="time__header time__header--important">
+            <p>17:30</p>
+
+            <div class="time__description">
+              <p>Работа секций</p>
+            </div>
+          </div>
+
+          <div class="timeSlider timeSlider2 slider-sections">
+            <div class="timeSlider__slide">
+              <div class="partakers">
+                <div class="partakers__caption"><h4>IT/HITECH</h4></div>
+                <div class="partakers__content">
+                  <div class="partakers__content__title">Модератор</div>
+                  <div class="partakers__content__body">
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="timeSlider__slide">
+              <div class="partakers">
+                <div class="partakers__caption"><h4>IT/HITECH</h4></div>
+                <div class="partakers__content">
+                  <div class="partakers__content__title">Модератор</div>
+                  <div class="partakers__content__body">
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="timeSlider__slide">
+              <div class="partakers">
+                <div class="partakers__caption"><h4>IT/HITECH</h4></div>
+                <div class="partakers__content">
+                  <div class="partakers__content__title">Модератор</div>
+                  <div class="partakers__content__body">
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="time">
+          <div class="time__header time__header--not-important">
+            <p>19:30</p>
+
+            <div class="time__description">
+              <p>Завершение первого бизнес-форума</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timetable__dates timetable__dates--second" id="second-date">
+        <div class="timetable__date timetable__date--third">
+          <h2>22 июня</h2>
+        </div>
+      </div>
+
+      <div class="date">
+        <div class="time">
+          <div class="time__header time__header--not-important">
+            <p>9:30</p>
+
+            <div class="time__description">
+              <p>Регистрация</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="time">
+          <div class="time__header time__header--not-important">
+            <p>10:00</p>
+
+            <div class="time__description time__description--little">
+              <p>Презетация бизнес-миссий, доклады откаждого из представителей</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="time">
+          <div class="time__header time__header--not-important">
+            <p>12:00</p>
+
+            <div class="time__description">
+              <p>Инвестиционная панель</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="time">
+          <div class="time__header time__header--not-important">
+            <p>13:00</p>
+
+            <div class="time__description">
+              <p>Ланч</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="time">
+          <div class="time__header time__header--important">
+            <p>14:00</p>
+
+            <div class="time__description">
+              <p>Работа секций</p>
+            </div>
+          </div>
+
+          <div class="timeSlider timeSlider3 slider-sections">
+            <div class="timeSlider__slide">
+              <div class="partakers">
+                <div class="partakers__caption"><h4>IT/HITECH</h4></div>
+                <div class="partakers__content">
+                  <div class="partakers__content__title">Модератор</div>
+                  <div class="partakers__content__body">
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="timeSlider__slide">
+              <div class="partakers">
+                <div class="partakers__caption"><h4>IT/HITECH</h4></div>
+                <div class="partakers__content">
+                  <div class="partakers__content__title">Модератор</div>
+                  <div class="partakers__content__body">
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="timeSlider__slide">
+              <div class="partakers">
+                <div class="partakers__caption"><h4>IT/HITECH</h4></div>
+                <div class="partakers__content">
+                  <div class="partakers__content__title">Модератор</div>
+                  <div class="partakers__content__body">
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="time">
+          <div class="time__header time__header--not-important">
+            <p>16:00</p>
+
+            <div class="time__description">
+              <p>Кофе-брейк</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="time">
+          <div class="time__header time__header--important">
+            <p>16:30</p>
+
+            <div class="time__description">
+              <p>Работа секций</p>
+            </div>
+          </div>
+
+          <div class="timeSlider timeSlider4 slider-sections">
+            <div class="timeSlider__slide">
+              <div class="partakers">
+                <div class="partakers__caption"><h4>IT/HITECH</h4></div>
+                <div class="partakers__content">
+                  <div class="partakers__content__title">Модератор</div>
+                  <div class="partakers__content__body">
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="timeSlider__slide">
+              <div class="partakers">
+                <div class="partakers__caption"><h4>IT/HITECH</h4></div>
+                <div class="partakers__content">
+                  <div class="partakers__content__title">Модератор</div>
+                  <div class="partakers__content__body">
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="timeSlider__slide">
+              <div class="partakers">
+                <div class="partakers__caption"><h4>IT/HITECH</h4></div>
+                <div class="partakers__content">
+                  <div class="partakers__content__title">Модератор</div>
+                  <div class="partakers__content__body">
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                    <div class="partaker">
+                      <div class="partakerPhotoWrap">
+                        <div class="connectLine connectLine--top"></div>
+                        <div class="partaker__photo">
+                          <img src="images/member.png" alt="">
+                        </div>
+                        <div class="connectLine connectLine--bottom"></div>
+                      </div>
+                      <div class="partaker__infoWrap">
+                        <div class="partaker__info">
+                          <div class="partaker__info__name">Юрий Сапронов</div>
+                          <div class="partaker__info__post">SP Advisors</div>
+                          <div class="partaker__info__more"></div>
+                        </div>
+                        <div class="partaker__time">9:30</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="time">
+          <div class="time__header time__header--not-important">
+            <p>19:30</p>
+
+            <div class="time__description">
+              <p>Завершение форума</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="timetable__download clearfix">Скачать программу</button>
+    </div>
+  </section>
+
+  <section class="partner">
+    <h2>Официальный партнер</h2>
+    <a href="#">
+      <img src="images/avec.png" alt="">
+    </a>
+  </section>
+
+  <section class="partners">
+    <h2>Партнёры</h2>
+
+    <a href="#">
+      <img src="images/ukr.png" alt="Укртелеком">
+    </a>
+    <a href="#">
+      <img src="images/owl.png" alt="Филин">
+    </a>
+    <a href="#">
+      <img src="images/bank.png" alt="КредоБанк">
+    </a>
+
+    <h3>Информационные партнеры</h3>
+
+    <div class="partners__partner">
+      <h4>Деловой интернет-партнер</h4>
+      <a href="">
+        <img src="images/finance.png" alt="Бизнес">
+      </a>
+    </div>
+
+    <div class="partners__partner">
+      <h4>Генеральный медиапартнер</h4>
+      <a href="">
+        <img src="images/business_fm.png" alt="Бизнес">
+      </a>
+    </div>
+
+    <div class="partners__partner">
+      <h4>Деловой медиапартнер</h4>
+      <a href="#">
+        <img src="images/business.png" alt="finance.ua">
+      </a>
+    </div>
+
+
+    <div class="wrapper">
+      <div class="partners__other">
+        <a href="#">
+          <img src="images/partner1.png" alt="">
+        </a>
+        <a href="#">
+          <img src="images/partner2.png" alt="">
+        </a>
+        <a href="#">
+          <img src="images/partner3.png" alt="">
+        </a>
+        <a href="#">
+          <img src="images/partner4.png" alt="">
+        </a>
+        <a href="#">
+          <img src="images/partner5.png" alt="">
+        </a>
+        <a href="#">
+          <img src="images/partner6.png" alt="">
+        </a>
+        <a href="#">
+          <img src="images/partner7.png" alt="">
+        </a>
+        <a href="#">
+          <img src="images/partner8.png" alt="">
+        </a>
+        <a href="#">
+          <img src="images/partner9.png" alt="">
+        </a>
+        <a href="#">
+          <img src="images/partner10.png" alt="">
+        </a>
+        <a href="#">
+          <img src="images/partner11.png" alt="">
+        </a>
+        <a href="#">
+          <img src="images/partner12.png" alt="">
+        </a>
+        <a href="#">
+          <img src="images/partner13.png" alt="">
+        </a>
+        <a href="#">
+          <img src="images/partner14.png" alt="">
+        </a>
+        <a href="#">
+          <img src="images/partner15.png" alt="">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="organizers">
+    <h2>Организаторы</h2>
+
+    <a href="#">
+      <img src="images/monya.png" alt="MONYA GETS">
+    </a>
+    <a href="#">
+      <img src="images/icom.png" alt="ICOM">
+    </a>
+  </section>
+
+  <section class="faq">
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="wrapper">
+      <ul class="faq__list">
+        <li class="faq__item faq__item--active" id="faq1">Где проходит бизнес-форум?</li>
+        <li class="faq__item" id="faq2">Как добраться?</li>
+        <li class="faq__item" id="faq3">Где поселиться?</li>
+        <li class="faq__item" id="faq4">Где покушать?</li>
+        <li class="faq__item" id="faq5">Где парковка?</li>
+        <li class="faq__item" id="faq6">Какие есть такси?</li>
+        <li class="faq__item" id="faq7">Как зарегестрироваться?</li>
+        <li class="faq__item" id="faq8">Как оплатить?</li>
+        <li class="faq__item" id="faq9">Когда и как получить акты?</li>
+      </ul>
+
+      <p id="faq-answer1" class="faq__answer faq__answer-show animated">Бизнес-форум проходит на улице</p>
+
+      <p id="faq-answer2" class="faq__answer animated">Добраться можно на маршрутке</p>
+
+      <p id="faq-answer3" class="faq__answer animated">«Харьков Палас» – первый в городе отель класса luxury+, воплощающий идею сдержанной роскоши третьего тысячелетия. Отель спроектирован в характерном для Харькова стиле конструктивизма и органично вписывается в ансамбль центральной площади города – площади Свободы.</p>
+
+      <p id="faq-answer4" class="faq__answer animated">Покушать можно в FreshLine</p>
+
+      <p id="faq-answer5" class="faq__answer animated">Парковка под землёй</p>
+
+      <p id="faq-answer6" class="faq__answer animated">Такси есть разные</p>
+
+      <p id="faq-answer7" class="faq__answer animated">Зарегестрироваться можно, нажав на кнопку "Регистрация", как не странно</p>
+
+      <p id="faq-answer8" class="faq__answer animated">Оплатить лучше через Приват24</p>
+
+      <p id="faq-answer9" class="faq__answer animated">Акты можно получить когда угодно и как угодно</p>
+
+    </div>
+  </section>
+
+  <section class="contacts" id="contacts">
+    <div class="wrapper">
+      <h2>Контакты</h2>
+
+      <div class="contact">
+        <h4>По вопросам участия</h4>
+        <a href="+380674432228" class="contact__phone">+38(067) 44-32-228</a>
+        <a href="mailti:join@businessforum.kharkov.ua" class="contact__mail">join@businessforum.kharkov.ua</a>
+        <button class="contact__button contact__button--first">Регистрация</button>
+
+        <div class="contact__info contact__info--first hide animated">
+          <p>Как сделать бизнес инвестиционно привлекательным. Практические аспекты.</p>
+          <div class="contact__hide contact__hide--first"></div>
+        </div>
+      </div>
+
+      <div class="contact">
+        <h4>По вопросам партнерства</h4>
+        <a href="+380996604480" class="contact__phone">+38 (099) 66-04-480</a>
+        <a href="mailti:partner@businessforum.kharkov.ua" class="contact__mail">partner@businessforum.kharkov.ua</a>
+        <button class="contact__button contact__button--second">Связаться</button>
+
+        <div class="contact__info contact__info--second hide animated">
+          <p>Внешние рынки для МСБ: мифы и реалии</p>
+          <div class="contact__hide contact__hide--second"></div>
+        </div>
+      </div>
+
+      <div class="contact">
+        <h4>Аккредитация СМИ</h4>
+        <a href="+380637130615" class="contact__phone">+38 (063) 71-30-615</a>
+        <a href="mailti:pr@businessforum.kharkov.ua" class="contact__mail">pr@businessforum.kharkov.ua</a>
+        <button class="contact__button contact__button--third">Аккредитоваться</button>
+
+        <div class="contact__info contact__info--third hide animated">
+          <p>Энергоэффективность как вызовы и возможности украинского бизнеса</p>
+          <div class="contact__hide contact__hide--third"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="volunteers">
+    <h2>Регистрация для волонтеров</h2>
+
+    <div class="wrapper">
+      <form method="POST" action="forms.php" class="form-volunteers">
+        <input type="text" name="name"  required pattern="^[A-Za-zА-Яа-яЁё\s-]{1,50}" placeholder="Имя*">
+        <input type="text" name="surname" placeholder="Фамилия">
+        <input type="text" name="phone" required minlength="11" maxlength="20" pattern="\+\d*" title="начните ввод с символа +" placeholder="Телефон в международном формате*">
+        <input type="text" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="E-mail*" title="не похоже на E-mail :(">
+        <input type="text" name="company" placeholder="Компания">
+        <input type="text" name="activity" placeholder="Сфера деятельности">
+
+        <textarea name="comments" id="2" cols="30" rows="10" placeholder="Текст..."></textarea>
+
+        <input type="submit" value="Отправить" class="form-volunteers__button">
+        <input type="hidden" name="volunteer_form" />
+      </form>
+    </div>
+  </section>
+
+  <section class="last-forums" id="history">
+    <a href="#">
+      <h2>Бизнес-форум 2014</h2>
+      <div class="wrapper">
+        <img src="images/last1.jpg" alt="">
+        <img src="images/last2.jpg" alt="">
+
+        <div class="last-forums__tablet">
+          <img src="images/last1.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/last2.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/last1.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/last2.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/last1.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/last2.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/last1.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/last2.jpg" alt="">
+        </div>
+      </div>
+    </a>
+
+    <a href="#">
+      <h2>Бизнес-форум 2015</h2>
+      <div class="wrapper">
+        <img src="images/last1.jpg" alt="">
+        <img src="images/last2.jpg" alt="">
+
+        <div class="last-forums__tablet">
+          <img src="images/last1.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/last2.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/last1.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/last2.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/last1.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/last2.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/last1.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/last2.jpg" alt="">
+        </div>
+      </div>
+    </a>
+
+    <a href="#">
+      <h2>Бизнес-форум 2016</h2>
+      <div class="wrapper">
+        <img src="images/last1.jpg" alt="">
+        <img src="images/last2.jpg" alt="">
+
+        <div class="last-forums__tablet">
+          <img src="images/last1.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/last2.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/last1.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/last2.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/last1.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/last2.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/last1.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/last2.jpg" alt="">
+        </div>
+      </div>
+    </a>
+  </section>
+
+  <footer class="footer">
+    <div class="wrapper">
+      <a href="7777777">Тел. 777-77-77</a>
+      <p>При поддержке</p>
+
+      <div class="footer__copyright">
+        <p>©2017 Международный бизнес-форум</p>
+      </div>
+
+      <div class="footer__crepla-logo">
+        <a href="http://crepla.com"><img src="images/crepla_logo.png" alt="crepla"></a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="feedback"></div>
+
+  <a href="#top" class="up"></a>
+
+  <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+
+  <script type="text/javascript" src="js/registration.js"></script>
+
+  <script type="text/javascript" src="js/mobile-menu.js"></script>
+
+  <script type="text/javascript" src="js/cost.js"></script>
+
+  <script type="text/javascript" src="js/popups.js"></script>
+
+  <script type="text/javascript" src="js/waypoints-animated.js"></script>
+
+  <script type="text/javascript" src="js/smoothscroll.js"></script>
+
+  <script type="text/javascript" src="js/jquery.viewportchecker.min.js"></script>
+
+  <script type="text/javascript" src="js/animation-delay.js"></script>
+
+  <script type="text/javascript" src="js/speakers.js"></script>
+
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+
+  <script src="js/slick.js" type="text/javascript" charset="utf-8"></script>
+
+  <script type="text/javascript">
+    $(document).on('ready', function() {
+      $(".regular").slick({
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        infinite: true,
+      });
+      console.log(screen.width);
+      if (screen.width < 700) {
+        $('.timeSlider1').slick({
+          dots: true,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          infinite: true,
+          dots: false
+        });
+      }
+
+      console.log(screen.width);
+      if (screen.width < 700) {
+        $('.timeSlider2').slick({
+          dots: true,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          infinite: true,
+          dots: false
+        });
+      }
+
+      console.log(screen.width);
+      if (screen.width < 700) {
+        $('.timeSlider3').slick({
+          dots: true,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          infinite: true,
+          dots: false
+        });
+      }
+
+      console.log(screen.width);
+      if (screen.width < 700) {
+        $('.timeSlider4').slick({
+          dots: true,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          infinite: true,
+          dots: false
+        });
+      }
+    });
+  </script>
+
+  <script type="text/javascript" src="js/faq.js"></script>
+
+  <script type="text/javascript" src="js/business-missions.js"></script>
+
+  <script type="text/javascript" src="js/speakers-more.js"></script> 
 
 </body>
 </html>

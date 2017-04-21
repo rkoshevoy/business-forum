@@ -6,14 +6,18 @@
 
 	@media @tablet {
 		top: 420px;
-		left: 50%;
-		transform: translatex(-50%);
+		left: ~"calc(50% - 360px)";
 		width: 720px;
 	}
 
 	@media @desktop {
 		top: 215px;
-		width: 940px;
+		left: ~"calc(50% - 465px)";
+		width: 930px;
+
+		.wrapper {
+			width: 930px;
+		}
 	}
 
 	&__close {
@@ -77,7 +81,12 @@
 			}
 		}
 
-		input {
+		input[type="submit"] {
+			-webkit-appearance: none;
+		}
+
+		input[type="text"],
+		input[type="number"] {
 			width: 100%;
 			margin-bottom: 14px;
 			padding: 15px;
@@ -110,7 +119,7 @@
 			width: 98%;
 			height: 120px;
 			padding: 15px;
-			margin-bottom: 80px;
+			margin-bottom: 35px;
 			border: 1px solid #ececec;
 
 			@media @tablet {
@@ -129,23 +138,32 @@
 		}
 
 		p {
-			margin-top: 20px;
-			margin-bottom: 30px;
 			text-align: left;
-
-			@media @tablet {
-				margin-top: 0;
-				margin-left: 10px;
-			}
-
-			@media @desktop {
-				font-size: 14px;
-			}
 		}
 	}
 
-	&__button {
+	&__interesting {
+		margin-top: 20px;
+		margin-bottom: 30px;
+		text-align: left;
+
+		@media @tablet {
+			margin-top: 0;
+			margin-left: 10px;
+		}
+
+		@media @desktop {
+			font-size: 14px;
+		}
+	}
+
+	input[type='submit'] {
+		width: 165px;
+		margin-bottom: 45px;
 		border: 1px solid #4aa08b;
+	}
+
+	&__button {
 		background-color: #1f8a70;
 		font-family: BlissProHeavy;
 		color: #fff;
@@ -162,19 +180,19 @@
 
 		@media @tablet {
 			width: auto;
+			margin-right: 35px;
 		}
 
-		&:last-of-type {
+		@media @desktop {
+			margin-right: 48px;
+		}
+
+		&:nth-of-type(6) {
 			margin-right: 49%;
-			margin-bottom: 25px;
 
 			@media @tablet {
 				margin-right: 35px;
 			}
-		}
-
-		@media @desktop {
-			margin-right: 55px;
 		}
 
 		label {
@@ -189,6 +207,7 @@
 
 		input[type="checkbox"] {
 			position: absolute;
+			left: 10px;
 			z-index: 11;
 			opacity: 0;
 			cursor: pointer;
@@ -217,4 +236,111 @@
 			transform: rotate(135deg);
 		}
 	}
+
+	&__payment {
+		text-align: center;
+
+		@media @tablet {
+			text-align: left;
+			margin-left: 5px;
+		}
+
+		p {
+			margin-right: 20px;
+			margin-bottom: 35px;
+			margin-left: 5px;
+
+			@media @tablet {
+				display: inline-block;
+				vertical-align: middle;
+				font-size: 12px;
+			}
+
+			@media @desktop {
+				margin-right: 85px;
+			}
+		}
+	}
+
+	&__payment-type {
+		display: inline-block;
+		width: 49%;
+		height: 40px;
+		margin-bottom: 35px;
+		cursor: pointer;
+
+		@media @tablet {
+			width: 40px;
+			margin-right: 25px;
+			vertical-align: middle;
+		}
+
+		@media @desktop {
+			margin-right: 50px;
+		}
+	}
+
+	&__payment-type--first {
+		background-image: url('../images/privat.png');
+		background-position: center;
+		background-size: 40px;
+		height: 130px;
+	}
+
+	&__payment-type--second {
+		background-image: url('../images/money.png');
+		background-position: center;
+		background-size: 40px;
+		height: 130px;
+	}
+
+	&__payment-type--third {
+		background-image: url('../images/contract.png');
+		background-position: center;
+		background-size: 40px;
+		height: 130px;
+	}
+
+	&__payment-type--fourth {
+		background-image: url('../images/card.png');
+		background-position: center;
+		background-size: 40px;
+		height: 130px;
+	}
+
+	&__bottom-text {
+		margin-bottom: 30px;
+		font-size: 12px;
+
+		@media @tablet {
+			font-size: 14px;
+			margin-left: 5px;
+		}
+
+		@media @desktop {
+			font-size: 19px;
+		}
+	}
+
+	&__tickets-count {
+		display: inline-block;
+		width: 100%;
+
+		@media @tablet {
+			width: 48%;
+		}
+	}
+
+	 &__ticket {
+	 	width: 100%;
+		text-align: left;
+	
+		input {
+			display: inline-block;
+		}
+	
+		label {
+			display: inline-block;
+		}
+	}  
 }

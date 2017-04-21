@@ -2,6 +2,18 @@
 	padding: 0 15px;
 	color: #666666;
 
+	@media @tablet {
+
+		.wrapper {
+			width: 700px;
+			padding: 0;
+
+			@media @desktop {
+				width: 930px;
+			}
+		}
+	}
+
 	h2 {
 		padding-top: 70px;
 		padding-bottom: 60px;
@@ -28,16 +40,38 @@
 		}
 	}
 
+	&__item--active {
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 6px;
+			left: -10px;
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			background-color: #fee010;
+		}
+	}
+
 	p {
 		padding-bottom: 50px;
 		font-size: 11px;
 		text-align: left;
 
 		@media @tablet {
-			display: inline-block;
 			width: 49%;
 			font-size: 14px;
 			vertical-align: top;
 		}
+	}
+
+	&__answer {
+		display: none;
+	}
+
+	&__answer-show {
+		display: inline-block;
 	}
 }

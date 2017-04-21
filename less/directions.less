@@ -1,10 +1,25 @@
 .directions {
 	background-color: #f3f4f6;
+	overflow: hidden;
 	
 	&__header {
 		position: relative;
 		padding-top: 50px;
 		padding-bottom: 115px;
+
+		@media @desktop {
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 186px;
+				left: 0;
+				z-index: 0;
+				width: 4000px;
+				height: 100px;
+				background-color: #6C6C6D;
+			}
+		}
 
 		h2 {
 			color: #666666;
@@ -76,8 +91,8 @@
 		border-radius: 50%;
 
 		@media @tablet {
-				display: none;
-			}
+			display: none;
+		}
 
 		&::after {
 			content: '';
@@ -114,8 +129,8 @@
 		border-radius: 50%;
 
 		@media @tablet {
-				display: none;
-			}
+			display: none;
+		}
 
 		&::after {
 			content: '';

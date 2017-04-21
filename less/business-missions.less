@@ -1,12 +1,15 @@
 .business-missions {
 	color: #484e5c;
 
-	.wrapper {
-		border: 1px solid red;
-	}
-
 	@media @tablet {
 		text-align: center;
+	}
+
+	@media @big-desktop {
+
+		.wrapper {
+			width: 950px;
+		}
 	}
 
 	h2 {
@@ -52,26 +55,56 @@
 		}
 	}
 
+	&__less {
+		display: none;
+		position: relative;
+		height: 100px;
+		cursor: pointer;
+
+		@media @tablet {
+			height: 50px;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 20px;
+			height: 20px;
+			border-top: 2px solid #000;
+			border-right: 2px solid #000;
+			transform: translate(-50%, -70%) rotate(-45deg);
+		}
+	}
+
 	&__tablet {
 		display: none;
+		width: 100%;
 
 		@media @tablet {
 			display: inline-block;
 			width: 300px;
 		}
-
-		@media @desktop {
-			width: 250px;
-		}
 	}
 
 	&__desktop {
 		display: none;
+		width: 100%;
+
+		@media @tablet {
+			width: 300px;
+		}
 
 		@media @desktop {
 			display: inline-block;
 			width: 300px;
-			border: 1px solid red;
+			margin-right: 0;
+
+			.question {
+				width: 100%;
+				margin: 0;
+			}
 		}
 	} 
 }
@@ -79,25 +112,11 @@
 .question {
 	position: relative;
 	margin-bottom: 27px;
-	border: 1px solid blue;
-
+	width: 100%;
 
 	@media @tablet {
 		display: inline-block;
 		width: 300px;
-
-		&:nth-of-type(2n-1) {
-			margin-right: 20px;
-		}
-	}
-
-	@media @desktop {
-		width: 250px;
-		margin-right: 15px;
-
-		:nth-of-type(3n) {
-			margin-right: 0;
-		}
 	}
 
 	img {
@@ -138,6 +157,14 @@
 			border-right: 2px solid #000;
 			border-bottom: 2px solid #000;
 			transform: rotate(45deg);
+		}
+	}
+
+	&--hidden {
+		display: none;
+
+		@media @tablet {
+			display: none;
 		}
 	}
 }

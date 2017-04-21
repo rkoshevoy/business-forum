@@ -5,9 +5,17 @@
 	color: #fff;
 	font-size: 12px;
 
+	.wrapper {
+		position: relative;
+	}
+
 	@media @tablet {
 		padding-top: 20px;
 		padding-bottom: 25px;
+	}
+
+	@media @big-desktop {
+		text-align: center;
 	}
 
 	a {
@@ -29,6 +37,11 @@
 		@media @tablet {
 			width: 24%;
 		}
+
+		@media @big-desktop {
+			width: auto;
+			margin-right: 75px;
+		}
 	}
 
 	&__copyright {
@@ -49,6 +62,36 @@
 		@media @tablet {
 			display: inline-block;
 			width: 49%;
+		}
+
+		@media @big-desktop {
+			width: auto;
+		}
+	}
+
+	&__crepla-logo {
+		width: 100px;
+		margin: 0 auto;
+		margin-top: 25px;
+
+		@media @tablet {
+		position: absolute;
+			right: 30px;
+			top: -40px;
+			width: 75px;
+			height: 50px;
+		}
+
+		a {
+			width: 100%;
+
+			@media @tablet {
+				width: 75px;
+			}
+
+			img {
+				width: 100%;
+			}
 		}
 	}
 }
