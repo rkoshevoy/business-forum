@@ -527,6 +527,13 @@ p {
   border-radius: 50%;
   background-color: #6c6c6d;
 }
+.modal-registration__result {
+  position: absolute;
+  top: 546px;
+  right: 60px;
+  font-size: 18px;
+  color: #bdd73d;
+}
 .cost {
   position: absolute;
   z-index: 10;
@@ -1930,6 +1937,10 @@ p {
   .modal-registration__ticket:first-of-type label {
     margin-bottom: 5px;
   }
+  .modal-registration__result {
+    top: 325px;
+    right: 50px;
+  }
   .cost {
     top: 320px;
     width: 720px;
@@ -2494,6 +2505,10 @@ p {
   }
   .modal-registration__ticket input[type=radio]:checked + label::after {
     top: 3px;
+  }
+  .modal-registration__result {
+    top: 333px;
+    right: 60px;
   }
   .cost {
     top: 110px;
