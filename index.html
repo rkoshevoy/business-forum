@@ -51,7 +51,7 @@
     </div>
   </header>
 
-  <section class="modal-registration animated">
+  <section class="modal-registration animated hide">
     <form method="POST" action="forms.php">
       <h2>Регистрация на бизнес-форум 2017</h2>
       <div class="wrapper">
@@ -63,18 +63,20 @@
         <input type="text" name="phone" required minlength="11" maxlength="20" pattern="\+\d*" title="начните ввод с символа +" placeholder="Телефон в международном формате*">
         <input type="text" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="E-mail" title="не похоже на E-mail :(">
         <input type="text" name="position" placeholder="Должность">
-        <input type="number" step="1" min="1" name="tickets" required placeholder="Количество билетов* (стоимость одного билета 8 500 грн)">
+        <input type="number" step="1" min="1" name="tickets_count" required placeholder="Количество билетов*">
         <input type="text" name="promo" placeholder="Промокод">
         <div class="modal-registration__tickets-count">
           <div class="modal-registration__ticket">
-            <input type="radio" name="tickets" id="one_ticket">
+            <input type="radio" name="tickets" id="one_ticket" value="4000" checked>
             <label for="one_ticket">Билет на один день</label>
           </div>
           <div class="modal-registration__ticket">
-            <input type="radio" name="tickets" id="two_tickets">
+            <input type="radio" name="tickets" id="two_tickets" value="8000">
             <label for="two_tickets">Билет на два дня</label>
           </div>
         </div> 
+
+        <div class="modal-registration__result">0 грн</div>
 
         <div class="modal-registration__checkboxes">
           <p class="modal-registration__interesting">Интересные направления работы форума:</p>
@@ -126,7 +128,7 @@
         <input type="submit" class="modal-registration__button">
         <input type="hidden" name="registration_form" />
 
-        <p class="modal-registration__bottom-text">После заполнения вами формы регистрации. Вам будет автоматически отправлено письмо на  почту.</p>
+        <p class="modal-registration__bottom-text">После заполнения вами формы регистрации, Вам будет автоматически отправлено письмо на  почту.</p>
       </div>
     </form>
   </section>
@@ -238,25 +240,25 @@
     </div>
   </section>
 
-  <section class="business-missions">
+  <!-- <section class="business-missions">
     <div class="wrapper">
       <h2>Бизнес-миссии</h2>
       <p class="business-missions__text"><font size="+8">Lorem ipsum</font> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
+  
       <div class="question">
         <img src="images/mission.jpg" alt="">
         <h3>Какие вопросы будут затронуты</h3>
         <p>Lorem ipsum dolor sit amet, consectetur</p>
         <div class="question__more-button"></div>
       </div>
-
+  
       <div class="question">
         <img src="images/mission.jpg" alt="">
         <h3>Какие вопросы будут затронуты</h3>
         <p>Lorem ipsum dolor sit amet, consectetur</p>
         <div class="question__more-button"></div>
       </div>
-
+  
       <div class="question">
         <img src="images/mission.jpg" alt="">
         <h3>Какие вопросы будут затронуты</h3>
@@ -269,67 +271,67 @@
         <p>Lorem ipsum dolor sit amet, consectetur</p>
         <div class="question__more-button"></div>
       </div>
-
+  
       <div class="question question--hidden hide">
         <img src="images/mission.jpg" alt="">
         <h3>Какие вопросы будут затронуты</h3>
         <p>Lorem ipsum dolor sit amet, consectetur</p>
         <div class="question__more-button"></div>
       </div>
-
+  
       <div class="question question--hidden hide">
         <img src="images/mission.jpg" alt="">
         <h3>Какие вопросы будут затронуты</h3>
         <p>Lorem ipsum dolor sit amet, consectetur</p>
         <div class="question__more-button"></div>
       </div>
-
+  
       <div class="question question--hidden hide">
         <img src="images/mission.jpg" alt="">
         <h3>Какие вопросы будут затронуты</h3>
         <p>Lorem ipsum dolor sit amet, consectetur</p>
         <div class="question__more-button"></div>
       </div>
-
+  
       <div class="question question--hidden hide">
         <img src="images/mission.jpg" alt="">
         <h3>Какие вопросы будут затронуты</h3>
         <p>Lorem ipsum dolor sit amet, consectetur</p>
         <div class="question__more-button"></div>
       </div>
-
+  
       <div class="question question--hidden hide">
         <img src="images/mission.jpg" alt="">
         <h3>Какие вопросы будут затронуты</h3>
         <p>Lorem ipsum dolor sit amet, consectetur</p>
         <div class="question__more-button"></div>
       </div>
-
+  
       <div class="question question--hidden hide">
         <img src="images/mission.jpg" alt="">
         <h3>Какие вопросы будут затронуты</h3>
         <p>Lorem ipsum dolor sit amet, consectetur</p>
         <div class="question__more-button"></div>
       </div>
-
+  
       <div class="question question--hidden hide">
         <img src="images/mission.jpg" alt="">
         <h3>Какие вопросы будут затронуты</h3>
         <p>Lorem ipsum dolor sit amet, consectetur</p>
         <div class="question__more-button"></div>
       </div>
-
+  
       <div class="question question--hidden hide">
         <img src="images/mission.jpg" alt="">
         <h3>Какие вопросы будут затронуты</h3>
         <p>Lorem ipsum dolor sit amet, consectetur</p>
         <div class="question__more-button"></div>
       </div>
-
+  
       <div class="business-missions__more"></div>
       <div class="business-missions__less"></div>
     </div>
-  </section>
+  </section> -->
 
   <section class="directions">
     <div class="directions__header">
@@ -364,17 +366,17 @@
     </div>
   </section>
 
-  <section class="speakers" id="speakers">
+  <!-- <section class="speakers" id="speakers">
     <div class="speakers__header">
       <h2>Спикеры</h2>
     </div>
     <div class="wrapper">
-
+  
       <div class="speaker-details hide animated">
         <div class="speaker-details__header">
           <h3>Информация</h3>
         </div>
-
+  
         <div class="speaker-details__close"></div>
         <img src="images/speaker4.png" class="speaker-details__avatar" alt="">
         <div class="speaker-details__text">
@@ -384,90 +386,90 @@
           <p class="speaker-details__position">Должность</p>
         </div>
       </div>
-
+  
       <div id="speaker1" class="speaker">
         <img src="images/speaker4.png" alt="">
         <p class="speaker__name">Станислав Игнатьев</p>
         <p class="speaker__company">SP Advisors</p>
       </div>
-
+  
       <div id="speaker2" class="speaker">
         <img src="images/speaker2.png" alt="">
         <p class="speaker__name">Ник Пиацца</p>
         <p class="speaker__company">SP Advisors</p>
       </div>
-
+  
       <div id="speaker3" class="speaker">
         <img src="images/speaker3.png" alt="">
         <p class="speaker__name">Ник Пиацца</p>
         <p class="speaker__company">SP Advisors</p>
       </div>
-
+  
       <br>
-
+  
       <div id="speaker4" class="speaker">
         <img src="images/speaker4.png" alt="">
         <p class="speaker__name">Василий Петров</p>
         <p class="speaker__company">SP Advisors</p>
       </div>
-
+  
       <div id="speaker5" class="speaker">
         <img src="images/speaker3.png" alt="">
         <p class="speaker__name">Ник Пиацца</p>
         <p class="speaker__company">SP Advisors</p>
       </div>
-
+  
       <div id="speaker6" class="speaker">
         <img src="images/speaker3.png" alt="">
         <p class="speaker__name">Ник Пиацца</p>
         <p class="speaker__company">SP Advisors</p>
       </div>
-
+  
       <div id="speaker7" class="speaker speaker--hidden">
         <img src="images/speaker4.png" alt="">
         <p class="speaker__name">Василий Петров</p>
         <p class="speaker__company">SP Advisors</p>
       </div>
-
+  
       <div id="speaker8" class="speaker speaker--hidden">
         <img src="images/speaker3.png" alt="">
         <p class="speaker__name">Ник Пиацца</p>
         <p class="speaker__company">SP Advisors</p>
       </div>
-
+  
       <div id="speaker9" class="speaker speaker--hidden">
         <img src="images/speaker3.png" alt="">
         <p class="speaker__name">Ник Пиацца</p>
         <p class="speaker__company">SP Advisors</p>
       </div>
-
+  
       <div id="speaker10" class="speaker speaker--hidden">
         <img src="images/speaker4.png" alt="">
         <p class="speaker__name">Василий Петров</p>
         <p class="speaker__company">SP Advisors</p>
       </div>
-
+  
       <div id="speaker11" class="speaker speaker--hidden">
         <img src="images/speaker3.png" alt="">
         <p class="speaker__name">Ник Пиацца</p>
         <p class="speaker__company">SP Advisors</p>
       </div>
-
+  
       <div id="speaker12" class="speaker speaker--hidden">
         <img src="images/speaker3.png" alt="">
         <p class="speaker__name">Ник Пиацца</p>
         <p class="speaker__company">SP Advisors</p>
       </div>
-
+  
       <div class="speakers__more"></div>
       <div class="speakers__less"></div>
     </div>
   </section>
-
+  
   <section class="timetable" id="timetable">
     <div class="wrapper">
       <h2>Программа форума</h2>
-
+  
       <div class="timetable__dates">
         <div class="timetable__date timetable__date--first">
           <h2>21 июня</h2>
@@ -478,48 +480,48 @@
           </div>
         </a>
       </div>
-
+  
       <div class="date">
         <div class="time">
           <div class="time__header time__header--not-important">
             <p>09:00</p>
-
+  
             <div class="time__description">
               <p>Регистрация, велкам кофе</p>
             </div>
           </div>
         </div>
-
+  
         <div class="time">
           <div class="time__header time__header--not-important">
             <p>09:30</p>
-
+  
             <div class="time__description">
               <p>Приветствие</p>
             </div>
           </div>
         </div>
-
+  
         <div class="time">
           <div class="time__header time__header--important">
             <p>10:00</p>
-
+  
             <div class="time__description">
               <p>Панельная дискуссия №1</p>
             </div>
           </div>
-
+  
           <div class="time__about"><p>Направленность: “4-ая индустриальная революция Глобализация VS национальные приоритеты:  каким путем пойдет Украина?”</p></div>
-
+  
           <div class="wrapper">
             <div class="members">
-
+  
               <div class="member">
                 <img src="images/member.png" alt="">
                 <div class="member__moderator">
                   <p>Модератор</p>
                 </div>
-
+  
                 <div class="member__about">
                   <div class="member__left">
                     <p>Юрий Сапронов</p>
@@ -530,17 +532,17 @@
                     <p>9:30</p>
                   </div>
                 </div>
-
+  
                 <div class="member__circle member__circle--moderator"></div>
                 <div class="member__line1 member__line1--moderator"></div>
                 <div class="member__line2"></div>
               </div>
-
+  
               <br>
-
+  
               <div class="member">
                 <img src="images/member.png" alt="">
-
+  
                 <div class="member__about">
                   <div class="member__left">
                     <p>Юрий Сапронов</p>
@@ -551,15 +553,15 @@
                     <p>9:30</p>
                   </div>
                 </div>
-
+  
                 <div class="member__circle"></div>
                 <div class="member__line1"></div>
                 <div class="member__line3"></div>
               </div>
-
+  
               <div class="member">
                 <img src="images/member.png" alt="">
-
+  
                 <div class="member__about">
                   <div class="member__left">
                     <p>Юрий Сапронов</p>
@@ -570,14 +572,14 @@
                     <p>9:30</p>
                   </div>
                 </div>
-
+  
                 <div class="member__circle"></div>
                 <div class="member__line1"></div>
               </div>
-
+  
               <div class="member">
                 <img src="images/member.png" alt="">
-
+  
                 <div class="member__about">
                   <div class="member__left">
                     <p>Юрий Сапронов</p>
@@ -588,14 +590,14 @@
                     <p>9:30</p>
                   </div>
                 </div>
-
+  
                 <div class="member__circle"></div>
                 <div class="member__line1"></div>
               </div>
-
+  
               <div class="member">
                 <img src="images/member.png" alt="">
-
+  
                 <div class="member__about">
                   <div class="member__left">
                     <p>Юрий Сапронов</p>
@@ -606,41 +608,41 @@
                     <p>9:30</p>
                   </div>
                 </div>
-
+  
                 <div class="member__circle"></div>
                 <div class="member__line1"></div>
               </div>
             </div>
           </div>
         </div>
-
+  
         <div class="time">
           <div class="time__header time__header--not-important">
             <p>12:00</p>
-
+  
             <div class="time__description">
               <p>Кофе-брейк</p>
             </div>
           </div>
         </div>
-
+  
         <div class="time">
           <div class="time__header time__header--important">
             <p>12:30</p>
-
+  
             <div class="time__description">
               <p>Продолжение панельной дискуссии №1</p>
             </div>
           </div>
-
+  
           <div class="members">
-
+  
             <div class="member">
               <img src="images/member.png" alt="">
               <div class="member__moderator">
                 <p>Модератор</p>
               </div>
-
+  
               <div class="member__about">
                 <div class="member__left">
                   <p>Юрий Сапронов</p>
@@ -651,17 +653,17 @@
                   <p>9:30</p>
                 </div>
               </div>
-
+  
               <div class="member__circle member__circle--moderator"></div>
               <div class="member__line1 member__line1--moderator"></div>
               <div class="member__line2"></div>
             </div>
-
+  
             <br>
-
+  
             <div class="member">
               <img src="images/member.png" alt="">
-
+  
               <div class="member__about">
                 <div class="member__left">
                   <p>Юрий Сапронов</p>
@@ -672,15 +674,15 @@
                   <p>9:30</p>
                 </div>
               </div>
-
+  
               <div class="member__circle"></div>
               <div class="member__line1"></div>
               <div class="member__line3"></div>
             </div>
-
+  
             <div class="member">
               <img src="images/member.png" alt="">
-
+  
               <div class="member__about">
                 <div class="member__left">
                   <p>Юрий Сапронов</p>
@@ -691,14 +693,14 @@
                   <p>9:30</p>
                 </div>
               </div>
-
+  
               <div class="member__circle"></div>
               <div class="member__line1"></div>
             </div>
-
+  
             <div class="member">
               <img src="images/member.png" alt="">
-
+  
               <div class="member__about">
                 <div class="member__left">
                   <p>Юрий Сапронов</p>
@@ -709,14 +711,14 @@
                   <p>9:30</p>
                 </div>
               </div>
-
+  
               <div class="member__circle"></div>
               <div class="member__line1"></div>
             </div>
-
+  
             <div class="member">
               <img src="images/member.png" alt="">
-
+  
               <div class="member__about">
                 <div class="member__left">
                   <p>Юрий Сапронов</p>
@@ -727,14 +729,14 @@
                   <p>9:30</p>
                 </div>
               </div>
-
+  
               <div class="member__circle"></div>
               <div class="member__line1"></div>
             </div>
-
+  
             <div class="member">
               <img src="images/member.png" alt="">
-
+  
               <div class="member__about">
                 <div class="member__left">
                   <p>Юрий Сапронов</p>
@@ -745,14 +747,14 @@
                   <p>9:30</p>
                 </div>
               </div>
-
+  
               <div class="member__circle"></div>
               <div class="member__line1"></div>
             </div>
-
+  
             <div class="member">
               <img src="images/member.png" alt="">
-
+  
               <div class="member__about">
                 <div class="member__left">
                   <p>Юрий Сапронов</p>
@@ -763,14 +765,14 @@
                   <p>9:30</p>
                 </div>
               </div>
-
+  
               <div class="member__circle"></div>
               <div class="member__line1"></div>
             </div>
-
+  
             <div class="member">
               <img src="images/member.png" alt="">
-
+  
               <div class="member__about">
                 <div class="member__left">
                   <p>Юрий Сапронов</p>
@@ -781,14 +783,14 @@
                   <p>9:30</p>
                 </div>
               </div>
-
+  
               <div class="member__circle"></div>
               <div class="member__line1"></div>
             </div>
-
+  
             <div class="member">
               <img src="images/member.png" alt="">
-
+  
               <div class="member__about">
                 <div class="member__left">
                   <p>Юрий Сапронов</p>
@@ -799,32 +801,32 @@
                   <p>9:30</p>
                 </div>
               </div>
-
+  
               <div class="member__circle"></div>
               <div class="member__line1"></div>
             </div>
           </div>
         </div>
-
+  
         <div class="time">
           <div class="time__header time__header--not-important">
             <p>14:00</p>
-
+  
             <div class="time__description">
               <p>Ланч</p>
             </div>
           </div>
         </div>
-
+  
         <div class="time">
           <div class="time__header time__header--important">
             <p>15:00</p>
-
+  
             <div class="time__description">
               <p>Работа секций</p>
             </div>
           </div>
-
+  
           <div class="timeSlider timeSlider1 slider-sections">
             <div class="timeSlider__slide">
               <div class="partakers">
@@ -1010,28 +1012,28 @@
               </div>
             </div>
           </div>
-
+  
         </div>
-
+  
         <div class="time">
           <div class="time__header time__header--not-important">
             <p>17:00</p>
-
+  
             <div class="time__description">
               <p>Кофе-брейк</p>
             </div>
           </div>
         </div>
-
+  
         <div class="time">
           <div class="time__header time__header--important">
             <p>17:30</p>
-
+  
             <div class="time__description">
               <p>Работа секций</p>
             </div>
           </div>
-
+  
           <div class="timeSlider timeSlider2 slider-sections">
             <div class="timeSlider__slide">
               <div class="partakers">
@@ -1218,74 +1220,74 @@
             </div>
           </div>
         </div>
-
+  
         <div class="time">
           <div class="time__header time__header--not-important">
             <p>19:30</p>
-
+  
             <div class="time__description">
               <p>Завершение первого бизнес-форума</p>
             </div>
           </div>
         </div>
       </div>
-
+  
       <div class="timetable__dates timetable__dates--second" id="second-date">
         <div class="timetable__date timetable__date--third">
           <h2>22 июня</h2>
         </div>
       </div>
-
+  
       <div class="date">
         <div class="time">
           <div class="time__header time__header--not-important">
             <p>9:30</p>
-
+  
             <div class="time__description">
               <p>Регистрация</p>
             </div>
           </div>
         </div>
-
+  
         <div class="time">
           <div class="time__header time__header--not-important">
             <p>10:00</p>
-
+  
             <div class="time__description time__description--little">
               <p>Презетация бизнес-миссий, доклады откаждого из представителей</p>
             </div>
           </div>
         </div>
-
+  
         <div class="time">
           <div class="time__header time__header--not-important">
             <p>12:00</p>
-
+  
             <div class="time__description">
               <p>Инвестиционная панель</p>
             </div>
           </div>
         </div>
-
+  
         <div class="time">
           <div class="time__header time__header--not-important">
             <p>13:00</p>
-
+  
             <div class="time__description">
               <p>Ланч</p>
             </div>
           </div>
         </div>
-
+  
         <div class="time">
           <div class="time__header time__header--important">
             <p>14:00</p>
-
+  
             <div class="time__description">
               <p>Работа секций</p>
             </div>
           </div>
-
+  
           <div class="timeSlider timeSlider3 slider-sections">
             <div class="timeSlider__slide">
               <div class="partakers">
@@ -1472,26 +1474,26 @@
             </div>
           </div>
         </div>
-
+  
         <div class="time">
           <div class="time__header time__header--not-important">
             <p>16:00</p>
-
+  
             <div class="time__description">
               <p>Кофе-брейк</p>
             </div>
           </div>
         </div>
-
+  
         <div class="time">
           <div class="time__header time__header--important">
             <p>16:30</p>
-
+  
             <div class="time__description">
               <p>Работа секций</p>
             </div>
           </div>
-
+  
           <div class="timeSlider timeSlider4 slider-sections">
             <div class="timeSlider__slide">
               <div class="partakers">
@@ -1678,11 +1680,11 @@
             </div>
           </div>
         </div>
-
+  
         <div class="time">
           <div class="time__header time__header--not-important">
             <p>19:30</p>
-
+  
             <div class="time__description">
               <p>Завершение форума</p>
             </div>
@@ -1691,7 +1693,7 @@
       </div>
       <button class="timetable__download clearfix">Скачать программу</button>
     </div>
-  </section>
+  </section> -->
 
   <section class="partner">
     <h2>Официальный партнер</h2>
@@ -2029,7 +2031,7 @@
       </div>
 
       <div class="footer__crepla-logo">
-        <a href="http://crepla.com"><img src="images/crepla_logo.png" alt="crepla"></a>
+        <a href="http://www.crepla.com" target="_blank"><img src="images/crepla_logo.png" alt="crepla"></a>
       </div>
     </div>
   </footer>
@@ -2121,6 +2123,8 @@
   <script type="text/javascript" src="js/business-missions.js"></script>
 
   <script type="text/javascript" src="js/speakers-more.js"></script> 
+
+  <script type="text/javascript" src="js/calculator.js"></script>
 
 </body>
 </html>

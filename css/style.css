@@ -499,7 +499,7 @@ p {
   position: relative;
   display: inline-block;
   margin-left: 15px;
-  padding-left: 25px;
+  padding-left: 10px;
   cursor: pointer;
 }
 .modal-registration__ticket input[type=radio] {
@@ -509,7 +509,7 @@ p {
   content: "";
   position: absolute;
   top: -2px;
-  left: 0;
+  left: -15px;
   display: inline-block;
   width: 14px;
   height: 14px;
@@ -521,11 +521,18 @@ p {
   content: '';
   position: absolute;
   top: 1px;
-  left: 3px;
+  left: -12px;
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background-color: #6c6c6d;
+}
+.modal-registration__result {
+  position: absolute;
+  top: 546px;
+  right: 60px;
+  font-size: 18px;
+  color: #bdd73d;
 }
 .cost {
   position: absolute;
@@ -997,7 +1004,7 @@ p {
 }
 .speaker-details {
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   top: 50px;
   left: 0;
   border-top-right-radius: 10px;
@@ -1878,14 +1885,11 @@ p {
   .modal-registration form input[type="text"],
   .modal-registration form input[type="number"] {
     width: 48%;
+    vertical-align: top;
   }
   .modal-registration form input[type="text"]:nth-of-type(2n-1),
   .modal-registration form input[type="number"]:nth-of-type(2n-1) {
     margin-right: 20px;
-  }
-  .modal-registration form input[type="text"]:nth-of-type(9),
-  .modal-registration form input[type="number"]:nth-of-type(9) {
-    margin-right: 50.5%;
   }
   .modal-registration form textarea {
     margin-bottom: 35px;
@@ -1927,13 +1931,15 @@ p {
     margin-left: 5px;
   }
   .modal-registration__tickets-count {
-    position: absolute;
-    top: 380px;
-    left: 50%;
-    width: 40%;
+    width: 48%;
+    margin-top: 10px;
   }
   .modal-registration__ticket:first-of-type label {
     margin-bottom: 5px;
+  }
+  .modal-registration__result {
+    top: 325px;
+    right: 50px;
   }
   .cost {
     top: 320px;
@@ -2286,6 +2292,12 @@ p {
   .faq__item {
     font-size: 18px;
   }
+  .faq__item--active::before {
+    top: 7px;
+    left: -15px;
+    width: 7px;
+    height: 7px;
+  }
   .faq p {
     width: 49%;
     font-size: 14px;
@@ -2483,7 +2495,7 @@ p {
     font-size: 19px;
   }
   .modal-registration__tickets-count {
-    top: 385px;
+    margin-top: 5px;
   }
   .modal-registration__ticket label {
     font-size: 14px;
@@ -2493,6 +2505,10 @@ p {
   }
   .modal-registration__ticket input[type=radio]:checked + label::after {
     top: 3px;
+  }
+  .modal-registration__result {
+    top: 333px;
+    right: 60px;
   }
   .cost {
     top: 110px;
