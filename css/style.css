@@ -1849,15 +1849,22 @@ p {
   text-align: left;
 }
 .footer__crepla-logo {
-  width: 100px;
+  max-width: 250px;
   margin: 0 auto;
   margin-top: 25px;
 }
 .footer__crepla-logo a {
+  display: inline-block;
   width: 100%;
 }
+.footer__crepla-logo a p {
+  display: inline-block;
+  margin-top: 25px;
+  margin-right: 10px;
+  vertical-align: top;
+}
 .footer__crepla-logo a img {
-  width: 100%;
+  display: inline-block;
 }
 @media (min-width: 750px) {
   .wrapper {
@@ -2340,28 +2347,38 @@ p {
     padding-bottom: 25px;
   }
   .footer a {
-    width: 24%;
+    width: auto;
+    margin-right: 30px;
   }
   .footer p {
-    width: 24%;
+    width: auto;
+    margin-right: 30px;
   }
   .footer__copyright p {
-    width: 100%;
+    width: auto;
     margin-top: 0;
+    margin-right: 30px;
     font-size: 12px;
   }
   .footer__copyright {
     display: inline-block;
-    width: 49%;
+    width: auto;
   }
   .footer__crepla-logo {
     position: absolute;
-    right: 30px;
+    right: 15px;
     top: -40px;
-    width: 75px;
+    width: 200px;
     height: 50px;
   }
   .footer__crepla-logo a {
+    width: 200px;
+  }
+  .footer__crepla-logo a p {
+    margin-top: 15px;
+    margin-right: 10px;
+  }
+  .footer__crepla-logo a img {
     width: 75px;
   }
 }
@@ -2670,6 +2687,9 @@ p {
   .contact__info {
     top: 160px;
   }
+  .footer a {
+    margin-right: 80px;
+  }
 }
 @media (min-width: 750px) and (min-width: 950px) {
   .faq .wrapper {
@@ -2695,9 +2715,6 @@ p {
   .footer p {
     width: auto;
     margin-right: 75px;
-  }
-  .footer__copyright {
-    width: auto;
   }
 }
 @media (max-width: 300px) {
