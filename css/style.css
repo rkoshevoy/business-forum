@@ -535,6 +535,11 @@ p {
   font-size: 18px;
   color: #bdd73d;
 }
+.modal-registration__sale {
+  position: absolute;
+  top: -75px;
+  left: 15px;
+}
 .cost {
   position: absolute;
   z-index: 10;
@@ -1948,10 +1953,13 @@ p {
   .modal-registration__result {
     top: -59px;
   }
+  .modal-registration__sale {
+    top: -25px;
+  }
   .cost {
     top: 320px;
-    width: 720px;
-    left: calc(50% - 360px);
+    left: calc(50% - 280px);
+    width: 560px;
   }
   .cost__close {
     right: 10px;
@@ -2526,10 +2534,13 @@ p {
   .modal-registration__result {
     top: -54px;
   }
+  .modal-registration__sale {
+    top: -20px;
+  }
   .cost {
     top: 110px;
-    left: calc(50% - 470px);
-    width: 940px;
+    left: calc(50% - 340px);
+    width: 680px;
   }
   .cost h2 {
     font-size: 24px;
