@@ -63,20 +63,19 @@
         <input type="text" name="phone" required minlength="11" maxlength="20" pattern="\+\d*" title="начните ввод с символа +" placeholder="Телефон в международном формате*">
         <input type="text" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="E-mail" title="не похоже на E-mail :(">
         <input type="text" name="position" placeholder="Должность">
-        <input type="number" step="1" min="1" name="tickets" required placeholder="Количество билетов*">
+        <input type="number" step="1" min="1" name="tickets_count" required placeholder="Количество билетов*">
         <input type="text" name="promo" placeholder="Промокод">
         <div class="modal-registration__tickets-count">
           <div class="modal-registration__ticket">
-            <input type="radio" name="price" id="one_ticket" checked>
+            <input type="radio" name="tickets" id="one_ticket" value="4000" checked>
             <label for="one_ticket">Билет на один день</label>
           </div>
           <div class="modal-registration__ticket">
-            <input type="radio" name="price" id="two_tickets" >
+            <input type="radio" name="tickets" id="two_tickets" value="8000">
             <label for="two_tickets">Билет на два дня</label>
           </div>
-        </div>
-
-        <div class="modal-registration__result">0 грн</div>
+          <div class="modal-registration__result">0 грн</div>
+        </div> 
 
         <div class="modal-registration__checkboxes">
           <p class="modal-registration__interesting">Интересные направления работы форума:</p>
@@ -120,7 +119,7 @@
             <label for="radio3">Счет-фактура</label>
           </div>
           <div class="modal-registration__payment-type modal-registration__payment-type--fourth">
-            <input type="radio" name="radio1" value="Перевод на карту Visa/Mastercard" id="radio4">
+            <input type="radio" name="radio1" value="Перевод на карту VIsa/Mastercard" id="radio4">
             <label for="radio4">Перевод VISA/Mastercard</label>
           </div>
         </div>
@@ -464,9 +463,9 @@
       <div class="speakers__more"></div>
       <div class="speakers__less"></div>
     </div>
-  </section>
-  
-  <section class="timetable" id="timetable">
+  </section> -->
+
+  <!-- <section class="timetable" id="timetable">
     <div class="wrapper">
       <h2>Программа форума</h2>
   
