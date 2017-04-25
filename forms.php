@@ -1,3 +1,26 @@
+<div style=" margin-left:2%;"><h2>Спасибо за регистрацию на форуме!</h2>
+    <h3>Дорогой.<br>
+        Данные платежа сформированы и вы можете оплатить билеты нажав на кнопку ниже<br>
+        Если по каким-либо причинам вы захотите это сделать позже - на ваш электронный адрес также
+        выслано письмо с платежом.<br>
+        После оплаты на Ваш e-mail придет письмо с qr-кодами (электронными билетами), по которым вы
+        попадете на мероприятие</h3>
+</div>
+<div style="text-align: center;">
+    <?php
+    include_once('liqpay_api.php');
+    $liqpay = new LiqPay($public_key, $private_key);
+    $html = $liqpay->cnb_form(array(
+        'action'         => 'pay',
+        'amount'         => '4000',
+        'sandbox'         => '1',
+        'currency'       => 'UAH',
+        'description'    => 'Международный бизнес-форум',
+        'order_id'       => 'order_id_1',
+        'version'        => '3'
+    ));
+    ?>
+</div>
 <?php
 
 ini_set("ERROR_REPORTING", 1);
@@ -134,11 +157,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
                 $qr_hash[] = md5($name . $surname . $from . $i);
                 QRcode::png(md5($name . $surname . $from . $i), 'qr-images/' . iconv("UTF-8", "cp1251", $name . $surname . substr($phone, -3)) . '/' . iconv("UTF-8", "cp1251", $name . $surname . $i . substr($phone, -3)) . '.png'); //генерируем кр-коды
             }
-        } else {
+        } elseif ($tickets == 1){
             $qr_path = 'qr-images/' . $name . $surname . substr($phone, -3);
-            $qr_hash = md5($name . $surname . $from . $i);
+            $qr_hash = md5($name . $surname . $from);
             QRcode::png($qr_hash, 'qr-images/' . iconv("UTF-8", "cp1251", $name . $surname . substr($phone, -3) . '.png')); //генерируем кр-код для одного пользователя
-        }
+        } else echo '<div style="margin-top:25%; margin-left:25%; border:solid 1px black; height:20%; width:40%;">
+                    <div> style=" margin-left:2%;"><h2>Не указано количество билетов!</h2>
+                    <h3>Заполните заново форму регистрации и проверьте поля на правильность</h3>
+                    <br><h3>Переадресация на главную страницу через: <span id="count">5</span></h3>
+                    </div>
+              </div>';
 
         if (is_array($qr_hash)) {
             foreach ($qr_hash as $value) {
@@ -255,6 +283,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
                         <button type="submit"><img src="https://privat24.privatbank.ua/p24/img/buttons/api_logo_1.jpg"
                                                    border="0"/></button>
                     </form>
+                </div>
+            </div>
+            <?php
+        } else if ($admin_letter && $thank_letter && $result && $radio1 == 'Перевод на карту Visa/Mastercard') { //если через форму пришел LiqPay
+            ?>
+            <div style="margin-top:25%; margin-left:25%; border:solid 1px black; height:30%; width:40%;">
+                <div style=" margin-left:2%;"><h2>Спасибо за регистрацию на форуме!</h2>
+                    <h3>Дорогой <?php echo $name; ?>, вы указали способом оплаты <?php echo $radio1 ?>.<br>
+                        Данные платежа сформированы и вы можете оплатить билеты нажав на кнопку ниже<br>
+                        Если по каким-либо причинам вы захотите это сделать позже - на ваш электронный адрес также
+                        выслано письмо с платежом.<br>
+                        После оплаты на Ваш e-mail придет письмо с qr-кодами (электронными билетами), по которым вы
+                        попадете на мероприятие</h3>
+                </div>
+                <div style="text-align: center;">
+                    <?php
+                    include_once('liqpay_api.php');
+                    $liqpay = new LiqPay($public_key, $private_key);
+                    $html = $liqpay->cnb_form(array(
+                    'action'         => 'pay',
+                    'amount'         => '4000',
+                    'sandbox'         => '1',
+                    'currency'       => 'UAH',
+                    'description'    => 'Международный бизнес-форум',
+                    'order_id'       => 'order_id_1',
+                    'version'        => '3'
+                    ));
+                    ?>
                 </div>
             </div>
             <?php
@@ -449,7 +505,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
                     span = document.getElementById("count");
                     span.innerHTML = counter;
                 } else {
-                    window.location = "http://www.crepla.com/business-forum/index.html";
+                    window.location = "http://businessforum.kharkov.ua/";
                 }
                 counter--;
             }, 1000);

@@ -1,5 +1,5 @@
 $(document).ready(function() {  
-	$("input[name='tickets_count']").on('input keyup', function() {
+	$("input[name='tickets']").on('input keyup', function() {
 
 		var tickets = $(this).val(); 
 		var calc = $(".modal-registration__result");
@@ -8,15 +8,15 @@ $(document).ready(function() {
 		result = tickets * 4000; 
 
 		$(calc).text(result + " грн").val();
-	})
+	});
 
-	$("input[name='tickets']").change(function(){
+	$("input[name='price']").change(function(){
 		var inputVal;
 		var res;
 		var myValue = $(this).val();
 
-		if($("input[name='tickets']").val()){
-			inputVal = $("input[name='tickets_count']").val();
+		if($("input[name='price']").val()){
+			inputVal = $("input[name='tickets']").val();
 			res = inputVal * myValue;
 		}
 		else {
