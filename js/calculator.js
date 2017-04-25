@@ -11,6 +11,7 @@ $(document).ready(function() {
 			result = tickets * two_days_price;
 		}
 		$(calc).text(result + " грн").val();
+		$("input[name='summ']").text(result).val();
 	};
 
 	$("input[name='tickets']")
