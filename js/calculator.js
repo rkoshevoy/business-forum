@@ -1,28 +1,19 @@
 $(document).ready(function() {  
-	$("input[name='tickets']").on('input keyup', function() {
-
-		var tickets = $(this).val(); 
+	var calculator = function() {
+		var tickets = $("input[name='tickets']").val();
 		var calc = $(".modal-registration__result");
 		var result;
-
-		result = tickets * 4000; 
-
+		var one_day_price = parseInt($('#one_day_price li:eq(4) p').text());
+		var two_days_price = parseInt($('#two_days_price li:eq(4) p').text());
+		if($('#one_ticket').is(":checked")){
+			result = tickets * one_day_price;
+		} else if ($('#two_tickets').is(":checked")){
+			result = tickets * two_days_price;
+		}
 		$(calc).text(result + " грн").val();
-	});
+	};
 
-	$("input[name='price']").change(function(){
-		var inputVal;
-		var res;
-		var myValue = $(this).val();
-
-		if($("input[name='price']").val()){
-			inputVal = $("input[name='tickets']").val();
-			res = inputVal * myValue;
-		}
-		else {
-			res = 0;
-		}
-
-		$(".modal-registration__result").text(res + " грн");
-	})
+	$("input[name='tickets']").keyup(calculator);
+	$('#one_ticket').click(calculator);
+	$('#two_tickets').click(calculator);
 });

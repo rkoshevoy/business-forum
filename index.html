@@ -63,15 +63,15 @@
         <input type="text" name="phone" required minlength="11" maxlength="20" pattern="\+\d*" title="начните ввод с символа +" placeholder="Телефон в международном формате*">
         <input type="text" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="E-mail" title="не похоже на E-mail :(">
         <input type="text" name="position" placeholder="Должность">
-        <input type="number" step="1" min="1" name="tickets_count" required placeholder="Количество билетов*">
+        <input type="number" step="1" min="1" name="tickets" required placeholder="Количество билетов*">
         <input type="text" name="promo" placeholder="Промокод">
         <div class="modal-registration__tickets-count">
           <div class="modal-registration__ticket">
-            <input type="radio" name="tickets" id="one_ticket" value="4000" checked>
+            <input type="radio" name="price" id="one_ticket" checked>
             <label for="one_ticket">Билет на один день</label>
           </div>
           <div class="modal-registration__ticket">
-            <input type="radio" name="tickets" id="two_tickets" value="8000">
+            <input type="radio" name="price" id="two_tickets">
             <label for="two_tickets">Билет на два дня</label>
           </div>
           <div class="modal-registration__result">0 грн</div>
@@ -136,40 +136,40 @@
     <h2>Стоимость</h2>
     <div class="cost__close"></div>
 
-    <div class="price">
+    <div class="price" id="one_day_price">
       <h3>Стоимость на один день</h3>
       <ul class="price__list">
-        <li class="price__item">с 01.02 по 31.02<br>4 000 грн</li>
-        <li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
-        <li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
-        <li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
-        <li class="price__item">с 20.06 по 21.06<br>8 500 грн</li>
+        <li class="price__item">с 01.02 по 31.02<br>4000 грн</li>
+        <li class="price__item">с 01.04 по 30.04<br>5000 грн</li>
+        <li class="price__item">с 01.04 по 30.04<br>5000 грн</li>
+        <li class="price__item">с 01.04 по 30.04<br>5000 грн</li>
+        <li class="price__item">с 20.06 по 21.06<br><p>4500 грн</p> </li>
       </ul>
 
       <button class="price__button">Купить</button>
     </div>
 
-    <div class="price">
+    <div class="price" id="two_days_price">
       <h3>Стоимость на оба дня</h3>
       <ul class="price__list">
-        <li class="price__item">с 01.02 по 31.02<br>4 000 грн</li>
-        <li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
-        <li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
-        <li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
-        <li class="price__item">с 20.06 по 21.06<br>8 500 грн</li>
+        <li class="price__item">с 01.02 по 31.02<br>4000 грн</li>
+        <li class="price__item">с 01.04 по 30.04<br>5000 грн</li>
+        <li class="price__item">с 01.04 по 30.04<br>5000 грн</li>
+        <li class="price__item">с 01.04 по 30.04<br>5000 грн</li>
+        <li class="price__item">с 20.06 по 21.06<br><p>8500 грн<p></li>
       </ul>
 
       <button class="price__button">Купить</button>
     </div>
 
-    <div class="price">
+    <div class="price" id="khuy_znaet_sho_za_price">
       <h3>Стоимость за один из дней</h3>
       <ul class="price__list">
-        <li class="price__item">с 01.02 по 31.02<br>4 000 грн</li>
-        <li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
-        <li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
-        <li class="price__item">с 01.04 по 30.04<br>5 000 грн</li>
-        <li class="price__item">с 20.06 по 21.06<br>8 500 грн</li>
+        <li class="price__item">с 01.02 по 31.02<br>4000 грн</li>
+        <li class="price__item">с 01.04 по 30.04<br>5000 грн</li>
+        <li class="price__item">с 01.04 по 30.04<br>5000 грн</li>
+        <li class="price__item">с 01.04 по 30.04<br>5000 грн</li>
+        <li class="price__item">с 20.06 по 21.06<br><p>8500 грн<p></li>
       </ul>
 
       <button class="price__button">Купить</button>
