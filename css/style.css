@@ -482,6 +482,7 @@ p {
   font-size: 12px;
 }
 .modal-registration__tickets-count {
+  position: relative;
   display: inline-block;
   width: 100%;
 }
@@ -529,8 +530,8 @@ p {
 }
 .modal-registration__result {
   position: absolute;
-  top: 546px;
-  right: 60px;
+  top: -110px;
+  right: 40px;
   font-size: 18px;
   color: #bdd73d;
 }
@@ -1938,8 +1939,7 @@ p {
     margin-bottom: 5px;
   }
   .modal-registration__result {
-    top: 325px;
-    right: 50px;
+    top: -59px;
   }
   .cost {
     top: 320px;
@@ -2507,8 +2507,7 @@ p {
     top: 3px;
   }
   .modal-registration__result {
-    top: 333px;
-    right: 60px;
+    top: -54px;
   }
   .cost {
     top: 110px;
