@@ -1,26 +1,3 @@
-<div style=" margin-left:2%;"><h2>Спасибо за регистрацию на форуме!</h2>
-    <h3>Дорогой.<br>
-        Данные платежа сформированы и вы можете оплатить билеты нажав на кнопку ниже<br>
-        Если по каким-либо причинам вы захотите это сделать позже - на ваш электронный адрес также
-        выслано письмо с платежом.<br>
-        После оплаты на Ваш e-mail придет письмо с qr-кодами (электронными билетами), по которым вы
-        попадете на мероприятие</h3>
-</div>
-<div style="text-align: center;">
-    <?php
-    include_once('liqpay_api.php');
-    $liqpay = new LiqPay($public_key, $private_key);
-    $html = $liqpay->cnb_form(array(
-        'action'         => 'pay',
-        'amount'         => '4000',
-        'sandbox'         => '1',
-        'currency'       => 'UAH',
-        'description'    => 'Международный бизнес-форум',
-        'order_id'       => 'order_id_1',
-        'version'        => '3'
-    ));
-    ?>
-</div>
 <?php
 
 ini_set("ERROR_REPORTING", 1);
@@ -30,6 +7,32 @@ ini_set("default_charset", "UTF-8");
 //    $result = scandir('qr-images/'. iconv("UTF-8", "cp1251", 'ОлегДементьев465'));
 //    var_dump($result);
 //} else die("bolt");
+
+?><div style=" margin-left:2%;"><h2>Спасибо за регистрацию на форуме!</h2>
+    <h3>Дорогой.<br>
+Данные платежа сформированы и вы можете оплатить билеты нажав на кнопку ниже<br>
+        Если по каким-либо причинам вы захотите это сделать позже - на ваш электронный адрес также
+        выслано письмо с платежом.<br>
+После оплаты на Ваш e-mail придет письмо с qr-кодами (электронными билетами), по которым вы
+        попадете на мероприятие</h3>
+</div>
+<div style="text-align: center;">
+    <?php
+    include_once('liqpay_api.php');
+    $liqpay = new LiqPay(i68529970993, C4mHVBRQDS8lwHDN8jgLxdMQ9dk7iRUmCxb20r9l);
+    $html = $liqpay->cnb_form(array(
+        'action'         => 'pay',
+        'amount'         => '4000',
+        'sandbox'         => '1',
+        'currency'       => 'UAH',
+        'description'    => 'Оплата входных билетов',
+        'order_id'       => 'order_id_4',
+        'version'        => '3'
+    ));
+    echo $html;
+    ?>
+</div>
+<?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытается попасть в наш файл напрямую, не через отправку формы - получит болт
 

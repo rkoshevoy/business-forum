@@ -13,7 +13,9 @@ $(document).ready(function() {
 		$(calc).text(result + " грн").val();
 	};
 
-	$("input[name='tickets']").keyup(calculator);
+	$("input[name='tickets']")
+		.keyup(calculator)
+		.click(calculator);
 	$('#one_ticket').click(calculator);
 	$('#two_tickets').click(calculator);
 });
