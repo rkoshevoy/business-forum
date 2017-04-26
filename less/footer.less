@@ -25,7 +25,12 @@
 		color: #fff;
 
 		@media @tablet {
-			width: 24%;
+			width: auto;
+			margin-right: 30px;
+		}
+
+		@media @desktop {
+			margin-right: 80px;
 		}
 	}
 
@@ -35,7 +40,8 @@
 		text-align: left;
 
 		@media @tablet {
-			width: 24%;
+			width: auto;
+			margin-right: 30px;
 		}
 
 		@media @big-desktop {
@@ -53,44 +59,59 @@
 			text-align: left;
 
 			@media @tablet {
-				width: 100%;
+				width: auto;
 				margin-top: 0;
+				margin-right: 30px;
 				font-size: 12px;
 			}
 		}
 
 		@media @tablet {
 			display: inline-block;
-			width: 49%;
-		}
-
-		@media @big-desktop {
 			width: auto;
 		}
 	}
 
 	&__crepla-logo {
-		width: 100px;
+		max-width: 250px;
 		margin: 0 auto;
 		margin-top: 25px;
 
+
 		@media @tablet {
-		position: absolute;
-			right: 30px;
+			position: absolute;
+			right: 15px;
 			top: -40px;
-			width: 75px;
+			width: 200px;
 			height: 50px;
 		}
 
 		a {
+			display: inline-block;
 			width: 100%;
 
 			@media @tablet {
-				width: 75px;
+				width: 200px;
+			}
+
+			p {
+				display: inline-block;
+				margin-top: 25px;
+				margin-right: 10px;
+				vertical-align: top;
+
+				@media @tablet {
+					margin-top: 15px;
+					margin-right: 10px;
+				}
 			}
 
 			img {
-				width: 100%;
+				display: inline-block;
+
+				@media @tablet {
+					width: 75px;
+				}
 			}
 		}
 	}
