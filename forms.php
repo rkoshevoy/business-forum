@@ -8,7 +8,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
     if (isset($_POST['registration_form'])) { //если пришла форма регистрации участника
 
         include_once('phpqrcode/qrlib.php'); //наша библиотека генерации кр-кодов
-        //var_dump($_POST); die;
 
         if (isset($_POST['name']) && $_POST['name'] != '') {
             $name = stripslashes(strip_tags(trim($_POST['name'])));
@@ -37,6 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
         } else {
             $from = "Email не указан";
         }
+        setcookie("Email", $from, time()+3600);
 
         if (isset($_POST['position']) && $_POST['position'] != '') {
             $position = $_POST['position'];
@@ -120,7 +120,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
         }
 
         $promo_code = 1;
-        //var_dump($promo_phrase); die;
 
         foreach($promo_phrase as $key=>$value) {
             if ($promo == $value) {
@@ -130,11 +129,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
 
         if($tickets > 3){
             $promo_code .= -.15;
-            $skidon2 = "Вы заказли более 3 билетов, что дает право на автоматическую скидку 15%<br>";
+            $skidon2 = "Вы заказали более 3 билетов, что дает право на автоматическую скидку 15%<br>";
         } else $skidon2 = '';
 
         if($promo_code < 1){
-            $skidon = "Вы ввели промокод: ".$promo.", который дает скидку". (1 - $promo_code)*100 ." %<br>";
+            $skidon = "Вы ввели промокод: ".$promo.", который дает скидку ". (1 - $promo_code)*100 ."%<br>";
         } else $skidon = '';
 
         $price = $_POST['summ'] ? (int)$_POST['summ'] : 4000;
@@ -143,17 +142,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
 
         if ($tickets > 1) {
             //$folder = iconv("UTF-8", "cp1251", 'qr-images/' . $_POST['name'] . $_POST['surname']);
-            //echo $folder; die;
-            $folder = mkdir('qr-images/' . iconv("UTF-8", "cp1251", $name . $surname . substr($phone, -3)));
+            mkdir('qr-images/' . iconv("UTF-8", "cp1251", $name . $surname . substr($phone, -3)));
             $qr_path = 'qr-images/' . $name . $surname . substr($phone, -3);
+            $qr_photos = array();
             for ($i = 0; $i < $tickets; $i++) {
                 $qr_hash[] = md5($name . $surname . $from . $i);
                 QRcode::png(md5($name . $surname . $from . $i), 'qr-images/' . iconv("UTF-8", "cp1251", $name . $surname . substr($phone, -3)) . '/' . iconv("UTF-8", "cp1251", $name . $surname . $i . substr($phone, -3)) . '.png'); //генерируем кр-коды
+                //$qr_photos[] = $name . $surname . $i . substr($phone, -3) . '.png';
             }
+            setcookie("QrPath", $qr_path, time()+3600);
+            //setcookie("QrPhotos", serialize($qr_photos), time()+3600);
+            //var_dump($_COOKIE); die;
         } elseif ($tickets == 1){
-            $qr_path = 'qr-images/' . $name . $surname . substr($phone, -3);
             $qr_hash = md5($name . $surname . $from);
             QRcode::png($qr_hash, 'qr-images/' . iconv("UTF-8", "cp1251", $name . $surname . substr($phone, -3) . '.png')); //генерируем кр-код для одного пользователя
+            setcookie("QrPhoto", 'qr-images/'. $name . $surname . substr($phone, -3) . '.png', time()+3600);
         } else echo '<div style="margin-top:25%; margin-left:25%; border:solid 1px black; height:20%; width:40%;">
                     <h2>Не указано количество билетов!</h2>
                     <h3>Заполните заново форму регистрации и проверьте поля на правильность</h3>
@@ -271,8 +274,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
                     <form method="POST" action="https://api.privatbank.ua/p24api/ishop">
                         <input type="hidden" name="amt" value="<?php echo $summ; ?>"/>
                         <input type="hidden" name="ccy" value="UAH"/>
-                        <!-- 102003 -->
-                        <input type="hidden" name="merchant" value="127032"/>
+                        <input type="hidden" name="merchant" value="102003"/>
                         <input type="hidden" name="order" value="<?php echo $payment_id ?>"/>
                         <input type="hidden" name="details"
                                value="Оплата билетов. Заказано билетов: <?php echo $tickets; ?> "/>
@@ -445,26 +447,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
 
         $pb_payment = _privatbank_parse_query($_POST['payment']);
         $request_data = $_POST;
-        //JL333qhE7IrcM9eHL5EIccjt2K3M9Zte
-        $pass = 'nkHOZyuY5FLak3R7436Fpztt2qRN72dn'; //Пароль от Мерчанта
+        $pass = 'JL333qhE7IrcM9eHL5EIccjt2K3M9Zte'; //Пароль от Мерчанта
         $signature = sha1(md5($request_data['payment'] . $pass)); //расчет сигнатуры
 
         if ($request_data['signature'] == $signature && $pb_payment['state'] == 'test') { //если оплата прошла, то посылаем коды в письме
-            if (is_dir('qr-images/'. iconv("UTF-8", "cp1251", 'ИванБолван111'))){
-                $result = scandir('qr-images/'. iconv("UTF-8", "cp1251", 'ИванБолван111'));
+            if (is_dir(iconv("UTF-8", "cp1251", $_COOKIE['QrPath']))){
+                $result = scandir(iconv("UTF-8", "cp1251", $_COOKIE['QrPath']));
                 foreach ($result as $value){
                     if(substr(strrchr($value, '.'), 1)=='png'){
-                        $file[] = 'qr-images/ИванБолван111/'. iconv("cp1251", "UTF-8", $value);
+                        $file[] = $_COOKIE['QrPath'].'/'. iconv("cp1251", "UTF-8", $value);
                     }
                 }
-                var_dump($file);
-            } else die("bolt"); //вытяги
-            //var_dump($request_data);
-            $to = "parnable@gmail.com"; //Кому
-            $from = "abvgd@gmail.com"; //Кому
+                //var_dump($file);
+            } else if (is_string($_COOKIE["QrPhoto"])){
+                $file[] = $_COOKIE["QrPhoto"];
+            } else die("QR-коды не сгенерированы или произошла какая-то другая ошибка с файламами. Сообщите об ошибке администрации 
+            по телефону 067 556 71 66 или имейлом: . В любом случае, наши менеджеры вскоре свяжутся с Вами, не переживайте!"); //вытяги
+                //var_dump($request_data);
+            $to = $_COOKIE['Email']; //Кому. Берем из куки, т.к. это уже ответ сервера
+            unset($_COOKIE); //куки больше не нужны
+            $from = "vyzovyivozmozhnosti@gmail.com";
             $msg = "<h3>Спасибо за оплату входных билетов на мероприятие бизнес-форума 2017!</h3><br>
-                                 Ниже, в приложении, Вы найдете кр-коды билетов для входа. Распечатайте их или предъявите на экране телефона.<br>
-                                 Ждем Вас на мероприятии 20-21 июня!";
+                         Ниже, в приложении, Вы найдете кр-коды билетов для входа. Распечатайте их или предъявите на экране телефона.<br>
+                         Ждем Вас на мероприятии 20-21 июня!";
+            $subject = "Входные билеты на бизнес-форум 2017";
             function send_mail($email, $subject, $msg, $from, $file)
             {
                 $boundary = "--" . md5(uniqid(time()));
@@ -475,9 +481,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
                 $multipart .= "Content-Type: text/html; charset=utf-8\n";
                 $multipart .= "Content-Transfer-Encoding: Quot-Printed\n\n";
                 $multipart .= "$msg\n\n";
-                $message_part = "--$boundary\n";
+                $message_part = "";
                 foreach ($file as $key => $value) {
-                    $file = file_get_contents($value);
+                    $file = file_get_contents(iconv("UTF-8", "cp1251", $value));
+                    $message_part .= "--$boundary\n";
                     $message_part .= "Content-Type: application/octet-stream\n";
                     $message_part .= "Content-Transfer-Encoding: base64\n";
                     $message_part .= "Content-Disposition: attachment; filename=\"$value\"\n\n";
@@ -486,14 +493,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
                 $multipart .= $message_part . "--$boundary--\n";
 
                 mail($email, $subject, $multipart, $headers);
-            }
+                return true;
+            };
+            if (send_mail($to, $subject, $msg, $file) == true){
+                echo '<div style="margin-top:25%; margin-left:25%; border:solid 1px black; height:20%; width:40%;">
+                        <div style=" margin-left:2%;"><h2>Спасибо за оплату!</h2>
+                            <br><h3>Ваши электронные билеты должны быть уже на Вашей электронной почте!</h3>
+                            <br><h3>Переадресация на главную страницу через: <span id="count">5</span></h3>
+                        </div>
+                  </div>';
+            } else "Ошибка отправки билетов. Сообщите по телефону 067 556 71 66 или имейлом: В любом случае, наши менеджеры вскоре свяжутся с Вами, не переживайте!";
 
-            echo '<div style="margin-top:25%; margin-left:25%; border:solid 1px black; height:20%; width:40%;">
-                    <div style=" margin-left:2%;"><h2>Спасибо за оплату!</h2>
-                        <br><h3>Ваши электронные билеты должны быть уже на Вашей электронной почте!</h3>
-                        <br><h3>Переадресация на главную страницу через: <span id="count">5</span></h3>
-                    </div>
-              </div>';
         } else {
                 echo "Ошибка! Но на вашем имейле уже есть письмо для повторной оплаты ;)<br>
                       <h3>Переадресация на главную страницу через: <span id=\"count\">5</span></h3>";
