@@ -2339,7 +2339,7 @@ p {
   }
   .last-forums img {
     width: 20%;
-    height: 100px;
+    height: 93px;
     margin-right: -4px;
   }
   .last-forums__tablet {
@@ -2697,6 +2697,9 @@ p {
   }
   .contact__info {
     top: 160px;
+  }
+  .last-forums img {
+    height: 155px;
   }
   .footer a {
     margin-right: 80px;
