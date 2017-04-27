@@ -596,7 +596,6 @@ p {
   padding-top: 35px;
   padding-bottom: 30px;
   background-color: #edf3fa;
-  cursor: pointer;
 }
 .price:hover {
   background-color: #bdd63d;
@@ -613,6 +612,7 @@ p {
 }
 .price:hover .price__button:hover {
   border: 2px solid #6c6c6d;
+  color: #6c6c6d;
 }
 .price h3 {
   margin-bottom: 25px;
@@ -630,6 +630,10 @@ p {
   padding: 12px 20px;
   border: 2px solid #6c6c6d;
   border-radius: 30px;
+}
+.price__sale {
+  margin-bottom: 20px;
+  font-size: 12px;
 }
 .first {
   margin-bottom: 80px;

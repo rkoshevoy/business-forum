@@ -26,11 +26,11 @@
       <div class="header__dates"><p>21-22 июня 2017</p></div>
 
       <div class="social">
-        <a href="#" target="blank">
+        <a href="https://www.facebook.com/businessforum.kharkov/?fref=ts" target="blank">
           <div class="social__button social__button--fb"></div>
         </a>
 
-        <a href="#" target="blank">
+        <a href="https://www.youtube.com/channel/UCKwJCtph39yWj4jBdDYMFow?spfreload=10" target="blank">
           <div class="social__button social__button--yt"></div>
         </a>
       </div>
@@ -61,7 +61,7 @@
         <input type="text" name="company" placeholder="Компания">
         <input type="text" name="activity" placeholder="Сфера деятельности">
         <input type="text" name="phone" required minlength="11" maxlength="20" pattern="\+\d*" title="начните ввод с символа +" placeholder="Телефон в международном формате*">
-        <input type="text" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="E-mail" title="не похоже на E-mail :(">
+        <input type="text" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="E-mail*" title="не похоже на E-mail :(">
         <input type="text" name="position" placeholder="Должность">
         <input type="number" step="1" min="1" name="tickets" required placeholder="Количество билетов*">
         <input type="text" name="promo" placeholder="Промокод">
@@ -75,7 +75,7 @@
             <label for="two_tickets">Билет на два дня</label>
           </div>
           <div class="modal-registration__result">0 грн</div>
-          <div class="modal-registration__sale">При покупке от 3-х билетов- скидка -15%</div>
+          <div class="modal-registration__sale">При покупке от 3-х билетов - скидка -15%</div>
         </div> 
 
         <div class="modal-registration__checkboxes">
@@ -148,7 +148,7 @@
         <li class="price__item">с 20.06 по 21.06<br><p>5500 грн</p> </li>
       </ul>
 
-      <button class="price__button">Купить</button>
+      <button id="price-button1" class="price__button">Купить</button>
     </div>
 
     <div class="price" id="two_days_price">
@@ -161,8 +161,10 @@
         <li class="price__item">с 20.06 по 21.06<br><p>9500 грн<p></li>
       </ul>
 
-      <button class="price__button">Купить</button>
+      <button id="price-button2" class="price__button">Купить</button>
     </div>
+
+    <p class="price__sale">При покупке от 3-х билетов - скидка -15%</p>
   </section>
 
   <section class="first">
@@ -175,8 +177,20 @@
       </div>
 
       <div class="video">
-        <img src="images/video.jpg" alt="">
-        <button class="video__play-button"></button>
+        <video width="100%" controls="true" preload="none">
+          <source type="video/mp4" src="video/business-forum.mp4" />
+        </video>
+
+        <!-- <object width="640" height="390">
+          <param name="movie"
+         value="https://www.youtube.com/v/atI4JKFQYoU"></param>
+          <param name="allowScriptAccess" value="always"></param>
+          <embed src="https://www.youtube.com/watch?v=WNTQiug1LU8"
+         type="application/x-shockwave-flash"
+         allowscriptaccess="always"
+         width="422" height="258"></embed>
+        </object> -->
+        <!-- <button class="video__play-button"></button> -->
       </div>
     </div>
   </section>
