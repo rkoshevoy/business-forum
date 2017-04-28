@@ -91,6 +91,7 @@
 	text-align: center;
 	cursor: pointer;
 	width: 100%;
+	vertical-align: top;
 
 	@media @tablet {
 		display: inline-block;
@@ -102,10 +103,19 @@
 		width: 150px;
 	}
 
-	img {
-		display: block;
+	&__photo {
+		width: 140px;
+		height: 140px;
 		margin: 0 auto;
-		margin-bottom: 15px;
+		border-radius: 50%;
+		overflow: hidden;
+
+		img {
+			display: block;
+			width: 100%;
+			margin: 0 auto;
+			margin-bottom: 15px;
+		} 
 	}
 
 	&__name {
@@ -116,6 +126,9 @@
 		@media @tablet {
 			height: 40px;
 			margin-bottom: 5px;
+			display: flex;
+    align-items: center;
+    justify-content: center;
 		}
 	}
 
@@ -195,7 +208,14 @@
 	}
 
 	&__avatar {
+		margin: 0 auto;
 		margin-bottom: 10px;
+		width: 140px;
+		overflow: hidden;
+
+		img {
+			width: 100%;
+		}
 	}
 
 	&__name {
