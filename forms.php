@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
 
 
 
-        $to = 'vyzovyivozmozhnosti@gmail.com';
+        $to = 'vyzovyivozmozhnosti@gmail.com,join@businessforum.kharkov.ua';
         $to1 = $from;
 
         $subject = $name . " зарегистрировался на бизнес-форуме!";
@@ -356,7 +356,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
                 $comment = $_POST['comments'];
             } else $comment = "Комментариев нет";
 
-            $to = 'vyzovyivozmozhnosti@gmail.com';
+            $to = 'vyzovyivozmozhnosti@gmail.com,join@businessforum.kharkov.ua';
             $to1 = $from;
 
             $subject = $name . " хочет быть волонтером на форуме";
