@@ -1036,6 +1036,7 @@ p {
   margin: 0 auto;
   border-radius: 50%;
   overflow: hidden;
+  background-color: #fff;
 }
 .speaker__photo img {
   display: block;
@@ -1128,13 +1129,13 @@ p {
   text-align: left;
 }
 .speaker-details__company {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   font-size: 12px;
   text-align: left;
   color: #515255;
 }
 .speaker-details__position {
-  padding-bottom: 55px;
+  padding-bottom: 20px;
   font-size: 12px;
   text-align: left;
   color: #515255;
