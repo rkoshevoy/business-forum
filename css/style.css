@@ -1709,9 +1709,6 @@ p {
   margin-bottom: 55px;
   text-align: center;
 }
-.contact h4 {
-  margin-bottom: 25px;
-}
 .contact a {
   display: block;
   text-decoration: none;
@@ -2377,7 +2374,8 @@ p {
   }
   .contact {
     display: inline-block;
-    margin-right: 15px;
+    width: 33.3%;
+    margin-right: -4px;
   }
   .contact:last-of-type {
     margin-right: 0;
