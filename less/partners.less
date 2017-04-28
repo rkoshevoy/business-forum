@@ -1,13 +1,6 @@
 .partners {
 	text-align: center;
 
-	@media @tablet {
-
-		.wrapper {
-			width: 730px;
-		}
-	}
-
 	h2 {
 		padding-top: 135px;
 		padding-bottom: 30px;
@@ -59,16 +52,19 @@
 
 	&__partner {
 
+		@media @tablet {
+			display: inline-block;
+			width: 33.3%;
+			margin-right: -4px;
+			vertical-align: top;
+		}
+
 		a {
 			margin-bottom: 50px;
 			vertical-align: bottom;
 		}
 
-		@media @tablet {
-			display: inline-block;
-			margin-right: 35px;
-			vertical-align: top;
-		}
+		
 	}
 
 	&__other {
@@ -81,8 +77,9 @@
 			vertical-align: middle;
 
 			@media @tablet {
-				width: 24%;
+				width: 25%;
 				margin: 0;
+				margin-right: -4px;
 				margin-bottom: 45px;
 			}
 		}
