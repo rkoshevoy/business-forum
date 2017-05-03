@@ -88,6 +88,7 @@
 }
 
 .video {
+	position: relative;
 	width: 100%;
 
 	iframe {
@@ -104,6 +105,39 @@
 
 		@media @big-desktop {
 			height: 660px;
+		}
+	}
+
+	&__play {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 86px;
+		height: 86px;
+		border-radius: 50%;
+		background-color: rgba(255, 255, 255, 0.5);
+		cursor: pointer;
+
+		@media @tablet {
+			width: 135px;
+			height: 135px;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-5px, -50%);
+			border: 20px solid transparent;
+			border-left: 20px solid rgba(0, 0, 0, 0.5);
+
+			@media @tablet {
+				transform: translate(-8px, -50%);
+				border: 35px solid transparent;
+				border-left: 35px solid rgba(0, 0, 0, 0.5);
+			}
 		}
 	}
 }
