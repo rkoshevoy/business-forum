@@ -177,8 +177,10 @@
       </div>
 
       <div class="video">
-        <iframe width="100%" height="" src="https://www.youtube.com/embed/WNTQiug1LU8" frameborder="0" allowfullscreen></iframe>
+      <div class="video__play"></div>
+        <img width="100%" src="images/video_preview.jpg" alt="video" />
       </div>
+
     </div>
   </section>
 
@@ -1819,7 +1821,7 @@
     </div>
   </section> -->
 
-<!--   <section class="partner">
+  <!--  <section class="partner">
   <h2>Официальный партнер</h2>
   <a href="#">
     <img src="images/partners/" alt="">
@@ -2235,6 +2237,12 @@
 <script type="text/javascript" src="js/speakers-more.js"></script> 
 
 <script type="text/javascript" src="js/calculator.js"></script>
+
+<script type="text/javascript">
+  $('.video__play').click(function(){
+    $('.video').html('<iframe width="100%" src="https://www.youtube.com/embed/WNTQiug1LU8?autoplay=1" frameborder="0" allowfullscreen></iframe>');
+    });
+  </script>
 
 </body>
 </html>
