@@ -138,7 +138,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
 
         $price = $_POST['summ'] ? (int)$_POST['summ'] : 4000;
 
-        $summ = $price * $promo_code * (int)$tickets;
+        $summ = $price * $promo_code;
+        echo $summ; die;
 
         if ($tickets > 1) {
             //$folder = iconv("UTF-8", "cp1251", 'qr-images/' . $_POST['name'] . $_POST['surname']);
@@ -187,8 +188,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
                         <input type="hidden" name="ext_details"
                                value="Наш международный бизнес-форум - это мероприятие, объединяющие десятки лучших отечественных спикеров в области ведения собственного дела"/>
                         <input type="hidden" name="pay_way" value="privat24"/>
-                        <input type="hidden" name="return_url" value="http://business-forum/forms.php"/>
-                        <input type="hidden" name="server_url" value="http://business-forum/forms.php"/>
+                        <input type="hidden" name="return_url" value="http://businessforum.kharkov.ua/forms.php"/>
+                        <input type="hidden" name="server_url" value="http://businessforum.kharkov.ua/forms.php"/>
                         <button type="submit"><img src="https://privat24.privatbank.ua/p24/img/buttons/api_logo_1.jpg"
                                                    border="0"/></button>
                     </form>
@@ -281,8 +282,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
                         <input type="hidden" name="ext_details"
                                value="Наш международный бизнес-форум - это мероприятие, объединяющие десятки лучших отечественных спикеров в области ведения собственного дела"/>
                         <input type="hidden" name="pay_way" value="privat24"/>
-                        <input type="hidden" name="return_url" value="http://business-forum/forms.php"/>
-                        <input type="hidden" name="server_url" value="http://business-forum/forms.php"/>
+                        <input type="hidden" name="return_url" value="http://businessforum.kharkov.ua/forms.php"/>
+                        <input type="hidden" name="server_url" value="http://businessforum.kharkov.ua/forms.php"/>
                         <button type="submit"><img src="https://privat24.privatbank.ua/p24/img/buttons/api_logo_1.jpg"
                                                    border="0"/></button>
                     </form>
