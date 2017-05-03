@@ -4,7 +4,7 @@ $(document).ready(function() {
 	var missionClose = $('.mission-details__close');
 
 	$(missionMore).click(function() {
-		$(missionDetails).removeClass('hide'),
+		$(missionDetails).removeClass('hide');
 		$(missionDetails).addClass('zoomIn');
 	})
 
