@@ -3,17 +3,14 @@
 	width: 100%;
 
 	@media @desktop {
-		background-color: #6D6D6E;
-		width: 930px;
-		margin: 0 auto;	
 
 		&::before {
 			content: '';
 			position: absolute;
 			z-index: -1;
 			top: 0;
-			left: -2000px;
-			width: 2000px;
+			left: 0;
+			width: 50%;
 			height: 69px;
 			background-color: #6D6D6E;
 		}
@@ -23,208 +20,210 @@
 			position: absolute;
 			z-index: -1;
 			top: 0;
-			right: -2000px;
-			width: 2000px;
+			right: 0;
+			width: 50%;
 			height: 69px;
 			background-color: #014357;
-		}
-	}
+		} 
 
-	&__button-wrapper {
-		background-color: #6d6d6e;
-		text-align: center; 
-		padding: 5px;
-		margin-right: 80px;
+		&__wrapper {
+			width: 930px;
 
-		@media @tablet {
-			margin-right: 100px;
-		}
-
-		@media @desktop {
-			margin-right: 0;
-			padding: 0;
-		}
-	}
-
-	&__button { 
-		width: 100%;
-		max-width: 220px;
-		padding: 18px 0;
-		font-size: 20px;
-		color: #fff;
-		font-family: BlissProHeavy; 
-		background-color: #1f8a70;
-		overflow: hidden;
-
-		@media @desktop {
-			display: none;
-		}
-	}
-
-	&__menu-button {
-		float: right;
-		width: 80px;
-		height: 65px;
-
-		@media @tablet {
-			width: 100px;	
-		}
-
-		@media @desktop {
-			display: none;
-		}
-	}
-
-	&__button-line {
-		width: 50px;
-		height: 8px;
-		margin: 0 auto;
-		margin-bottom: 8px;
-		border-radius: 4px;
-		background-color: #343434;
-
-		&:last-of-type {
-			margin-bottom: 0;
-		}
-	}
-
-	&__dates {
-		display: none;
-
-		@media @desktop {
-			display: inline-block;
-			padding: 25px 20px;
-			margin-right: -3px;
-			background-color: #fee010;
-
-			p {
-				text-transform: uppercase;
-				color: #fff;
+			/* &::before {
+				content: '';
+				position: absolute;
+				z-index: -1;
+				top: 0;
+				left: -2000px;
+				width: 2000px;
+				height: 69px;
+				background-color: #000;
+			}
+			
+			&::after {
+				content: '';
+				position: absolute;
+				z-index: -1;
+				top: 0;
+				right: -2000px;
+				width: 2000px;
+				height: 69px;
+				background-color: #000;
+				}  */
 			}
 		}
+
+		&__button-wrapper {
+			background-color: #6d6d6e;
+			text-align: center; 
+			padding: 5px;
+			margin-right: 80px;
+
+			@media @tablet {
+				margin-right: 100px;
+			}
+
+			@media @desktop {
+				margin-right: 0;
+				padding: 0;
+			}
+		}
+
+		&__button { 
+			width: 100%;
+			max-width: 220px;
+			padding: 18px 0;
+			font-size: 20px;
+			color: #fff;
+			font-family: BlissProHeavy; 
+			background-color: #1f8a70;
+			overflow: hidden;
+
+			@media @desktop {
+				display: none;
+			}
+		}
+
+		&__menu-button {
+			float: right;
+			width: 80px;
+			height: 65px;
+
+			@media @tablet {
+				width: 100px;	
+			}
+
+			@media @desktop {
+				display: none;
+			}
+		}
+
+		&__button-line {
+			width: 50px;
+			height: 8px;
+			margin: 0 auto;
+			margin-bottom: 8px;
+			border-radius: 4px;
+			background-color: #343434;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+
+		&__dates {
+			display: none;
+
+			@media @desktop {
+				display: inline-block;
+				padding: 25px 15px;
+				margin-right: -3px;
+				background-color: #fee010;
+
+				p {
+					text-transform: uppercase;
+					color: #fff;
+				}
+			}
+		}
+
+		&__right {
+			float: right;
+			height: 60px;
+			background-color: #014357;
+		}
+
+		&__wrapper {
+			width: 100%;
+
+			@media @desktop {
+				width: 935px;
+				margin: 0 auto;
+			}
+		}  
 	}
 
-	&__right {
-		float: right;
-		height: 60px;
-		background-color: #014357;
-	}
-
-	&__wrapper {
+	.menu {
+		position: absolute;
+		z-index: 10;
+		top: 70px;
+		display: block;
 		width: 100%;
+		margin-left: -5px;
+		list-style: none;
+		background-color: #6d6d6e;
 
 		@media @desktop {
-			width: 935px;
+			position: relative;
+			top: 0;
+			display: inline-block;
+			width: auto;
+			padding: 25px 0;
 			margin: 0 auto;
 		}
-	}  
-}
 
-.menu {
-	position: absolute;
-	z-index: 10;
-	top: 70px;
-	display: block;
-	width: 100%;
-	margin-left: -5px;
-	list-style: none;
-	background-color: #6d6d6e;
-
-	@media @desktop {
-		position: relative;
-		top: 0;
-		display: inline-block;
-		width: auto;
-		padding: 25px 0;
-		margin: 0 auto;
-	}
-
-	&__item {
-		display: block;
-		padding: 20px;
-		border-top: 1px solid #1F8A70;
-		color: #e0dedb;
-		text-transform: uppercase;
-		cursor: pointer;
-
-		&:first-of-type {
-			animation-delay: 0.3s;
-		}
-
-		&:nth-of-type(2) {
-			animation-delay: 0.4s;
-		}
-
-		&:nth-of-type(3) {
-			animation-delay: 0.5s;
-		}
-
-		&:nth-of-type(4) {
-			animation-delay: 0.6s;
-		}
-
-		&:nth-of-type(5) {
-			animation-delay: 0.7s;
-		}
-
-		&:nth-of-type(6) {
-			animation-delay: 0.8s;
-		}
-
-		&:nth-of-type(7) {
-			animation-delay: 0.9s;
-		}
-
-		@media @desktop {
-			display: inline-block;
-			margin-right: 9px;
-			padding: 0;
-			border: none;
-			font-size: 13px;		
-		}
-
-		a {
+		&__item {
+			display: block;
+			padding: 20px;
+			border-top: 1px solid #1F8A70;
 			color: #e0dedb;
-			text-decoration: none;
+			text-transform: uppercase;
+			cursor: pointer;
+
+			@media @desktop {
+				display: inline-block;
+				margin-right: 9px;
+				padding: 0;
+				border: none;
+				font-size: 13px;	
+
+				&:last-of-type {
+					margin-right: 0;
+				}	
+			}
+
+			a {
+				color: #e0dedb;
+				text-decoration: none;
+
+				&:hover {
+					color: #fff;
+				}
+			}	
 
 			&:hover {
 				color: #fff;
 			}
-		}	
+		}
 
-		&:hover {
-				color: #fff;
-			}
+		&--hide {
+			display: none;
+		}
 	}
 
-	&--hide {
+	.social {
 		display: none;
-	}
-}
 
-.social {
-	display: none;
+		@media @desktop {
+			display: inline-block;
+			width: 70px;
+			padding: 21px 12px;
+			background-color: #014357;
+			vertical-align: middle;
+		}
 
-	@media @desktop {
-		display: inline-block;
-		width: 70px;
-		padding: 21px 12px;
-		background-color: #014357;
-		vertical-align: middle;
-	}
+		a {
+			text-decoration: none;
+		}
 
-	a {
-		text-decoration: none;
-	}
+		&__button {
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			background-image: url('../images/social_sprite.png');
+		}
 
-	&__button {
-		display: inline-block;
-		width: 20px;
-		height: 20px;
-		background-image: url('../images/social_sprite.png');
+		&__button--yt {
+			background-position: -25px 0;
+		}
 	}
-
-	&__button--yt {
-		background-position: -25px 0;
-	}
-}

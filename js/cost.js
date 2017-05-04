@@ -11,7 +11,8 @@ $(document).ready(function() {
 
 	$(costButton).click(function() {
 		$(cost).toggleClass('hide'),
-		$(cost).addClass('fadeInDown');
+		$(cost).addClass('fadeInDown'),
+		$(costRegistration).addClass('hide');
 	})
 
 	$(costClose).click(function() {
