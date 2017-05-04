@@ -1650,9 +1650,15 @@ p {
   display: block;
   margin-bottom: 30px;
 }
+.partners a img {
+  max-width: 100%;
+}
 .partners__partner a {
   margin-bottom: 50px;
   vertical-align: bottom;
+}
+.partners__partner a img {
+  max-width: 100%;
 }
 .partners__other {
   text-align: center;
@@ -1676,6 +1682,9 @@ p {
   display: inline-block;
   width: 50%;
   margin-right: -4px;
+}
+.organizers a img {
+  max-width: 100%;
 }
 .faq {
   padding: 0 15px;
