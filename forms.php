@@ -139,7 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
         $price = $_POST['summ'] ? (int)$_POST['summ'] : 4000;
 
         $summ = $price * $promo_code;
-        echo $summ; die;
+        //echo $summ; die;
 
         if ($tickets > 1) {
             //$folder = iconv("UTF-8", "cp1251", 'qr-images/' . $_POST['name'] . $_POST['surname']);
