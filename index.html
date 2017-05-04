@@ -51,122 +51,6 @@
     </div>
   </header>
 
-  <section class="modal-registration hide animated">
-    <form method="POST" action="forms.php">
-      <h2>Регистрация на бизнес-форум 2017</h2>
-      <div class="wrapper">
-        <div class="modal-registration__close"></div>
-        <input type="text" name="name"  required pattern="^[A-Za-zА-Яа-яЁё\s-]{1,50}" placeholder="Имя*">
-        <input type="text" name="surname" required pattern="^[A-Za-zА-Яа-яЁё\s-]{1,50}" placeholder="Фамилия*">
-        <input type="text" name="company" placeholder="Компания">
-        <input type="text" name="activity" placeholder="Сфера деятельности">
-        <input type="text" name="phone" required minlength="11" maxlength="20" pattern="\+\d*" title="начните ввод с символа +" placeholder="Телефон в международном формате*">
-        <input type="text" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="E-mail*" title="не похоже на E-mail :(">
-        <input type="text" name="position" placeholder="Должность">
-        <input type="number" step="1" min="1" name="tickets" required placeholder="Количество билетов*">
-        <input type="text" name="promo" placeholder="Промокод">
-        <div class="modal-registration__tickets-count">
-          <div class="modal-registration__ticket">
-            <input type="radio" name="price" id="one_ticket" checked>
-            <label for="one_ticket">Билет на один день</label>
-          </div>
-          <div class="modal-registration__ticket">
-            <input type="radio" name="price" id="two_tickets">
-            <label for="two_tickets">Билет на два дня</label>
-          </div>
-          <div class="modal-registration__result">0 грн</div>
-          <div class="modal-registration__sale">При покупке от 3-х билетов - скидка -15%</div>
-        </div> 
-
-        <div class="modal-registration__checkboxes">
-          <p class="modal-registration__interesting">Интересные направления работы форума:</p>
-
-          <div class="modal-registration__checkbox">
-            <input type="checkbox" value="Инвестиции" name="checkbox1[]" id="checkbox1">
-            <label for="checkbox1">Инвестиции</label>
-          </div>
-          <div class="modal-registration__checkbox">
-            <input type="checkbox" value="Экспорт/Импорт" name="checkbox1[]" id="checkbox2">
-            <label for="checkbox2">Экспорт/Импорт</label>
-          </div>
-          <div class="modal-registration__checkbox">
-            <input type="checkbox" value="IT" name="checkbox1[]" id="checkbox3">
-            <label for="checkbox3">IT</label>
-          </div>
-          <div class="modal-registration__checkbox">
-            <input type="checkbox" value="Энергоэффективность" name="checkbox1[]" id="checkbox4">
-            <label for="checkbox4">Энергоэффективность</label>
-          </div>
-          <div class="modal-registration__checkbox">
-            <input type="checkbox" value="Гранты для бизнеса" name="checkbox1[]" id="checkbox5">
-            <label for="checkbox5">Гранты для бизнеса</label>
-          </div>
-        </div>
-
-        <textarea name="comments" id="1" cols="30" rows="10" class="modal-registration_textarea" placeholder="Комментарии/предложения..."></textarea>
-
-        <div class="modal-registration__payment">
-          <p>Выберете удобный способ оплаты:</p>
-          <div class="modal-registration__payment-type modal-registration__payment-type--first">
-            <input type="radio" name="radio1" value="Приват24" id="radio1">
-            <label for="radio1">Приват24</label>
-          </div>
-          <div class="modal-registration__payment-type modal-registration__payment-type--second">
-            <input type="radio" name="radio1" value="Наличными" id="radio2">
-            <label for="radio2">Наличными</label>
-          </div>
-          <div class="modal-registration__payment-type modal-registration__payment-type--third">
-            <input type="radio" name="radio1" value="Счет-фактура" id="radio3">
-            <label for="radio3">Счет-фактура</label>
-          </div>
-          <div class="modal-registration__payment-type modal-registration__payment-type--fourth">
-            <input type="radio" name="radio1" value="Перевод на карту Visa/Mastercard" id="radio4">
-            <label for="radio4">Перевод VISA/Mastercard</label>
-          </div>
-        </div>
-
-        <input type="submit" class="modal-registration__button">
-        <input type="hidden" name="registration_form" />
-        <input type="hidden" name ="summ">
-
-        <p class="modal-registration__bottom-text">После заполнения вами формы регистрации, Вам будет автоматически отправлено письмо на  почту.</p>
-      </div>
-    </form>
-  </section>
-
-  <section class="cost hide animated">
-    <h2>Стоимость</h2>
-    <div class="cost__close"></div>
-
-    <div class="price" id="one_day_price">
-      <h3>Стоимость на один день</h3>
-      <ul class="price__list">
-        <li class="price__item">с 01.02 по 31.03<br>4000 грн</li>
-        <li class="price__item">с 01.04 по 30.04<br>5000 грн</li>
-        <li class="price__item">с 01.05 по 31.05<br>6000 грн</li>
-        <li class="price__item">с 01.06 по 19.06<br>7000 грн</li>
-        <li class="price__item">с 20.06 по 21.06<br><p>8500 грн</p> </li>
-      </ul>
-
-      <button id="price-button1" class="price__button">Купить</button>
-    </div>
-
-    <div class="price" id="two_days_price">
-      <h3>Стоимость на оба дня</h3>
-      <ul class="price__list">
-        <li class="price__item">с 01.02 по 31.03<br>5500 грн</li>
-        <li class="price__item">с 01.04 по 30.04<br>6500 грн</li>
-        <li class="price__item">с 01.05 по 31.05<br>7500 грн</li>
-        <li class="price__item">с 01.06 по 19.06<br>8500 грн</li>
-        <li class="price__item">с 20.06 по 21.06<br><p>10000 грн</p> </li>
-      </ul>
-
-      <button id="price-button2" class="price__button">Купить</button>
-    </div>
-
-    <p class="price__sale">При покупке от 3-х билетов - скидка -15%</p>
-  </section>
-
   <section class="first">
     <div class="content hidden">
       <div class="wrapper">
@@ -239,17 +123,6 @@
         <h2>Бизнес-миссии</h2>
 
         <!-- <p class="business-missions__text"><font size="+2.5">Lorem ipsum</font> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> -->
-
-        <div class="mission-details hide animated">
-          <div class="mission-details__header">
-            <h3>Информация</h3>
-          </div>
-          <div class="mission-details__close"></div>
-          <img src="images/mission_poland.jpg" alt="">
-          <h3>Польская бизнес-миссия</h3>
-          <p>Польская бизнес-миссия — это успешные польские компании, заинтересованные в сотрудничестве с представителями малого и среднего бизнеса Украины. <br><br>Цель польских компаний — найти в Украине партнеров для совместного развития бизнеса. Это уникальный шанс для владельцев бизнеса, директоров по развитию, маркетингу и коммерческих директоров Украины обсудить вопросы развития и возможного партнерства. <br><br>Мы создаем эту коммуникационную площадку для украинских компаний, а потому исходим из ваших предложений и запросов. 
-          </p>
-        </div>
 
         <div class="question">
           <img src="images/mission_poland.jpg" alt="">
@@ -1959,179 +1832,180 @@
           <h4>Марина Блажко</h4>
           <a href="tel:+380674432228" class="contact__phone">+38(067) 44-32-228</a>
           <a href="mailti:join@businessforum.kharkov.ua" class="contact__mail">join@businessforum.kharkov.ua</a>
-      <!-- <button class="contact__button contact__button--first">Регистрация</button>
+          <!-- <button class="contact__button contact__button--first">Регистрация</button>
           
           <div class="contact__info contact__info--first hide animated">
             <p>Как сделать бизнес инвестиционно привлекательным. Практические аспекты.</p>
             <div class="contact__hide contact__hide--first"></div>
-          </div>
-        -->    </div>
+          </div>--> 
+        </div>
 
         <div class="contact">
           <h4>По вопросам партнерства</h4>
           <h4>Антон Карапутин</h4>
           <a href="tel:+380685480719" class="contact__phone">+38 (068) 548-07-19</a>
           <a href="mailti:partner@businessforum.kharkov.ua" class="contact__mail">partner@businessforum.kharkov.ua</a>
-      <!-- <button class="contact__button contact__button--second">Связаться</button>
+          <!-- <button class="contact__button contact__button--second">Связаться</button>
       
-      <div class="contact__info contact__info--second hide animated">
-        <p>Внешние рынки для МСБ: мифы и реалии</p>
-        <div class="contact__hide contact__hide--second"></div>
-      </div> -->
-    </div>
+          <div class="contact__info contact__info--second hide animated">
+          <p>Внешние рынки для МСБ: мифы и реалии</p>
+          <div class="contact__hide contact__hide--second"></div> -->
+        </div>
 
-    <div class="contact">
-      <h4>Аккредитация СМИ</h4>
-      <h4>Татьяна Поверенная</h4>
-      <a href="tel:+380638305579" class="contact__phone">+38 (063) 830-55-79</a>
-      <a href="mailti:pr@businessforum.kharkov.ua" class="contact__mail">pr@businessforum.kharkov.ua</a>
-      <!-- <button class="contact__button contact__button--third">Аккредитоваться</button>
+        <div class="contact">
+          <h4>Аккредитация СМИ</h4>
+          <h4>Татьяна Поверенная</h4>
+          <a href="tel:+380638305579" class="contact__phone">+38 (063) 830-55-79</a>
+          <a href="mailti:pr@businessforum.kharkov.ua" class="contact__mail">pr@businessforum.kharkov.ua</a>
+          <!-- <button class="contact__button contact__button--third">Аккредитоваться</button>
       
-      <div class="contact__info contact__info--third hide animated">
-        <p>Энергоэффективность как вызовы и возможности украинского бизнеса</p>
-        <div class="contact__hide contact__hide--third"></div>
-      </div> -->
-    </div>
-  </div>
-</section>
-
-<section class="volunteers">
-  <div class="content hidden">
-    <h2>Регистрация для волонтеров</h2>
-
-    <div class="wrapper">
-      <form method="POST" action="forms.php" class="form-volunteers">
-        <input type="text" name="name"  required pattern="^[A-Za-zА-Яа-яЁё\s-]{1,50}" placeholder="Имя*">
-        <input type="text" name="surname" placeholder="Фамилия">
-        <input type="text" name="phone" required minlength="11" maxlength="20" pattern="\+\d*" title="начните ввод с символа +" placeholder="Телефон в международном формате*">
-        <input type="text" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="E-mail*" title="не похоже на E-mail :(">
-        <input type="text" name="company" placeholder="Компания">
-        <input type="text" name="activity" placeholder="Сфера деятельности">
-
-        <textarea name="comments" id="2" cols="30" rows="10" placeholder="Текст..."></textarea>
-
-        <input type="submit" value="Отправить" class="form-volunteers__button">
-        <input type="hidden" name="volunteer_form" />
-      </form>
-    </div>
-  </div>
-</section>
-
-<section class="last-forums" id="history">
-  <div class="content hidden">
-    <h2>Бизнес-форум 2014</h2>
-
-    <div class="wrapper">
-      <img src="images/bf1/1.jpg" alt="">
-      <img src="images/bf1/2.jpg" alt="">
-
-      <div class="last-forums__tablet">
-        <img src="images/bf1/3.jpg" alt="">
-      </div>
-
-      <div class="last-forums__tablet">
-        <img src="images/bf1/4.jpg" alt="">
-      </div>
-
-      <div class="last-forums__tablet">
-        <img src="images/bf1/5.jpg" alt="">
-      </div>
-
-      <div class="last-forums__tablet">
-        <img src="images/bf1/6.jpg" alt="">
-      </div>
-
-      <div class="last-forums__tablet">
-        <img src="images/bf1/7.jpg" alt="">
-      </div>
-
-      <div class="last-forums__tablet">
-        <img src="images/bf1/8.jpg" alt="">
-      </div>
-
-      <div class="last-forums__tablet">
-        <img src="images/bf1/9.jpg" alt="">
-      </div>
-
-      <div class="last-forums__tablet">
-        <img src="images/bf1/10.jpg" alt="">
+          <div class="contact__info contact__info--third hide animated">
+          <p>Энергоэффективность как вызовы и возможности украинского бизнеса</p>
+          <div class="contact__hide contact__hide--third">
+          </div> -->
+        </div>
       </div>
     </div>
+  </section>
 
-    <h2>Бизнес-форум 2015</h2>
+  <section class="volunteers">
+    <div class="content hidden">
+      <h2>Регистрация для волонтеров</h2>
 
-    <div class="wrapper">
-      <img src="images/bf2/1.jpg" alt="">
-      <img src="images/bf2/2.jpg" alt="">
+      <div class="wrapper">
+        <form method="POST" action="forms.php" class="form-volunteers">
+          <input type="text" name="name"  required pattern="^[A-Za-zА-Яа-яЁё\s-]{1,50}" placeholder="Имя*">
+          <input type="text" name="surname" placeholder="Фамилия">
+          <input type="text" name="phone" required minlength="11" maxlength="20" pattern="\+\d*" title="начните ввод с символа +" placeholder="Телефон в международном формате*">
+          <input type="text" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="E-mail*" title="не похоже на E-mail :(">
+          <input type="text" name="company" placeholder="Компания">
+          <input type="text" name="activity" placeholder="Сфера деятельности">
 
-      <div class="last-forums__tablet">
-        <img src="images/bf2/3.jpg" alt="">
-      </div>
+          <textarea name="comments" id="2" cols="30" rows="10" placeholder="Текст..."></textarea>
 
-      <div class="last-forums__tablet">
-        <img src="images/bf2/4.jpg" alt="">
-      </div>
-
-      <div class="last-forums__tablet">
-        <img src="images/bf2/5.jpg" alt="">
-      </div>
-
-      <div class="last-forums__tablet">
-        <img src="images/bf2/6.jpg" alt="">
-      </div>
-
-      <div class="last-forums__tablet">
-        <img src="images/bf2/7.jpg" alt="">
-      </div>
-
-      <div class="last-forums__tablet">
-        <img src="images/bf2/8.jpg" alt="">
-      </div>
-
-      <div class="last-forums__tablet">
-        <img src="images/bf2/9.jpg" alt="">
-      </div>
-
-      <div class="last-forums__tablet">
-        <img src="images/bf2/10.jpg" alt="">
+          <input type="submit" value="Отправить" class="form-volunteers__button">
+          <input type="hidden" name="volunteer_form" />
+        </form>
       </div>
     </div>
+  </section>
 
-    <h2>Бизнес-форум 2016</h2>
-    <div class="wrapper">
-      <img src="images/bf3/1.jpg" alt="">
-      <img src="images/bf3/2.jpg" alt="">
+  <section class="last-forums" id="history">
+    <div class="content hidden">
+      <h2>Бизнес-форум 2014</h2>
 
-      <div class="last-forums__tablet">
-        <img src="images/bf3/3.jpg" alt="">
+      <div class="wrapper">
+        <img src="images/bf1/1.jpg" alt="">
+        <img src="images/bf1/2.jpg" alt="">
+
+        <div class="last-forums__tablet">
+          <img src="images/bf1/3.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/bf1/4.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/bf1/5.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/bf1/6.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/bf1/7.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/bf1/8.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/bf1/9.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/bf1/10.jpg" alt="">
+        </div>
       </div>
 
-      <div class="last-forums__tablet">
-        <img src="images/bf3/4.jpg" alt="">
+      <h2>Бизнес-форум 2015</h2>
+
+      <div class="wrapper">
+        <img src="images/bf2/1.jpg" alt="">
+        <img src="images/bf2/2.jpg" alt="">
+
+        <div class="last-forums__tablet">
+          <img src="images/bf2/3.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/bf2/4.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/bf2/5.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/bf2/6.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/bf2/7.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/bf2/8.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/bf2/9.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/bf2/10.jpg" alt="">
+        </div>
       </div>
 
-      <div class="last-forums__tablet">
-        <img src="images/bf3/5.jpg" alt="">
-      </div>
+      <h2>Бизнес-форум 2016</h2>
+      <div class="wrapper">
+        <img src="images/bf3/1.jpg" alt="">
+        <img src="images/bf3/2.jpg" alt="">
 
-      <div class="last-forums__tablet">
-        <img src="images/bf3/6.jpg" alt="">
-      </div>
+        <div class="last-forums__tablet">
+          <img src="images/bf3/3.jpg" alt="">
+        </div>
 
-      <div class="last-forums__tablet">
-        <img src="images/bf3/7.jpg" alt="">
-      </div>
+        <div class="last-forums__tablet">
+          <img src="images/bf3/4.jpg" alt="">
+        </div>
 
-      <div class="last-forums__tablet">
-        <img src="images/bf3/8.jpg" alt="">
-      </div>
+        <div class="last-forums__tablet">
+          <img src="images/bf3/5.jpg" alt="">
+        </div>
 
-      <div class="last-forums__tablet">
-        <img src="images/bf3/9.jpg" alt="">
-      </div>
+        <div class="last-forums__tablet">
+          <img src="images/bf3/6.jpg" alt="">
+        </div>
 
-      <div class="last-forums__tablet">
-        <img src="images/bf3/10.jpg" alt="">
+        <div class="last-forums__tablet">
+          <img src="images/bf3/7.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/bf3/8.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/bf3/9.jpg" alt="">
+        </div>
+
+        <div class="last-forums__tablet">
+          <img src="images/bf3/10.jpg" alt="">
+        </div>
       </div>
     </div>
   </section>
@@ -2150,6 +2024,133 @@
       </div>
     </div>
   </footer>
+
+  <section class="modal-registration hide animated">
+    <form method="POST" action="forms.php">
+      <h2>Регистрация на бизнес-форум 2017</h2>
+      <div class="wrapper">
+        <div class="modal-registration__close"></div>
+        <input type="text" name="name"  required pattern="^[A-Za-zА-Яа-яЁё\s-]{1,50}" placeholder="Имя*">
+        <input type="text" name="surname" required pattern="^[A-Za-zА-Яа-яЁё\s-]{1,50}" placeholder="Фамилия*">
+        <input type="text" name="company" placeholder="Компания">
+        <input type="text" name="activity" placeholder="Сфера деятельности">
+        <input type="text" name="phone" required minlength="11" maxlength="20" pattern="\+\d*" title="начните ввод с символа +" placeholder="Телефон в международном формате*">
+        <input type="text" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="E-mail*" title="не похоже на E-mail :(">
+        <input type="text" name="position" placeholder="Должность">
+        <input type="number" step="1" min="1" name="tickets" required placeholder="Количество билетов*">
+        <input type="text" name="promo" placeholder="Промокод">
+        <div class="modal-registration__tickets-count">
+          <div class="modal-registration__ticket">
+            <input type="radio" name="price" id="one_ticket" checked>
+            <label for="one_ticket">Билет на один день</label>
+          </div>
+          <div class="modal-registration__ticket">
+            <input type="radio" name="price" id="two_tickets">
+            <label for="two_tickets">Билет на два дня</label>
+          </div>
+          <div class="modal-registration__result">0 грн</div>
+          <div class="modal-registration__sale">При покупке от 3-х билетов - скидка -15%</div>
+        </div> 
+
+        <div class="modal-registration__checkboxes">
+          <p class="modal-registration__interesting">Интересные направления работы форума:</p>
+
+          <div class="modal-registration__checkbox">
+            <input type="checkbox" value="Инвестиции" name="checkbox1[]" id="checkbox1">
+            <label for="checkbox1">Инвестиции</label>
+          </div>
+          <div class="modal-registration__checkbox">
+            <input type="checkbox" value="Экспорт/Импорт" name="checkbox1[]" id="checkbox2">
+            <label for="checkbox2">Экспорт/Импорт</label>
+          </div>
+          <div class="modal-registration__checkbox">
+            <input type="checkbox" value="IT" name="checkbox1[]" id="checkbox3">
+            <label for="checkbox3">IT</label>
+          </div>
+          <div class="modal-registration__checkbox">
+            <input type="checkbox" value="Энергоэффективность" name="checkbox1[]" id="checkbox4">
+            <label for="checkbox4">Энергоэффективность</label>
+          </div>
+          <div class="modal-registration__checkbox">
+            <input type="checkbox" value="Гранты для бизнеса" name="checkbox1[]" id="checkbox5">
+            <label for="checkbox5">Гранты для бизнеса</label>
+          </div>
+        </div>
+
+        <textarea name="comments" id="1" cols="30" rows="10" class="modal-registration_textarea" placeholder="Комментарии/предложения..."></textarea>
+
+        <div class="modal-registration__payment">
+          <p>Выберете удобный способ оплаты:</p>
+          <div class="modal-registration__payment-type modal-registration__payment-type--first">
+            <input type="radio" name="radio1" value="Приват24" id="radio1">
+            <label for="radio1">Приват24</label>
+          </div>
+          <div class="modal-registration__payment-type modal-registration__payment-type--second">
+            <input type="radio" name="radio1" value="Наличными" id="radio2">
+            <label for="radio2">Наличными</label>
+          </div>
+          <div class="modal-registration__payment-type modal-registration__payment-type--third">
+            <input type="radio" name="radio1" value="Счет-фактура" id="radio3">
+            <label for="radio3">Счет-фактура</label>
+          </div>
+          <div class="modal-registration__payment-type modal-registration__payment-type--fourth">
+            <input type="radio" name="radio1" value="Перевод на карту Visa/Mastercard" id="radio4">
+            <label for="radio4">Перевод VISA/Mastercard</label>
+          </div>
+        </div>
+
+        <input type="submit" class="modal-registration__button">
+        <input type="hidden" name="registration_form" />
+        <input type="hidden" name ="summ">
+
+        <p class="modal-registration__bottom-text">После заполнения вами формы регистрации, Вам будет автоматически отправлено письмо на  почту.</p>
+      </div>
+    </form>
+  </section>
+
+  <section class="cost hide animated">
+    <h2>Стоимость</h2>
+    <div class="cost__close"></div>
+
+    <div class="price" id="one_day_price">
+      <h3>Стоимость на один день</h3>
+      <ul class="price__list">
+        <li class="price__item">с 01.02 по 31.03<br>4000 грн</li>
+        <li class="price__item">с 01.04 по 30.04<br>5000 грн</li>
+        <li class="price__item">с 01.05 по 31.05<br>6000 грн</li>
+        <li class="price__item">с 01.06 по 19.06<br>7000 грн</li>
+        <li class="price__item">с 20.06 по 21.06<br><p>8500 грн</p> </li>
+      </ul>
+
+      <button id="price-button1" class="price__button">Купить</button>
+    </div>
+
+    <div class="price" id="two_days_price">
+      <h3>Стоимость на оба дня</h3>
+      <ul class="price__list">
+        <li class="price__item">с 01.02 по 31.03<br>5500 грн</li>
+        <li class="price__item">с 01.04 по 30.04<br>6500 грн</li>
+        <li class="price__item">с 01.05 по 31.05<br>7500 грн</li>
+        <li class="price__item">с 01.06 по 19.06<br>8500 грн</li>
+        <li class="price__item">с 20.06 по 21.06<br><p>10000 грн</p> </li>
+      </ul>
+
+      <button id="price-button2" class="price__button">Купить</button>
+    </div>
+
+    <p class="price__sale">При покупке от 3-х билетов - скидка -15%</p>
+  </section>
+
+  <div class="mission-details hide animated">
+    <div class="mission-details__header">
+      <h3>Информация</h3>
+    </div>
+    <div class="mission-details__close"></div>
+    <img src="images/mission_poland.jpg" alt="">
+    <h3>Польская бизнес-миссия</h3>
+    <p>Польская бизнес-миссия — это успешные польские компании, заинтересованные в сотрудничестве с представителями малого и среднего бизнеса Украины. <br><br>Цель польских компаний — найти в Украине партнеров для совместного развития бизнеса. Это уникальный шанс для владельцев бизнеса, директоров по развитию, маркетингу и коммерческих директоров Украины обсудить вопросы развития и возможного партнерства. <br><br>Мы создаем эту коммуникационную площадку для украинских компаний, а потому исходим из ваших предложений и запросов. 
+    </p>
+  </div>
 
   <!-- <div class="feedback"></div> -->
 
