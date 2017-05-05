@@ -4,6 +4,7 @@ $(document).ready(function() {
 	var regNav = $('.modal-registration');
 	var regClose = $('.modal-registration__close');
 	var regMenu = $('.menu');
+	var regCost = $('.cost');
 
 
 	$(regButton).click(function() {
@@ -14,7 +15,8 @@ $(document).ready(function() {
 
 	$(regButton2).click(function() {
 		$(regNav).toggleClass('hide'),
-		$(regNav).addClass('fadeInDown');
+		$(regNav).addClass('fadeInDown'),
+		$(regCost).addClass('hide');
 	})
 
 	$(regClose).click(function() {
