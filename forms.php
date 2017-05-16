@@ -141,6 +141,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
         $summ = $price * $promo_code;
         //echo $summ; die;
 
+        //До кр-кодов, чтоб не засирать сервер всяким лишним хламом, проверим ответ рекаптчи, ну а потом можно продолжать
+        // 1) Смотрим на то, что назаполнял пользователь и если рекаптча пришла, записываем ее ответ
+        if($_POST['g-recaptcha-response']){
+            $recaptcha = $_POST['g-recaptcha-response'];
+        } else  echo "<div style=\"margin-top:25%; margin-left:25%; border:solid 1px black; height:20%; width:40%;\">
+                    <div style=\" margin-left:2%;\"><h2>Ага! Попробовали войти без капчи?</h2>
+                    <h3>Попробуйте еще раз!</h3>
+                    <br><h3>Переадресация на главную страницу через: <span id=\"count\">5</span></h3>
+                    </div>
+              </div>"; die;
+
+        // 2) Посылаем постом запрос на гугл апи и смотрим, решил ли он пропускать человека, или это бот
+
+        $url = 'https://www.google.com/recaptcha/api/siteverify';
+        $data = array('secret' => '6LfOliEUAAAAACIq7kJlicCm_Kp2C-j37_mTflsx', 'response' => $recaptcha, 'remoteip' => $_SERVER['REMOTE_ADDR']);
+
+        // use key 'http' even if you send the request to https://...
+        $options = array(
+            'http' => array(
+                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                'method'  => 'POST',
+                'content' => http_build_query($data)
+            )
+        );
+        $context  = stream_context_create($options);
+        $result = file_get_contents($url, false, $context);
+        if ($result === FALSE) { /* Handle error */ }
+
+        json_decode($result, true);
+
+        if(!$result['success']){
+            echo "<div style=\"margin-top:25%; margin-left:25%; border:solid 1px black; height:20%; width:40%;\">
+                    <div style=\" margin-left:2%;\"><h2>Ошибка капчи!</h2>
+                    <h3>Попробуйте еще раз!</h3>
+                    <br><h3>Переадресация на главную страницу через: <span id=\"count\">5</span></h3>
+                    </div>
+              </div>"; die;
+        }
+
+
         if ($tickets > 1) {
             //$folder = iconv("UTF-8", "cp1251", 'qr-images/' . $_POST['name'] . $_POST['surname']);
             mkdir('qr-images/' . iconv("UTF-8", "cp1251", $name . $surname . substr($phone, -3)));
@@ -332,6 +372,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
                 <p>Попробуйте еще раз позже</p>';
         }
     } else if (isset($_POST['volunteer_form'])) { //если пришла форма регистрации волонтера
+
+            //До всего проеврим форму регистрации волонтера
+            // 1) Смотрим на то, что назаполнял пользователь и если рекаптча пришла, записываем ее ответ
+            if($_POST['g-recaptcha-response']){
+                $recaptcha = $_POST['g-recaptcha-response'];
+            } else  echo "<div style=\"margin-top:25%; margin-left:25%; border:solid 1px black; height:20%; width:40%;\">
+                        <div style=\" margin-left:2%;\"><h2>Ага! Попробовали войти без капчи?</h2>
+                        <h3>Попробуйте еще раз!</h3>
+                        <br><h3>Переадресация на главную страницу через: <span id=\"count\">5</span></h3>
+                        </div>
+                  </div>"; die;
+
+            // 2) Посылаем постом запрос на гугл апи и смотрим, решил ли он пропускать человека, или это бот
+
+            $url = 'https://www.google.com/recaptcha/api/siteverify';
+            $data = array('secret' => '6LeQoSEUAAAAAJx3eLI52adB2KwmrjmHtI6RcTV0', 'response' => $recaptcha, 'remoteip' => $_SERVER['REMOTE_ADDR']);
+
+            // use key 'http' even if you send the request to https://...
+            $options = array(
+                'http' => array(
+                    'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                    'method'  => 'POST',
+                    'content' => http_build_query($data)
+                )
+            );
+            $context  = stream_context_create($options);
+            $result = file_get_contents($url, false, $context);
+            if ($result === FALSE) { /* Handle error */ }
+
+            json_decode($result, true);
+
+            if(!$result['success']){
+                echo "<div style=\"margin-top:25%; margin-left:25%; border:solid 1px black; height:20%; width:40%;\">
+                        <div style=\" margin-left:2%;\"><h2>Ошибка капчи!</h2>
+                        <h3>Попробуйте еще раз!</h3>
+                        <br><h3>Переадресация на главную страницу через: <span id=\"count\">5</span></h3>
+                        </div>
+                  </div>"; die;
+            }
 
             $volunteer = "Волонтер";
             $name = strip_tags(trim($_POST['name']));
