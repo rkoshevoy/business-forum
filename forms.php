@@ -145,12 +145,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
         // 1) Смотрим на то, что назаполнял пользователь и если рекаптча пришла, записываем ее ответ
         if($_POST['g-recaptcha-response']){
             $recaptcha = $_POST['g-recaptcha-response'];
-        } else  echo "<div style=\"margin-top:25%; margin-left:25%; border:solid 1px black; height:20%; width:40%;\">
+        } else  die("<div style=\"margin-top:25%; margin-left:25%; border:solid 1px black; height:20%; width:40%;\">
                     <div style=\" margin-left:2%;\"><h2>Ага! Попробовали войти без капчи?</h2>
                     <h3>Попробуйте еще раз!</h3>
-                    <br><h3>Переадресация на главную страницу через: <span id=\"count\">5</span></h3>
+                    <br><h3><a href=".$_SERVER['HTTP_REFERER'].">Назад на страницу форума</a></span></h3>
                     </div>
-              </div>"; die;
+              </div>");
 
         // 2) Посылаем постом запрос на гугл апи и смотрим, решил ли он пропускать человека, или это бот
 
@@ -167,17 +167,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
         );
         $context  = stream_context_create($options);
         $result = file_get_contents($url, false, $context);
-        if ($result === FALSE) { /* Handle error */ }
+        if ($result === FALSE) { echo "Все очень плохо"; } else echo $result;
 
         json_decode($result, true);
 
         if(!$result['success']){
-            echo "<div style=\"margin-top:25%; margin-left:25%; border:solid 1px black; height:20%; width:40%;\">
+            die("<div style=\"margin-top:25%; margin-left:25%; border:solid 1px black; height:20%; width:40%;\">
                     <div style=\" margin-left:2%;\"><h2>Ошибка капчи!</h2>
                     <h3>Попробуйте еще раз!</h3>
                     <br><h3>Переадресация на главную страницу через: <span id=\"count\">5</span></h3>
                     </div>
-              </div>"; die;
+              </div>");
         }
 
 
@@ -441,6 +441,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // если кто-то пытает
 
             $subject = $name . " хочет быть волонтером на форуме";
             $subject1 = "Международный бизнес-форум";
+
+            //До формирования данных проверим ответ рекаптчи, ну а потом можно продолжать
+            // 1) Смотрим на то, что назаполнял пользователь и если рекаптча пришла, записываем ее ответ
+            if($_POST['g-recaptcha-response']){
+                $recaptcha = $_POST['g-recaptcha-response'];
+            } else  die("<div style=\"margin-top:25%; margin-left:25%; border:solid 1px black; height:20%; width:40%;\">
+                        <div style=\" margin-left:2%;\"><h2>Ага! Попробовали войти без капчи?</h2>
+                        <h3>Попробуйте еще раз!</h3>
+                        <br><h3><a href=".$_SERVER['HTTP_REFERER'].">Назад на страницу форума</a></span></h3>
+                        </div>
+                  </div>");
+
+            // 2) Посылаем постом запрос на гугл апи и смотрим, решил ли он пропускать человека, или это бот
+
+            $url = 'https://www.google.com/recaptcha/api/siteverify';
+            $data = array('secret' => '6LeQoSEUAAAAAJx3eLI52adB2KwmrjmHtI6RcTV0', 'response' => $recaptcha, 'remoteip' => $_SERVER['REMOTE_ADDR']);
+
+            // use key 'http' even if you send the request to https://...
+            $options = array(
+                'http' => array(
+                    'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                    'method'  => 'POST',
+                    'content' => http_build_query($data)
+                )
+            );
+            $context  = stream_context_create($options);
+            $result = file_get_contents($url, false, $context);
+            if ($result === FALSE) { /* Handle error */ }
+
+            json_decode($result, true);
+
+            if(!$result['success']){
+                die("<div style=\"margin-top:25%; margin-left:25%; border:solid 1px black; height:20%; width:40%;\">
+                        <div style=\" margin-left:2%;\"><h2>Ошибка капчи!</h2>
+                        <h3>Попробуйте еще раз!</h3>
+                        <br><h3><a href=".$_SERVER['HTTP_REFERER'].">Назад на страницу форума</a></span></h3>
+                        </div>
+                  </div>");
+            }
+            //end captcha verifying
 
             $message = '';
 
