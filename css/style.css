@@ -1637,6 +1637,7 @@ p {
 .partners a {
   display: block;
   margin-bottom: 30px;
+  vertical-align: middle;
 }
 .partners a img {
   max-width: 100%;
