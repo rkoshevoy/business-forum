@@ -4,8 +4,8 @@
 .timeSlider__slide{
 	display: inline-block;
 	width: 33%;
-
 	position: relative;
+	/* vertical-align: top; */
 }
 
 .timeSlider__slide:first-of-type:before,
@@ -66,29 +66,43 @@
 	border-right: 2px solid #b5b5b6;
 }
 
-
 .partakers__caption{
 	position: absolute;
+
+	display: flex;
+	align-items: center;
 	top: 0;
 	left: 0;
 	width: 100%;
+	height: 76px;
 	border-bottom: 2px solid #b5b5b6;
 	border-top: 2px solid #b5b5b6;
-	padding: 30px 0;
 }
 .partakers__caption h4{
-	font-size: 10px;
+	font-size: 14px;
 }
 .partakers__content{
 	position: relative;
 	top: 80px;
+	height: 550px;
+	/* verflow: scroll;
+	overflow-x: hidden; */
+}
+.partakers__content__body {
+	padding-bottom: 20px;
 }
 .partakers{
-	width: 150px;
+	width: 300px;
 	margin: 0 auto;
 	text-align: center;
 	color: #6c6c6d;
-	height: 650px;
+	height: 630px;
+}
+
+@media (max-width: 950px) {
+	.partakers {
+		width: 235px;
+	}
 }
 .partaker{
 	position: relative;
@@ -157,10 +171,14 @@
 	text-align: left;
 }
 .partaker__info__name{
+	padding-right: 7px;
 	font-size: .75em;
+	text-align: right;
 }
 .partaker__info__post{
+	padding-right: 20px;
 	font-size: .6em;
+	text-align: right;
 }
 .partaker__info__more{
 	position: absolute;

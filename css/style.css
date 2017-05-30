@@ -59,7 +59,7 @@ p {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-color: rgba(99, 193, 190, 0.15);
+  background-color: rgba(0, 0, 0, 0.04);
   cursor: pointer;
 }
 .up::before {
@@ -2769,7 +2769,7 @@ p {
     margin-left: -125px;
   }
   .time__header--not-important p {
-    margin-left: 145px;
+    margin-left: 135px;
   }
   .time__about p {
     font-size: 24px;
