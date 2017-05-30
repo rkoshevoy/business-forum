@@ -2253,8 +2253,8 @@ p {
   }
   .time__about p {
     padding-top: 5px;
-    padding-right: 75px;
-    padding-left: 75px;
+    /* padding-right: 75px;
+				padding-left: 75px; */
     font-size: 18px;
   }
   .members {

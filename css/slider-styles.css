@@ -68,7 +68,6 @@
 
 .partakers__caption{
 	position: absolute;
-
 	display: flex;
 	align-items: center;
 	top: 0;
@@ -229,11 +228,30 @@
 		border-right: 0;
 	}
 	.partakers{
+		/* position: relative; */
 		width: 65%;
 		height: 500px;
-		border-right: 2px solid #b5b5b6;
-		border-left: 2px solid #b5b5b6;
+		/* border-right: 2px solid #b5b5b6;
+		border-left: 2px solid #b5b5b6;  */
 	}
+	.partakers::before{
+		content: '';
+		position: absolute;
+		top: 76px;
+		left: 17.5%;
+		width: 2px;
+		height: 100%;
+		background-color: #b5b5b6;
+	} 
+	.partakers::after{
+		content: '';
+		position: absolute;
+		top: 76px;
+		right: 17.5%;
+		width: 2px;
+		height: 100%;
+		background-color: #b5b5b6;
+	} 
 	.partaker__photo{
 		width: 77px;
 		height: 77px;
