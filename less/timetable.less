@@ -277,6 +277,14 @@
 		}
 	}
 
+	&__header--fabula {
+		background-color: #f5f5f5;
+
+		p {
+			color: #6c6c6d;
+		}
+	}
+
 	&__header--important {
 		background-color: #6c6c6d;
 
@@ -313,13 +321,41 @@
 		}
 	}
 
+	&__description--fabula {
+
+		p {
+			color: #6c6c6d;
+			font-size: 14px;
+
+			@media @tablet {
+				font-size: 18px;
+			}
+
+			@media @desktop {
+				font-size: 22px;
+			}
+
+			@media @big-desktop {
+				font-size: 24px;
+			}
+		}
+	}
+
 	&__description--little {
 
 		p {
 			font-size: 14px;
 
 			@media @tablet {
+				font-size: 19px;
+			}
 
+			@media @desktop {
+				font-size: 24px;
+			}
+
+			@media @big-desktop {
+				font-size: 26px;
 			}
 		}
 	}
@@ -566,7 +602,7 @@
 		left: 102px;
 		width: 20px;
 		height: 2px;
-		background-color: #bdd63d;
+		background-color: #fee746;
 
 		@media @tablet {
 			top: 40px;
@@ -585,7 +621,7 @@
 			width: 4px;
 			height: 4px;
 			border-radius: 50%;
-			background-color: #bdd63d;
+			background-color: #fee746;
 		}
 
 		&::after {
@@ -596,7 +632,7 @@
 			width: 4px;
 			height: 4px;
 			border-radius: 50%;
-			background-color: #bdd63d;
+			background-color: #fee746;
 		}
 	}
 

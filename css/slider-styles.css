@@ -121,6 +121,9 @@
 .connectLine--top{
 	bottom: 100%;
 }
+.connectLine--moder{
+	background-color: #fee746;
+}
 .connectLine--bottom{
 	height: 40px;
 	bottom: -44px;
@@ -142,6 +145,10 @@
 .connectLine:before{
 	bottom: 100%;
 }
+.connectLine--moder:before,
+.connectLine--moder:after{
+	background-color: #fee746;
+}
 .partaker__photo{
 	width: 100px;
 	height: 100px;
@@ -153,6 +160,9 @@
 }
 .partaker__photo img{
 	max-width: 100%;
+}
+.partaker__photo--moder{
+	border-color: #fee746;
 }
 .partakers__content__title{
 	color: #666666;
