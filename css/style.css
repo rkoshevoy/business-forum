@@ -903,8 +903,10 @@ p {
 }
 .direction__header {
   position: relative;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
   margin-bottom: 25px;
   background-color: #6c6c6d;
 }
@@ -913,11 +915,12 @@ p {
   position: absolute;
   top: 0;
   left: 0;
-  width: 40px;
+  width: 20px;
   height: 100%;
   background-color: #1f8a70;
 }
 .direction__header h2 {
+  max-width: 90%;
   font-size: 16px;
   color: #fff;
 }
