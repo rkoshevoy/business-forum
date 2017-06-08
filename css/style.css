@@ -2396,6 +2396,9 @@ p {
     margin-right: -4px;
     margin-bottom: 45px;
   }
+  .partners__other a img {
+    max-width: 180px;
+  }
   .organizers h2 {
     padding-top: 45px;
   }
