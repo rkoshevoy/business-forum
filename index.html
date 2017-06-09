@@ -535,6 +535,14 @@ fbq('track', 'PageView');
           <p class="speaker__company">Главный после Мони в Маркетинговом бюро Monya Gets</p>
         </div>
 
+        <div id="speaker44" class="speaker speaker--hidden">
+          <div class="speaker__photo">
+            <img src="images/speakers/speakers_new/speaker44.png" alt="">
+          </div>
+          <p class="speaker__name">Александр Чумак</p>
+          <p class="speaker__company">Президент "Ассоциации частных работодателей"</p>
+        </div>
+
         <div id="speaker43" class="speaker speaker--hidden">
           <div class="speaker__photo">
             <img src="images/speakers/speakers_new/speaker43.png" alt="">
@@ -2175,6 +2183,15 @@ fbq('track', 'PageView');
  <a href="http://ukrbizpol.org/" target="blank">
    <img src="images/partners/partner11.png" alt="">
  </a>
+ <a href="http://apr.org.ua//" target="blank">
+   <img src="images/partners/partner12.jpg" alt="">
+ </a>
+ <a href="http://4leader.com.ua/" target="blank">
+   <img src="images/partners/partner14.png" alt="">
+ </a>
+ <a href="https://megatraffic.com.ua/" target="blank">
+   <img src="images/partners/partner13.png" alt="">
+ </a>
  <a href="http://www.crepla.com/" target="blank">
    <img src="images/partners/partner8.png" alt="">
  </a>
@@ -2459,12 +2476,21 @@ fbq('track', 'PageView');
 			<div class="modal-registration__tickets-count">
 				<div class="modal-registration__ticket">
 					<input type="radio" name="price" id="one_ticket" checked>
-					<label for="one_ticket">Билет на один день</label>
+					<label for="one_ticket">Билет на один день (включены: кофе-брейки, бизнес ланч, ужин с польской Бизнес-Миссией)</label>
 				</div>
 				<div class="modal-registration__ticket">
 					<input type="radio" name="price" id="two_tickets">
-					<label for="two_tickets">Билет на два дня</label>
+					<label for="two_tickets">Билет на два дня (включены: кофе-брейки, два бизнес ланча, ужин с польской Бизнес-Миссией)</label>
 				</div>
+        <div class="modal-registration__ticket">
+          <input type="radio" name="price" id="one_ticket_second">
+          <label for="two_tickets">Билет на один день (с включенными кофе-паузами)</label>
+        </div>
+        <br>
+        <div class="modal-registration__ticket">
+          <input type="radio" name="price" id="two_tickets_second">
+          <label for="two_tickets">Билет на два дня (с включенными кофе-паузами)</label>
+        </div>
 				<div class="modal-registration__result">0 грн</div>
 				<div class="modal-registration__sale">При покупке от 3-х билетов - скидка -15%</div>
 			</div>
@@ -2482,7 +2508,7 @@ fbq('track', 'PageView');
 				</div>
 				<div class="modal-registration__checkbox">
 					<input type="checkbox" value="IT" name="checkbox1[]" id="checkbox3">
-					<label for="checkbox3">IT</label>
+					<label for="checkbox3">АПК&nbsp;</label>
 				</div>
 				<div class="modal-registration__checkbox">
 					<input type="checkbox" value="Энергоэффективность" name="checkbox1[]" id="checkbox4">
@@ -2532,12 +2558,10 @@ fbq('track', 'PageView');
 	<div class="cost__close"></div>
 
 	<div class="price" id="one_day_price">
-		<h3>Стоимость на один день</h3>
+		<h3>Стоимость на один день<br>(Включены: кофе паузами, бизнес ланчем, ужином с польской Бизнес Миссией)</h3>
 		<ul class="price__list">
-			<li class="price__item">с 01.02 по 31.03<br><p>4000 грн</p></li>
-			<li class="price__item">с 01.04 по 30.04<br><p>5000 грн</p></li>
-			<li class="price__item">с 01.05 по 14.06<br><p>6000 грн</p></li>
-			<li class="price__item">с 15.06 по 21.06<br><p>7000 грн</p></li>
+			<li class="price__item">с 01.06 по 19.06<br><p>6000 грн</p></li>
+			<li class="price__item">с 20.06 по 22.06<br><p>7000 грн</p></li>
 			<!-- <li class="price__item">с 15.06 по 21.06<br><p>8500 грн</p> </li> -->
 		</ul>
 
@@ -2545,17 +2569,39 @@ fbq('track', 'PageView');
 	</div>
 
 	<div class="price" id="two_days_price">
-		<h3>Стоимость на оба дня</h3>
+		<h3>Стоимость на оба дня<br>(Включены: кофе паузы, 2 бизнес ланча, ужин с польской Бизнес Миссией)</h3>
 		<ul class="price__list">
-			<li class="price__item">с 01.02 по 31.03<br><p>5500 грн</p></li>
-			<li class="price__item">с 01.04 по 30.04<br><p>6500 грн</p></li>
-			<li class="price__item">с 01.05 по 14.06<br><p>7500 грн</p></li>
-			<li class="price__item">с 15.06 по 21.06<br><p>8500 грн</p></li>
+			<li class="price__item">с 01.06 по 19.06<br><p>7500 грн</p></li>
+			<li class="price__item">с 20.06 по 21.06<br><p>8500 грн</p></li>
 			<!-- <li class="price__item">с 15.06 по 21.06<br><p>10000 грн</p></li> -->
 		</ul>
 
 		<button id="price-button2" class="price__button">Купить</button>
 	</div>
+
+  <br>
+
+  <div class="price" id="two_days_price_second">
+    <h3>Стоимость на оба дня<br>(с включенными кофе паузами)</h3>
+    <ul class="price__list">
+      <li class="price__item">с 01.06 по 19.06<br><p>3500 грн</p></li>
+      <li class="price__item">с 20.06 по 21.06<br><p>4500 грн</p></li>
+      <!-- <li class="price__item">с 15.06 по 21.06<br><p>10000 грн</p></li> -->
+    </ul>
+
+    <button id="price-button3" class="price__button">Купить</button>
+  </div>
+
+  <div class="price" id="two_days_price_second">
+    <h3>Стоимость на оба дня<br>(Включены: кофе паузы)</h3>
+    <ul class="price__list">
+      <li class="price__item">с 01.06 по 19.06<br><p>5000 грн</p></li>
+      <li class="price__item">с 20.06 по 21.06<br><p>6000 грн</p></li>
+      <!-- <li class="price__item">с 15.06 по 21.06<br><p>10000 грн</p></li> -->
+    </ul>
+
+    <button id="price-button4" class="price__button">Купить</button>
+  </div>
 
 	<p class="price__sale">При покупке от 3-х билетов - скидка -15%</p>
 </section>
@@ -2634,28 +2680,28 @@ fbq('track', 'PageView');
 	<div class="speaker-details__text">
 		<h3 class="speaker-details__name">Олег Яременко</h3>
 		<p class="speaker-details__description">Ведущий
-научный сотрудник отдела &nbsp;экономической теории &nbsp;ГУ «Институт экономики и прогнозирования НАН
-Украины»</p>
-		<p class="speaker-details__company">Компания:&nbsp;ГУ «Институт экономики и прогнозирования НАН Украины»</p>
-		<p class="speaker-details__position">Должность:&nbsp;Ведущий научный сотрудник</p>
-	</div>
-</div>
+      научный сотрудник отдела &nbsp;экономической теории &nbsp;ГУ «Институт экономики и прогнозирования НАН
+      Украины»</p>
+      <p class="speaker-details__company">Компания:&nbsp;ГУ «Институт экономики и прогнозирования НАН Украины»</p>
+      <p class="speaker-details__position">Должность:&nbsp;Ведущий научный сотрудник</p>
+    </div>
+  </div>
 
-<div id="speaker-modal7" class="speaker-details hide animated">
-	<div class="speaker-details__header">
-		<h3>Информация</h3>
-	</div>
+  <div id="speaker-modal7" class="speaker-details hide animated">
+   <div class="speaker-details__header">
+    <h3>Информация</h3>
+  </div>
 
-	<div class="speaker-details__close"></div>
-	<div class="speaker-details__avatar">
-		<img src="images/speakers/speakers_new/speaker7.png" alt="">
-	</div>
-	<div class="speaker-details__text">
-		<h3 class="speaker-details__name">Виталий Шапран</h3>
-		<p class="speaker-details__description">Главный финансовый аналитик ООО "РА "Эксперт-Рейтинг"</p>
-		<p class="speaker-details__company">Компания: ООО "РА "Эксперт-Рейтинг"</p>
-		<p class="speaker-details__position">Должность: Главный финансовый аналитик</p>
-	</div>
+  <div class="speaker-details__close"></div>
+  <div class="speaker-details__avatar">
+    <img src="images/speakers/speakers_new/speaker7.png" alt="">
+  </div>
+  <div class="speaker-details__text">
+    <h3 class="speaker-details__name">Виталий Шапран</h3>
+    <p class="speaker-details__description">Главный финансовый аналитик ООО "РА "Эксперт-Рейтинг"</p>
+    <p class="speaker-details__company">Компания: ООО "РА "Эксперт-Рейтинг"</p>
+    <p class="speaker-details__position">Должность: Главный финансовый аналитик</p>
+  </div>
 </div>
 
 <div id="speaker-modal15" class="speaker-details hide animated">
@@ -2976,12 +3022,12 @@ fbq('track', 'PageView');
 	<div class="speaker-details__text">
 		<h3 class="speaker-details__name">Андрей Дубецкий</h3>
 		<p class="speaker-details__description">Участник
-Bitcoin Foundation Ukraine, партнер
-компании Hotmine
-</p>
-		<p class="speaker-details__company">Компания:&nbsp;Bitcoin Foundation Ukraine</p>
-		<p class="speaker-details__position">Должность:&nbsp;Участник</p>
-	</div>
+      Bitcoin Foundation Ukraine, партнер
+      компании Hotmine
+    </p>
+    <p class="speaker-details__company">Компания:&nbsp;Bitcoin Foundation Ukraine</p>
+    <p class="speaker-details__position">Должность:&nbsp;Участник</p>
+  </div>
 </div>
 
 <div id="speaker-modal29" class="speaker-details hide animated">
@@ -3233,9 +3279,26 @@ Bitcoin Foundation Ukraine, партнер
   </div>
   <div class="speaker-details__text">
     <h3 class="speaker-details__name">Сергей Ефремов</h3>
-    <p class="speaker-details__description">Ефремов Сергей, сертифицированный бизнес-тренер, коуч и консультант. Директор тренинг-центра «ЛИДЕР»</p>
+    <p class="speaker-details__description">Сертифицированный бизнес-тренер, коуч и консультант. Директор тренинг-центра «ЛИДЕР»</p>
     <p class="speaker-details__company">Компания: Тренинг-центр «ЛИДЕР»</p>
     <p class="speaker-details__position">Должность: Директор тренинг-центра</p>
+  </div>
+</div>
+
+<div id="speaker-modal44" class="speaker-details hide animated">
+  <div class="speaker-details__header">
+    <h3>Информация</h3>
+  </div>
+  
+  <div class="speaker-details__close"></div>
+  <div class="speaker-details__avatar">
+    <img src="images/speakers/speakers_new/speaker44.png" alt="">
+  </div>
+  <div class="speaker-details__text">
+    <h3 class="speaker-details__name">Александр Чумак</h3>
+    <p class="speaker-details__description">Президент "Ассоциации частных работодателей"</p>
+    <p class="speaker-details__company">Компания: "Ассоциации частных работодателей"</p>
+    <p class="speaker-details__position">Должность: Президент ассоциации</p>
   </div>
 </div>
 

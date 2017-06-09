@@ -18,10 +18,10 @@ $(document).ready(function() {
 		        itemIndex = 2;
 		        break;
 	    	case 6:
-		    	if (currentDay < 15) {
+		    	if (currentDay < 20) {
 		    		itemIndex = 2;
 		    	}
-		    	if (currentDay >= 15 ) {
+		    	if (currentDay >= 20 ) {
 		    		itemIndex = 3;
 		    	}
 		        break;

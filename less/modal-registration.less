@@ -375,14 +375,17 @@
 		width: 100%;
 		text-align: left;
 
-		&:first-of-type {
+		label {
+			margin-bottom: 20px;
 
+			@media @tablet {
+				margin-bottom: 5px;
+			}
+		}
+
+		&:last-of-type {
 			label {
-				margin-bottom: 20px;
-
-				@media @tablet {
-					margin-bottom: 5px;
-				}
+				margin-bottom: 0;
 			}
 		}
 
