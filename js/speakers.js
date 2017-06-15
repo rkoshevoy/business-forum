@@ -48,6 +48,14 @@ $(document).ready(function() {
 	var speaker47 = $('#speaker47');
 	var speaker48 = $('#speaker48');
 	var speaker49 = $('#speaker49');
+	var speaker50 = $('#speaker50');
+	var speaker51 = $('#speaker51');
+	var speaker52 = $('#speaker52');
+	var speaker53 = $('#speaker53');
+	var speaker54 = $('#speaker54');
+	var speaker55 = $('#speaker55');
+	var speaker56 = $('#speaker56');
+	var speaker57 = $('#speaker57');
 
 	var speakerDetails1 = $('#speaker-modal1');
 	var speakerDetails2 = $('#speaker-modal2');
@@ -98,6 +106,14 @@ $(document).ready(function() {
 	var speakerDetails47 = $('#speaker-modal47');
 	var speakerDetails48 = $('#speaker-modal48');
 	var speakerDetails49 = $('#speaker-modal49');
+	var speakerDetails50 = $('#speaker-modal50');
+	var speakerDetails51 = $('#speaker-modal51');
+	var speakerDetails52 = $('#speaker-modal52');
+	var speakerDetails53 = $('#speaker-modal53');
+	var speakerDetails54 = $('#speaker-modal54');
+	var speakerDetails55 = $('#speaker-modal55');
+	var speakerDetails56 = $('#speaker-modal56');
+	var speakerDetails57 = $('#speaker-modal57');
 
 	var speakerClose = $('.speaker-details__close');
 
@@ -346,6 +362,46 @@ $(document).ready(function() {
 		$(speakerDetails49).addClass('zoomIn');
 	})
 
+	$(speaker50).click(function() {
+		$(speakerDetails50).removeClass('hide');
+		$(speakerDetails50).addClass('zoomIn');
+	})
+
+	$(speaker51).click(function() {
+		$(speakerDetails51).removeClass('hide');
+		$(speakerDetails51).addClass('zoomIn');
+	})
+
+	$(speaker52).click(function() {
+		$(speakerDetails52).removeClass('hide');
+		$(speakerDetails52).addClass('zoomIn');
+	})
+
+	$(speaker53).click(function() {
+		$(speakerDetails53).removeClass('hide');
+		$(speakerDetails53).addClass('zoomIn');
+	})
+
+	$(speaker54).click(function() {
+		$(speakerDetails54).removeClass('hide');
+		$(speakerDetails54).addClass('zoomIn');
+	})
+
+	$(speaker55).click(function() {
+		$(speakerDetails55).removeClass('hide');
+		$(speakerDetails55).addClass('zoomIn');
+	})
+
+	$(speaker56).click(function() {
+		$(speakerDetails56).removeClass('hide');
+		$(speakerDetails56).addClass('zoomIn');
+	})
+
+	$(speaker57).click(function() {
+		$(speakerDetails57).removeClass('hide');
+		$(speakerDetails57).addClass('zoomIn');
+	})
+
 	$(speakerClose).click(function() {
 		$(speakerDetails1).addClass('hide');
 		$(speakerDetails2).addClass('hide');
@@ -396,5 +452,13 @@ $(document).ready(function() {
 		$(speakerDetails47).addClass('hide');
 		$(speakerDetails48).addClass('hide');
 		$(speakerDetails49).addClass('hide');
+		$(speakerDetails50).addClass('hide');
+		$(speakerDetails51).addClass('hide');
+		$(speakerDetails52).addClass('hide');
+		$(speakerDetails53).addClass('hide');
+		$(speakerDetails54).addClass('hide');
+		$(speakerDetails55).addClass('hide');
+		$(speakerDetails56).addClass('hide');
+		$(speakerDetails57).addClass('hide');
 	})
 });

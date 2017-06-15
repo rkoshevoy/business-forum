@@ -1671,6 +1671,9 @@ p {
   margin-bottom: 45px;
   vertical-align: middle;
 }
+.partners__other a img {
+  max-height: 100px;
+}
 .organizers {
   padding-bottom: 70px;
   text-align: center;
