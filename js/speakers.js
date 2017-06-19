@@ -58,6 +58,7 @@ $(document).ready(function() {
 	var speaker57 = $('#speaker57');
 	var speaker58 = $('#speaker58');
 	var speaker59 = $('#speaker59');
+	var speaker60 = $('#speaker60');
 
 	var speakerDetails1 = $('#speaker-modal1');
 	var speakerDetails2 = $('#speaker-modal2');
@@ -118,6 +119,7 @@ $(document).ready(function() {
 	var speakerDetails57 = $('#speaker-modal57');
 	var speakerDetails58 = $('#speaker-modal58');
 	var speakerDetails59 = $('#speaker-modal59');
+	var speakerDetails60 = $('#speaker-modal60');
 
 	var speakerClose = $('.speaker-details__close');
 
@@ -416,6 +418,11 @@ $(document).ready(function() {
 		$(speakerDetails59).addClass('zoomIn');
 	})
 
+	$(speaker60).click(function() {
+		$(speakerDetails60).removeClass('hide');
+		$(speakerDetails60).addClass('zoomIn');
+	})
+
 	$(speakerClose).click(function() {
 		$(speakerDetails1).addClass('hide');
 		$(speakerDetails2).addClass('hide');
@@ -476,5 +483,6 @@ $(document).ready(function() {
 		$(speakerDetails57).addClass('hide');
 		$(speakerDetails58).addClass('hide');
 		$(speakerDetails59).addClass('hide');
+		$(speakerDetails60).addClass('hide');
 	})
 });
