@@ -56,6 +56,8 @@ $(document).ready(function() {
 	var speaker55 = $('#speaker55');
 	var speaker56 = $('#speaker56');
 	var speaker57 = $('#speaker57');
+	var speaker58 = $('#speaker58');
+	var speaker59 = $('#speaker59');
 
 	var speakerDetails1 = $('#speaker-modal1');
 	var speakerDetails2 = $('#speaker-modal2');
@@ -114,6 +116,8 @@ $(document).ready(function() {
 	var speakerDetails55 = $('#speaker-modal55');
 	var speakerDetails56 = $('#speaker-modal56');
 	var speakerDetails57 = $('#speaker-modal57');
+	var speakerDetails58 = $('#speaker-modal58');
+	var speakerDetails59 = $('#speaker-modal59');
 
 	var speakerClose = $('.speaker-details__close');
 
@@ -402,6 +406,16 @@ $(document).ready(function() {
 		$(speakerDetails57).addClass('zoomIn');
 	})
 
+	$(speaker58).click(function() {
+		$(speakerDetails58).removeClass('hide');
+		$(speakerDetails58).addClass('zoomIn');
+	})
+
+	$(speaker59).click(function() {
+		$(speakerDetails59).removeClass('hide');
+		$(speakerDetails59).addClass('zoomIn');
+	})
+
 	$(speakerClose).click(function() {
 		$(speakerDetails1).addClass('hide');
 		$(speakerDetails2).addClass('hide');
@@ -460,5 +474,7 @@ $(document).ready(function() {
 		$(speakerDetails55).addClass('hide');
 		$(speakerDetails56).addClass('hide');
 		$(speakerDetails57).addClass('hide');
+		$(speakerDetails58).addClass('hide');
+		$(speakerDetails59).addClass('hide');
 	})
 });
